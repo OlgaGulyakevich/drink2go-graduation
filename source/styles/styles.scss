@@ -1,7 +1,52 @@
-/* GLOBAL */
-@import "./common/variables.scss";
-@import "./common/global.scss";
-@import "./common/fonts.scss";
+// ============================================================
+// Drink2Go - Main Stylesheet
+// ============================================================
+// Порядок импорта стилей:
+// 1. Variables (переменные)
+// 2. Fonts (шрифты)
+// 3. Global (сброс стилей, базовая типографика)
+// 4. UI Components (переиспользуемые UI-элементы)
+// 5. Blocks (БЭМ-блоки секций)
+// ============================================================
 
-/* BLOCKS */
+
+// ============================================================
+// 1️⃣ COMMON - Переменные, шрифты, глобальные стили
+// ============================================================
+
+@import "./common/variables.scss";
+@import "./common/fonts.scss";
+@import "./common/global.scss";
+
+
+// ============================================================
+// 2️⃣ UI COMPONENTS - Переиспользуемые элементы интерфейса
+// ============================================================
+
+@import "./ui/logo.scss";
+@import "./ui/logo-htmlacademy.scss";
+@import "./ui/button.scss";
+@import "./ui/input.scss";
+@import "./ui/select.scss";
+@import "./ui/checkbox.scss";
+@import "./ui/radio.scss";
+@import "./ui/range-slider.scss";
+@import "./ui/badge.scss";
+@import "./ui/card.scss";
+@import "./ui/nav.scss";
+@import "./ui/social.scss";
+@import "./ui/pagination.scss";
+@import "./ui/filters.scss";
+
+
+// ============================================================
+// 3️⃣ BLOCKS - БЭМ-блоки основных секций страницы
+// ============================================================
+
 @import "./blocks/header.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/features.scss";
+@import "./blocks/catalog.scss";
+@import "./blocks/map.scss";
+@import "./blocks/footer.scss";

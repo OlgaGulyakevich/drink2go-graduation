@@ -1,1 +1,528 @@
-/* здесь используйте глобальные переменные */
+// ============================================================
+// Drink2Go - SCSS Variables (Design Tokens)
+// ============================================================
+
+// Все значения извлечены из Figma макета
+// ⚠️ Во время верстки: если замеренное значение отличается - сообщи для исправления
+// ============================================================
+
+
+// ============================================================
+// 🎨 ЦВЕТОВАЯ ПАЛИТРА
+// ============================================================
+
+// ------------------------------------------------------------
+// Основные цвета (Primary colors - фиолетовый бренд)
+// ------------------------------------------------------------
+$color-primary: #7859CF;                     // Основной цвет бренда
+$color-primary-hover: #9070EC;               // Hover состояние
+$color-primary-active: #593CAC;              // Active состояние
+$color-primary-light: #F0EBFF;               // Светлый вариант (фоны)
+$color-primary-transparent: rgba(120, 89, 207, 0.25); // Прозрачный вариант
+
+// ------------------------------------------------------------
+// Secondary colors
+// ------------------------------------------------------------
+$color-secondary: #333333;                   // Темно-серый (основной текст)
+$color-secondary-light: #BDBDBD;             // Светло-серый (отключенные элементы)
+$color-secondary-lighter: #E2E2E2;           // Очень светлый серый (границы)
+
+// ------------------------------------------------------------
+// Текст
+// ------------------------------------------------------------
+$color-text-primary: #333333;                // Основной текст
+$color-text-secondary: #7859CF;              // Акцентный текст (бренд)
+$color-text-inverse: #FFFFFF;                // Инверсный текст (на темном фоне)
+$color-text-disabled: #BDBDBD;               // Отключенный текст
+
+// ------------------------------------------------------------
+// Фоны
+// ------------------------------------------------------------
+$color-bg-primary: #FFFFFF;                  // Основной фон (белый)
+$color-bg-secondary: #F8F8F8;                // Вторичный фон (светло-серый)
+$color-bg-accent: #F3EBE1;                   // Акцентный фон (кофейные напитки)
+$color-bg-disabled: #E2E2E2;                 // Фон отключенных элементов
+
+// ------------------------------------------------------------
+// Границы и разделители
+// ------------------------------------------------------------
+$color-border-primary: #9070EC;              // Основные границы (фиолетовый)
+$color-border-secondary: #E2E2E2;            // Вторичные границы (серый)
+$color-border-focus: #593CAC;                // Focus state (темно-фиолетовый)
+$color-border-disabled: #E2E2E2;             // Отключенные границы
+
+// ------------------------------------------------------------
+// Состояния
+// ------------------------------------------------------------
+$color-disabled: #BDBDBD;                    // Отключенные элементы
+
+
+// ============================================================
+// ✍️ ТИПОГРАФИКА
+// ============================================================
+
+// ------------------------------------------------------------
+// Font families
+// ------------------------------------------------------------
+$font-family-primary: "Montserrat", sans-serif;  // Основной шрифт
+
+// ------------------------------------------------------------
+// Font weights
+// ------------------------------------------------------------
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+// ------------------------------------------------------------
+// Font sizes - Desktop (1440px+)
+// ------------------------------------------------------------
+$font-size-h1-desktop: 56px;                 // Главный заголовок
+$font-size-h2-desktop: 42px;                 // Заголовок секции
+$font-size-h3-desktop: 36px;                 // Подзаголовок (Card title)
+$font-size-h4-desktop: 14px;                 // Мелкий заголовок
+$font-size-body-desktop: 16px;               // Основной текст
+$font-size-small-desktop: 14px;              // Мелкий текст
+$font-size-caption-desktop: 12px;            // Подписи
+$font-size-button-desktop: 14px;             // Кнопки
+$font-size-input-desktop: 16px;              // Поля ввода
+$font-size-label-desktop: 16px;              // Лейблы форм
+$font-size-price-desktop: 20px;              // Цена
+
+// ------------------------------------------------------------
+// Font sizes - Tablet (768px-1439px)
+// ------------------------------------------------------------
+$font-size-h1-tablet: 56px;
+$font-size-h2-tablet: 42px;
+$font-size-h3-tablet: 24px;
+$font-size-h4-tablet: 14px;
+$font-size-body-tablet: 16px;
+$font-size-small-tablet: 14px;
+$font-size-caption-tablet: 12px;
+$font-size-button-tablet: 14px;
+$font-size-input-tablet: 16px;
+$font-size-label-tablet: 16px;
+$font-size-price-tablet: 20px;
+
+// ------------------------------------------------------------
+// Font sizes - Mobile (320px-767px)
+// ------------------------------------------------------------
+$font-size-h1-mobile: 36px;
+$font-size-h2-mobile: 24px;
+$font-size-h3-mobile: 18px;
+$font-size-h4-mobile: 14px;
+$font-size-body-mobile: 14px;
+$font-size-small-mobile: 12px;
+$font-size-caption-mobile: 12px;
+$font-size-button-mobile: 14px;
+$font-size-input-mobile: 16px;
+$font-size-label-mobile: 16px;
+$font-size-price-mobile: 20px;
+
+// ------------------------------------------------------------
+// Line heights
+// ------------------------------------------------------------
+$line-height-tight: 1.22;                    // Плотный (UI Kit title)
+$line-height-heading: 1.43;                  // Заголовки
+$line-height-normal: 1.5;                    // Нормальный
+$line-height-relaxed: 1.6;                   // Свободный
+$line-height-loose: 1.78;                    // Очень свободный
+$line-height-looser: 2.0;                    // Самый свободный
+
+// Для конкретных элементов
+$line-height-h1: 1.43;
+$line-height-h2: 1.52;
+$line-height-h3-desktop: 1.5;
+$line-height-h3-mobile: 1.78;
+$line-height-h4: 1.43;
+$line-height-body: 1.43;
+$line-height-price: 1.6;
+$line-height-badge: 1.33;
+
+// ------------------------------------------------------------
+// Letter spacing
+// ------------------------------------------------------------
+$letter-spacing-tight: 0;                    // Нормальный
+$letter-spacing-normal: 0.02em;              // 2%
+$letter-spacing-wide: 0.04em;                // 4% (Badge uppercase)
+
+// ------------------------------------------------------------
+// Text transform
+// ------------------------------------------------------------
+$text-transform-badge: uppercase;
+
+
+// ============================================================
+// 📏 SPACING (Отступы и размеры)
+// ============================================================
+
+// ------------------------------------------------------------
+// Базовая сетка
+// ------------------------------------------------------------
+$spacing-unit: 4px;                          // Базовая единица
+
+// Spacing scale
+$spacing-xs: 4px;                            // Extra small
+$spacing-sm: 6px;                            // Small
+$spacing-md: 8px;                            // Medium
+$spacing-lg: 10px;                           // Large
+$spacing-xl: 20px;                           // Extra large
+$spacing-2xl: 22px;                          // 2X Large
+$spacing-3xl: 32px;                          // 3X Large
+
+// ------------------------------------------------------------
+// Контейнеры
+// ------------------------------------------------------------
+
+// Mobile (320px)
+$container-width-mobile: 280px;              // Ширина контента (320px - 40px padding)
+$container-padding-mobile: 20px;             // Боковые отступы (по 20px)
+$container-max-width-mobile: 320px;          // Максимальная ширина viewport
+
+// Tablet (768px)
+$container-width-tablet: 728px;              // Ширина контента (768px - 40px padding)
+$container-padding-tablet: 20px;             // Боковые отступы (по 20px)
+$container-max-width-tablet: 768px;          // Максимальная ширина viewport
+
+// Desktop (1440px)
+$container-width-desktop: 1360px;            // Ширина контента (1440px - 80px padding)
+$container-padding-desktop: 40px;            // Боковые отступы (по 40px)
+$container-max-width-desktop: 1440px;        // Максимальная ширина viewport
+
+// ------------------------------------------------------------
+// Секции (вертикальные отступы)
+// ------------------------------------------------------------
+
+// Mobile
+$section-padding-top-mobile: 40px;
+$section-padding-bottom-mobile: 40px;
+
+// Tablet
+$section-padding-top-tablet: 50px;
+$section-padding-bottom-tablet: 50px;
+
+// Desktop
+$section-padding-top-desktop: 60px;
+$section-padding-bottom-desktop: 60px;
+
+
+// ============================================================
+// 🔘 КОМПОНЕНТЫ
+// ============================================================
+
+// ------------------------------------------------------------
+// Кнопки (Buttons)
+// ------------------------------------------------------------
+
+// Размеры - Mobile
+$button-height-mobile: 46px;
+$button-padding-x-mobile: 20px;
+$button-padding-y-mobile: 8px;
+$button-border-radius: 4px;
+
+// Размеры - Tablet
+$button-height-tablet: 46px;
+$button-padding-x-tablet: 20px;
+$button-padding-y-tablet: 8px;
+
+// Размеры - Desktop
+$button-height-desktop: 46px;
+$button-padding-x-desktop: 20px;
+$button-padding-y-desktop: 8px;
+
+// Цвета - Primary button
+$button-primary-bg: #7859CF;
+$button-primary-bg-hover: #9070EC;
+$button-primary-bg-active: #593CAC;
+$button-primary-text: #FFFFFF;
+
+// Цвета - Secondary button
+$button-secondary-bg: #FFFFFF;
+$button-secondary-bg-hover: #F0EBFF;
+$button-secondary-bg-active: #F0EBFF;
+$button-secondary-text: #7859CF;
+$button-secondary-border: #7859CF;
+
+// Цвета - Disabled
+$button-disabled-bg: #E2E2E2;
+$button-disabled-text: #BDBDBD;
+
+// ------------------------------------------------------------
+// Поля ввода (Inputs)
+// ------------------------------------------------------------
+
+// Размеры
+$input-height-mobile: 46px;
+$input-height-tablet: 46px;
+$input-height-desktop: 46px;
+$input-padding-x: 10px;
+$input-padding-y: 8px;
+$input-border-radius: 4px;
+$input-border-width: 2px;
+
+// Цвета
+$input-bg: #FFFFFF;
+$input-border: #E2E2E2;
+$input-border-focus: #593CAC;
+$input-text: #333333;
+$input-placeholder: #BDBDBD;
+
+// ------------------------------------------------------------
+// Карточки товаров (Cards)
+// ------------------------------------------------------------
+
+// Размеры
+$card-border-radius: 4px;
+$card-padding-mobile: 20px;
+$card-padding-tablet: 20px;
+$card-padding-desktop: 20px;
+
+// Цвета
+$card-bg: #FFFFFF;
+$card-border: #E2E2E2;
+$card-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+$card-shadow-hover: 0px 8px 20px rgba(0, 0, 0, 0.15);
+
+// Ширины карточек
+$card-width-mobile: 240px;
+$card-width-tablet: 289px;
+$card-width-desktop: 257px;
+
+// ------------------------------------------------------------
+// Чекбоксы (Checkboxes)
+// ------------------------------------------------------------
+
+// Размеры
+$checkbox-size: 24px;                        // Размер чекбокса
+$checkbox-inner-size: 12px;                  // Размер галочки
+$checkbox-border-radius: 12px;               // Border radius
+$checkbox-border-width: 2px;
+
+// Цвета
+$checkbox-bg: #FFFFFF;
+$checkbox-bg-unchecked: #E2E2E2;             // Default состояние
+$checkbox-bg-checked: #7859CF;               // Checked состояние
+$checkbox-bg-hover: #F0EBFF;
+$checkbox-border: #E2E2E2;
+$checkbox-border-checked: #7859CF;
+$checkbox-checkmark: #FFFFFF;                // Цвет внутреннего круга
+$checkbox-disabled-bg: #F8F8F8;
+$checkbox-disabled-border: #E2E2E2;
+$checkbox-disabled-text: #BDBDBD;
+
+// Spacing
+$checkbox-gap: 10px;                         // Gap между toggle и текстом
+
+// ------------------------------------------------------------
+// Радиокнопки (Radio buttons)
+// ------------------------------------------------------------
+
+// Размеры
+$radio-size: 24px;                           // Размер радиокнопки
+$radio-inner-size: 12px;                     // Размер внутреннего круга
+$radio-border-radius: 50%;                   // Круглый
+$radio-border-width: 2px;
+
+// Цвета
+$radio-bg: #FFFFFF;
+$radio-bg-checked: #7859CF;
+$radio-bg-hover: #F0EBFF;
+$radio-border: #E2E2E2;
+$radio-border-checked: #7859CF;
+$radio-dot: #FFFFFF;                         // Цвет внутреннего круга
+$radio-disabled-bg: #F8F8F8;
+$radio-disabled-border: #E2E2E2;
+$radio-disabled-text: #BDBDBD;
+
+// Spacing
+$radio-gap: 10px;                            // Gap между radio и текстом
+
+// ------------------------------------------------------------
+// Range Slider (NoUISlider)
+// ------------------------------------------------------------
+
+// Track (дорожка)
+$range-slider-track-bg: #E2E2E2;             // Неактивная часть
+$range-slider-track-height: 2px;
+
+// Connect (активная часть)
+$range-slider-connect-bg: #9070EC;
+
+// Handle (ползунок)
+$range-slider-handle-size: 20px;
+$range-slider-handle-bg: #FFFFFF;
+$range-slider-handle-border: #9070EC;
+$range-slider-handle-border-width: 2px;
+$range-slider-handle-hover-border: #7859CF;
+$range-slider-handle-active-border: #593CAC;
+
+// ------------------------------------------------------------
+// Filter Group Widths
+// ------------------------------------------------------------
+
+// Desktop
+$filter-width-desktop: 318px;
+$filter-checkbox-width-desktop: 318px;
+$filter-radio-width-desktop: 318px;
+
+// Tablet
+$filter-width-tablet: 223px;
+$filter-checkbox-width-tablet: 223px;
+$filter-radio-width-tablet: 222px;
+
+// Mobile
+$filter-width-mobile: 280px;
+$filter-checkbox-width-mobile: 280px;
+$filter-radio-width-mobile: 280px;
+
+// Filter Buttons Gap
+$filter-buttons-gap-desktop: 20px;
+$filter-buttons-gap-tablet: 20px;
+$filter-buttons-gap-mobile: 20px;
+
+// ------------------------------------------------------------
+// Filter Inputs (Price)
+// ------------------------------------------------------------
+
+// Desktop
+$filter-input-width-desktop: 134px;
+$filter-input-padding-desktop: 8px 10px;
+
+// Tablet
+$filter-input-width-tablet-min: 87px;
+$filter-input-width-tablet-max: 88px;
+$filter-input-padding-tablet: 8px 10px;
+
+// Dash между инпутами
+$filter-input-dash-color: #BDBDBD;
+
+
+// ============================================================
+// 🖼️ ИЗОБРАЖЕНИЯ
+// ============================================================
+
+// ------------------------------------------------------------
+// Товары (Item Photos)
+// ------------------------------------------------------------
+
+// Desktop
+$item-photo-width-desktop: 130px;
+$item-photo-height-desktop: 188px;
+
+// Tablet
+$item-photo-width-tablet: 130px;
+$item-photo-height-tablet: 188px;
+
+
+// Mobile
+$item-photo-width-mobile: 130px;
+$item-photo-height-mobile: 188px;
+
+
+// Aspect ratio
+$item-photo-aspect-ratio: 0,69;              // 130:188 (width:height)
+
+// ------------------------------------------------------------
+// Слайдер (Slider Images)
+// ------------------------------------------------------------
+
+// Desktop
+$slider-image-width-desktop: 600px;
+$slider-image-height-desktop: 600px;
+
+// Tablet
+$slider-image-width-tablet: 476px;
+$slider-image-height-tablet: 476px;
+
+// Mobile
+$slider-image-width-mobile: 280px;
+$slider-image-height-mobile: 280px;
+
+// ------------------------------------------------------------
+// Карта (Map)
+// ------------------------------------------------------------
+
+// Карта растягивается на всю ширину viewport
+$map-width-desktop: 100vw;
+$map-height-desktop: auto;
+
+$map-width-tablet: 100vw;
+$map-height-tablet: auto;
+
+$map-width-mobile: 100vw;
+$map-height-mobile: auto;
+
+
+// ============================================================
+// 🎭 ЭФФЕКТЫ
+// ============================================================
+
+// ------------------------------------------------------------
+// Тени (Box Shadows)
+// ------------------------------------------------------------
+
+$shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0px 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0px 8px 20px rgba(0, 0, 0, 0.15);
+$shadow-xl: 0px 12px 32px rgba(0, 0, 0, 0.2);
+
+// Специфичные тени
+$shadow-card: 0px 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-card-hover: 0px 8px 20px rgba(0, 0, 0, 0.15);
+$shadow-header: 0px 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-modal: 0px 12px 32px rgba(0, 0, 0, 0.2);
+
+// ------------------------------------------------------------
+// Border Radius
+// ------------------------------------------------------------
+
+$border-radius-sm: 2px;
+$border-radius-md: 4px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
+$border-radius-full: 50%;
+$border-radius-pill: 999px;
+
+// ------------------------------------------------------------
+// Transitions
+// ------------------------------------------------------------
+
+$transition-fast: 150ms ease-in-out;
+$transition-base: 250ms ease-in-out;
+$transition-slow: 350ms ease-in-out;
+
+// Специфичные переходы
+$transition-color: color $transition-base;
+$transition-bg: background-color $transition-base;
+$transition-transform: transform $transition-base;
+$transition-opacity: opacity $transition-base;
+$transition-all: all $transition-base;
+
+
+// ============================================================
+// 📱 BREAKPOINTS
+// ============================================================
+
+// Минимальные ширины (для min-width queries)
+$breakpoint-mobile: 320px;                   // Минимум mobile
+$breakpoint-tablet: 768px;                   // Начало tablet
+$breakpoint-desktop: 1440px;                 // Начало desktop
+
+// Максимальные ширины (для max-width queries если нужно)
+$breakpoint-mobile-max: 767px;               // Максимум mobile
+$breakpoint-tablet-max: 1439px;              // Максимум tablet
+
+
+// ============================================================
+// 🔤 Z-INDEX SCALE
+// ============================================================
+
+$z-index-base: 1;                            // Базовый уровень
+$z-index-dropdown: 100;                      // Выпадающие списки
+$z-index-sticky: 200;                        // Sticky элементы
+$z-index-fixed: 300;                         // Fixed элементы
+$z-index-modal-backdrop: 400;                // Backdrop модальных окон
+$z-index-modal: 500;                         // Модальные окна
+$z-index-popover: 600;                       // Popover/Tooltip
+$z-index-toast: 700;                         // Уведомления
