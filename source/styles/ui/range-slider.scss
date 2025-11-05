@@ -1,0 +1,209 @@
+// ============================================================
+// Drink2Go - Range Slider (NoUISlider)
+// ============================================================
+// Кастомные стили для библиотеки NoUISlider
+// Переопределяем дефолтные стили под дизайн проекта
+// ============================================================
+
+@use "../common/variables" as *;
+
+
+// ============================================================
+// 🎯 БАЗОВЫЙ КОНТЕЙНЕР
+// ============================================================
+
+.range-slider {
+  // Контейнер для всего range-slider
+  width: 100%;
+  margin: $spacing-xl 0;
+}
+
+
+// ============================================================
+// 🎨 ПЕРЕОПРЕДЕЛЕНИЕ СТИЛЕЙ NOUISLIDER
+// ============================================================
+
+// ------------------------------------------------------------
+// Track (дорожка слайдера)
+// ------------------------------------------------------------
+.noUi-target {
+  background-color: $range-slider-track-bg;
+  border: none;
+  box-shadow: none;
+  height: $range-slider-track-height;
+  border-radius: 0; // Прямоугольная дорожка
+}
+
+// Горизонтальная ориентация
+.noUi-horizontal {
+  height: $range-slider-track-height;
+}
+
+// ------------------------------------------------------------
+// Connect (активная часть дорожки)
+// ------------------------------------------------------------
+.noUi-connect {
+  background-color: $range-slider-connect-bg;
+  box-shadow: none;
+}
+
+// ------------------------------------------------------------
+// Handle (ползунок)
+// ------------------------------------------------------------
+.noUi-handle {
+  // Размеры и форма
+  width: $range-slider-handle-size;
+  height: $range-slider-handle-size;
+  border-radius: $border-radius-full; // Круглый
+
+  // Цвета
+  background-color: $range-slider-handle-bg;
+  border: $range-slider-handle-border-width solid $range-slider-handle-border;
+  box-shadow: none;
+
+  // Позиционирование
+  top: 50%;
+  transform: translateY(-50%);
+  right: -($range-slider-handle-size / 2); // Центрируем по дорожке
+
+  // Курсор
+  cursor: pointer;
+
+  // Убираем стрелочку ::before и ::after
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  // Состояния
+  &:hover {
+    border-color: $range-slider-handle-hover-border;
+  }
+
+  &:active {
+    border-color: $range-slider-handle-active-border;
+  }
+
+  // Focus для доступности
+  &:focus {
+    outline: 2px solid $color-border-focus;
+    outline-offset: 2px;
+  }
+}
+
+// Горизонтальный handle
+.noUi-horizontal .noUi-handle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// ------------------------------------------------------------
+// Tooltip (если нужен)
+// ------------------------------------------------------------
+.noUi-tooltip {
+  display: none; // По умолчанию скрыт
+
+  // Если понадобится:
+  // background-color: $color-primary;
+  // color: $color-text-inverse;
+  // border: none;
+  // font-size: $font-size-small-mobile;
+  // padding: 4px 8px;
+  // border-radius: $border-radius-sm;
+}
+
+// ------------------------------------------------------------
+// Touch area (для мобильных устройств)
+// ------------------------------------------------------------
+.noUi-touch-area {
+  // Увеличиваем область касания для мобильных
+  width: 200%;
+  height: 200%;
+}
+
+// ------------------------------------------------------------
+// Disabled state
+// ------------------------------------------------------------
+.noUi-target[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  .noUi-handle {
+    cursor: not-allowed;
+    background-color: $checkbox-disabled-bg;
+    border-color: $checkbox-disabled-border;
+  }
+
+  .noUi-connect {
+    background-color: $color-disabled;
+  }
+}
+
+
+// ============================================================
+// 🔢 INPUT FIELDS (связанные с range-slider)
+// ============================================================
+
+.range-slider__inputs {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-top: $spacing-xl;
+}
+
+.range-slider__input {
+  // Используем стили из input.scss
+  // Здесь только специфичные размеры для фильтров
+
+  // Mobile
+  width: 100%;
+
+  // Tablet
+  @media (min-width: $breakpoint-tablet) {
+    width: $filter-input-width-tablet-min;
+  }
+
+  // Desktop
+  @media (min-width: $breakpoint-desktop) {
+    width: $filter-input-width-desktop;
+  }
+}
+
+.range-slider__separator {
+  // Дефис между инпутами
+  color: $filter-input-dash-color;
+  font-size: $font-size-body-mobile;
+  flex-shrink: 0;
+}
+
+
+// ============================================================
+// 📱 АДАПТИВНОСТЬ
+// ============================================================
+
+// Tablet
+@media (min-width: $breakpoint-tablet) {
+  .range-slider {
+    // Возможно изменение размеров
+  }
+}
+
+// Desktop
+@media (min-width: $breakpoint-desktop) {
+  .range-slider {
+    // Возможно изменение размеров
+  }
+}
+
+
+// ============================================================
+// 📝 ПРИМЕР ИСПОЛЬЗОВАНИЯ В HTML
+// ============================================================
+// <div class="range-slider">
+//   <div id="price-slider"></div>
+//   <div class="range-slider__inputs">
+//     <input type="number" class="range-slider__input" id="price-min" value="0">
+//     <span class="range-slider__separator">—</span>
+//     <input type="number" class="range-slider__input" id="price-max" value="1000">
+//   </div>
+// </div>
