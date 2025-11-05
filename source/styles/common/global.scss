@@ -4,8 +4,6 @@
 // Сброс стилей, базовая типографика, вспомогательные классы
 // ============================================================
 
-@use "variables" as *;
-
 
 // ============================================================
 // 🧹 CSS RESET (Modern Minimal Reset)
@@ -23,6 +21,20 @@
 a {
   text-decoration: none;
   color: inherit;
+  transition: $transition-color;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-border-focus;
+    outline-offset: 2px;
+  }
 }
 
 // Убираем маркеры у списков
@@ -50,6 +62,17 @@ button {
   font: inherit;
   color: inherit;
   cursor: pointer;
+  transition: $transition-all;
+
+  &:focus-visible {
+    outline: 2px solid $color-border-focus;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 
 // Убираем дефолтные стили у inputs
@@ -59,12 +82,6 @@ select {
   font: inherit;
 }
 
-// Улучшаем рендеринг текста
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 
 // ============================================================
 // 📝 БАЗОВАЯ ТИПОГРАФИКА
@@ -72,7 +89,7 @@ body {
 
 html {
   // Базовый font-size для rem расчетов
-  font-size: 16px;
+  font-size: $font-size-body-mobile;
 }
 
 body {
@@ -89,6 +106,10 @@ body {
   // Типографика из переменных
   font-size: $font-size-body-mobile; // Mobile-first
   line-height: $line-height-body;
+
+  // Улучшаем рендеринг текста
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   // Адаптивность типографики
   @media (min-width: $breakpoint-tablet) {
@@ -117,47 +138,6 @@ h6 {
   font-weight: $font-weight-bold;
   color: $color-text-primary;
   line-height: $line-height-heading;
-}
-
-
-// ============================================================
-// 🔗 ССЫЛКИ
-// ============================================================
-
-a {
-  transition: $transition-color;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-border-focus;
-    outline-offset: 2px;
-  }
-}
-
-
-// ============================================================
-// 🖱️ КНОПКИ
-// ============================================================
-
-button {
-  transition: $transition-all;
-
-  &:focus-visible {
-    outline: 2px solid $color-border-focus;
-    outline-offset: 2px;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
 }
 
 
@@ -239,25 +219,25 @@ button {
 // Показать только на mobile
 .mobile-only {
   @media (min-width: $breakpoint-tablet) {
-    display: none !important;
+    display: none;
   }
 }
 
 // Показать только на tablet
 .tablet-only {
   @media (max-width: $breakpoint-mobile-max) {
-    display: none !important;
+    display: none;
   }
 
   @media (min-width: $breakpoint-desktop) {
-    display: none !important;
+    display: none;
   }
 }
 
 // Показать только на desktop
 .desktop-only {
   @media (max-width: $breakpoint-tablet-max) {
-    display: none !important;
+    display: none;
   }
 }
 

@@ -14,47 +14,47 @@
 // ------------------------------------------------------------
 // Основные цвета (Primary colors - фиолетовый бренд)
 // ------------------------------------------------------------
-$color-primary: #7859CF;                     // Основной цвет бренда
-$color-primary-hover: #9070EC;               // Hover состояние
-$color-primary-active: #593CAC;              // Active состояние
-$color-primary-light: #F0EBFF;               // Светлый вариант (фоны)
+$color-primary: #7859cf;                     // Основной цвет бренда
+$color-primary-hover: #9070ec;               // Hover состояние
+$color-primary-active: #593cac;              // Active состояние
+$color-primary-light: #f0ebff;               // Светлый вариант (фоны)
 $color-primary-transparent: rgba(120, 89, 207, 0.25); // Прозрачный вариант
 
 // ------------------------------------------------------------
 // Secondary colors
 // ------------------------------------------------------------
 $color-secondary: #333333;                   // Темно-серый (основной текст)
-$color-secondary-light: #BDBDBD;             // Светло-серый (отключенные элементы)
-$color-secondary-lighter: #E2E2E2;           // Очень светлый серый (границы)
+$color-secondary-light: #bdbdbd;             // Светло-серый (отключенные элементы)
+$color-secondary-lighter: #e2e2e2;           // Очень светлый серый (границы)
 
 // ------------------------------------------------------------
 // Текст
 // ------------------------------------------------------------
 $color-text-primary: #333333;                // Основной текст
-$color-text-secondary: #7859CF;              // Акцентный текст (бренд)
-$color-text-inverse: #FFFFFF;                // Инверсный текст (на темном фоне)
-$color-text-disabled: #BDBDBD;               // Отключенный текст
+$color-text-secondary: #7859cf;              // Акцентный текст (бренд)
+$color-text-inverse: #ffffff;                // Инверсный текст (на темном фоне)
+$color-text-disabled: #bdbdbd;               // Отключенный текст
 
 // ------------------------------------------------------------
 // Фоны
 // ------------------------------------------------------------
-$color-bg-primary: #FFFFFF;                  // Основной фон (белый)
-$color-bg-secondary: #F8F8F8;                // Вторичный фон (светло-серый)
-$color-bg-accent: #F3EBE1;                   // Акцентный фон (кофейные напитки)
-$color-bg-disabled: #E2E2E2;                 // Фон отключенных элементов
+$color-bg-primary: #ffffff;                  // Основной фон (белый)
+$color-bg-secondary: #f8f8f8;                // Вторичный фон (светло-серый)
+$color-bg-accent: #f3ebe1;                   // Акцентный фон (кофейные напитки)
+$color-bg-disabled: #e2e2e2;                 // Фон отключенных элементов
 
 // ------------------------------------------------------------
 // Границы и разделители
 // ------------------------------------------------------------
-$color-border-primary: #9070EC;              // Основные границы (фиолетовый)
-$color-border-secondary: #E2E2E2;            // Вторичные границы (серый)
-$color-border-focus: #593CAC;                // Focus state (темно-фиолетовый)
-$color-border-disabled: #E2E2E2;             // Отключенные границы
+$color-border-primary: #9070ec;              // Основные границы (фиолетовый)
+$color-border-secondary: #e2e2e2;            // Вторичные границы (серый)
+$color-border-focus: #593cac;                // Focus state (темно-фиолетовый)
+$color-border-disabled: #e2e2e2;             // Отключенные границы
 
 // ------------------------------------------------------------
 // Состояния
 // ------------------------------------------------------------
-$color-disabled: #BDBDBD;                    // Отключенные элементы
+$color-disabled: #bdbdbd;                    // Отключенные элементы
 
 
 // ============================================================
@@ -128,7 +128,7 @@ $line-height-heading: 1.43;                  // Заголовки
 $line-height-normal: 1.5;                    // Нормальный
 $line-height-relaxed: 1.6;                   // Свободный
 $line-height-loose: 1.78;                    // Очень свободный
-$line-height-looser: 2.0;                    // Самый свободный
+$line-height-looser: 2;                    // Самый свободный
 
 // Для конкретных элементов
 $line-height-h1: 1.43;
@@ -232,21 +232,21 @@ $button-padding-x-desktop: 20px;
 $button-padding-y-desktop: 8px;
 
 // Цвета - Primary button
-$button-primary-bg: #7859CF;
-$button-primary-bg-hover: #9070EC;
-$button-primary-bg-active: #593CAC;
-$button-primary-text: #FFFFFF;
+$button-primary-bg: #7859cf;
+$button-primary-bg-hover: #9070ec;
+$button-primary-bg-active: #593cac;
+$button-primary-text: #ffffff;
 
 // Цвета - Secondary button
-$button-secondary-bg: #FFFFFF;
-$button-secondary-bg-hover: #F0EBFF;
-$button-secondary-bg-active: #F0EBFF;
-$button-secondary-text: #7859CF;
-$button-secondary-border: #7859CF;
+$button-secondary-bg: #ffffff;
+$button-secondary-bg-hover: #f0ebff;
+$button-secondary-bg-active: #f0ebff;
+$button-secondary-text: #7859cf;
+$button-secondary-border: #7859cf;
 
 // Цвета - Disabled
-$button-disabled-bg: #E2E2E2;
-$button-disabled-text: #BDBDBD;
+$button-disabled-bg: #e2e2e2;
+$button-disabled-text: #bdbdbd;
 
 // ------------------------------------------------------------
 // Поля ввода (Inputs)
@@ -262,11 +262,11 @@ $input-border-radius: 4px;
 $input-border-width: 2px;
 
 // Цвета
-$input-bg: #FFFFFF;
-$input-border: #E2E2E2;
-$input-border-focus: #593CAC;
+$input-bg: #ffffff;
+$input-border: #e2e2e2;
+$input-border-focus: #593cac;
 $input-text: #333333;
-$input-placeholder: #BDBDBD;
+$input-placeholder: #bdbdbd;
 
 // ------------------------------------------------------------
 // Карточки товаров (Cards)
@@ -279,8 +279,8 @@ $card-padding-tablet: 20px;
 $card-padding-desktop: 20px;
 
 // Цвета
-$card-bg: #FFFFFF;
-$card-border: #E2E2E2;
+$card-bg: #ffffff;
+$card-border: #e2e2e2;
 $card-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 $card-shadow-hover: 0px 8px 20px rgba(0, 0, 0, 0.15);
 
@@ -300,16 +300,16 @@ $checkbox-border-radius: 12px;               // Border radius
 $checkbox-border-width: 2px;
 
 // Цвета
-$checkbox-bg: #FFFFFF;
-$checkbox-bg-unchecked: #E2E2E2;             // Default состояние
-$checkbox-bg-checked: #7859CF;               // Checked состояние
-$checkbox-bg-hover: #F0EBFF;
-$checkbox-border: #E2E2E2;
-$checkbox-border-checked: #7859CF;
-$checkbox-checkmark: #FFFFFF;                // Цвет внутреннего круга
-$checkbox-disabled-bg: #F8F8F8;
-$checkbox-disabled-border: #E2E2E2;
-$checkbox-disabled-text: #BDBDBD;
+$checkbox-bg: #ffffff;
+$checkbox-bg-unchecked: #e2e2e2;             // Default состояние
+$checkbox-bg-checked: #7859cf;               // Checked состояние
+$checkbox-bg-hover: #f0ebff;
+$checkbox-border: #e2e2e2;
+$checkbox-border-checked: #7859cf;
+$checkbox-checkmark: #ffffff;                // Цвет внутреннего круга
+$checkbox-disabled-bg: #f8f8f8;
+$checkbox-disabled-border: #e2e2e2;
+$checkbox-disabled-text: #bdbdbd;
 
 // Spacing
 $checkbox-gap: 10px;                         // Gap между toggle и текстом
@@ -325,15 +325,15 @@ $radio-border-radius: 50%;                   // Круглый
 $radio-border-width: 2px;
 
 // Цвета
-$radio-bg: #FFFFFF;
-$radio-bg-checked: #7859CF;
-$radio-bg-hover: #F0EBFF;
-$radio-border: #E2E2E2;
-$radio-border-checked: #7859CF;
-$radio-dot: #FFFFFF;                         // Цвет внутреннего круга
-$radio-disabled-bg: #F8F8F8;
-$radio-disabled-border: #E2E2E2;
-$radio-disabled-text: #BDBDBD;
+$radio-bg: #ffffff;
+$radio-bg-checked: #7859cf;
+$radio-bg-hover: #f0ebff;
+$radio-border: #e2e2e2;
+$radio-border-checked: #7859cf;
+$radio-dot: #ffffff;                         // Цвет внутреннего круга
+$radio-disabled-bg: #f8f8f8;
+$radio-disabled-border: #e2e2e2;
+$radio-disabled-text: #bdbdbd;
 
 // Spacing
 $radio-gap: 10px;                            // Gap между radio и текстом
@@ -343,19 +343,19 @@ $radio-gap: 10px;                            // Gap между radio и текс
 // ------------------------------------------------------------
 
 // Track (дорожка)
-$range-slider-track-bg: #E2E2E2;             // Неактивная часть
+$range-slider-track-bg: #e2e2e2;             // Неактивная часть
 $range-slider-track-height: 2px;
 
 // Connect (активная часть)
-$range-slider-connect-bg: #9070EC;
+$range-slider-connect-bg: #9070ec;
 
 // Handle (ползунок)
 $range-slider-handle-size: 20px;
-$range-slider-handle-bg: #FFFFFF;
-$range-slider-handle-border: #9070EC;
+$range-slider-handle-bg: #ffffff;
+$range-slider-handle-border: #9070ec;
 $range-slider-handle-border-width: 2px;
-$range-slider-handle-hover-border: #7859CF;
-$range-slider-handle-active-border: #593CAC;
+$range-slider-handle-hover-border: #7859cf;
+$range-slider-handle-active-border: #593cac;
 
 // ------------------------------------------------------------
 // Filter Group Widths
@@ -395,7 +395,7 @@ $filter-input-width-tablet-max: 88px;
 $filter-input-padding-tablet: 8px 10px;
 
 // Dash между инпутами
-$filter-input-dash-color: #BDBDBD;
+$filter-input-dash-color: #bdbdbd;
 
 
 // ============================================================
