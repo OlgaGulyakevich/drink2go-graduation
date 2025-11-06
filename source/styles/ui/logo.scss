@@ -1,56 +1,54 @@
-// ============================================================
-// Drink2Go - Logo Component
-// ============================================================
-// Адаптивный логотип с переключением версий для разных экранов
-// ============================================================
+/* ============================================
+   LOGO
+   ============================================ */
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
   text-decoration: none;
+  color: #333333;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid #7859cf;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 }
 
 .logo__image {
   display: block;
+  width: auto;
+  height: 36px;
   flex-shrink: 0;
-}
 
-// Адаптивное отображение логотипов
-.logo__image--mobile {
-  display: block;
+  @media (min-width: 768px) {
+    height: 40px;
+  }
 
-  @media (min-width: $breakpoint-tablet) {
-    display: none;
+  @media (min-width: 1440px) {
+    height: 44px;
   }
 }
 
-.logo__image--tablet {
-  display: none;
-
-  @media (min-width: $breakpoint-tablet) {
-    display: block;
-  }
-
-  @media (min-width: $breakpoint-desktop) {
-    display: none;
-  }
-}
-
-.logo__image--desktop {
-  display: none;
-
-  @media (min-width: $breakpoint-desktop) {
-    display: block;
-  }
-}
-
+/* Слоган "Интернет-магазин кофейных напитков" */
 .logo__tagline {
-  font-size: 12px;
-  line-height: 1.2;
-  color: $color-text-secondary;
+  display: none;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: 1440px) {
+    display: block;
     font-size: 14px;
+    line-height: 1.4;
+    color: #666666;
+    font-weight: 400;
+    max-width: 160px;
   }
 }

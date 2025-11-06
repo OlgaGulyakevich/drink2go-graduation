@@ -1,5 +1,183 @@
+/* ============================================
+   HEADER
+   ============================================ */
+
 .header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 100;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+
+  @media (min-width: 768px) {
+    min-height: 80px;
+  }
+
+  @media (min-width: 1440px) {
+    min-height: 100px;
+  }
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.header__logo {
+  flex-shrink: 0;
+  z-index: 101;
+}
+
+/* ============================================
+   NAVIGATION (Desktop/Tablet)
+   ============================================ */
+
+.header__nav {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* ============================================
+   BURGER MENU BUTTON (Mobile/Tablet)
+   ============================================ */
+
+.header__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333333;
+  transition: color 0.3s ease;
+
+  @media (min-width: 1440px) {
+    display: none;
+  }
+
+  &:hover {
+    color: #7859cf;
+  }
+
+  &:focus {
+    outline: 2px solid #7859cf;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    color: #6849b8;
+  }
+}
+
+.header__toggle-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* ============================================
+   USER NAVIGATION (Icons)
+   ============================================ */
+
+.header__user-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+
+  @media (min-width: 768px) {
+    margin-left: 40px;
+  }
+
+  @media (min-width: 1440px) {
+    gap: 32px;
+  }
+}
+
+.user-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  color: #333333;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #7859cf;
+  }
+
+  &:focus {
+    outline: 2px solid #7859cf;
+    outline-offset: 2px;
+    color: #7859cf;
+  }
+
+  &:active {
+    color: #6849b8;
+  }
+}
+
+.user-nav__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.user-nav__text {
+  display: none;
+
+  @media (min-width: 1440px) {
+    display: inline;
+  }
+}
+
+/* ============================================
+   MOBILE MENU STATES
+   ============================================ */
+
+/* Когда меню открыто */
+.header--menu-open {
+  .header__nav {
+    display: block;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    padding: 24px 20px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 99;
+
+    @media (min-width: 768px) {
+      top: 80px;
+    }
+  }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
 }
