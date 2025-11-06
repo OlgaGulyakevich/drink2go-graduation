@@ -1,0 +1,10 @@
+# Stylelint ignore patterns
+
+# Vendor libraries (third-party code)
+source/vendor/**
+
+# Build output
+build/**
+
+# Node modules
+node_modules/**

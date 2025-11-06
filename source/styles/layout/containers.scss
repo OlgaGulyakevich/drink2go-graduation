@@ -1,0 +1,30 @@
+// ============================================================
+// Drink2Go - Layout: Containers
+// ============================================================
+// Классы для контейнеров и layout-структуры
+// ============================================================
+
+
+// ============================================================
+// 📦 КОНТЕЙНЕР (Базовый класс)
+// ============================================================
+
+.container {
+  // Mobile-first
+  width: 100%;
+  max-width: $container-max-width-mobile;
+  margin: 0 auto;
+  padding: 0 $container-padding-mobile;
+
+  // Tablet
+  @media (min-width: $breakpoint-tablet) {
+    max-width: $container-max-width-tablet;
+    padding: 0 $container-padding-tablet;
+  }
+
+  // Desktop
+  @media (min-width: $breakpoint-desktop) {
+    max-width: $container-max-width-desktop;
+    padding: 0 $container-padding-desktop;
+  }
+}
