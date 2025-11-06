@@ -46,7 +46,7 @@ $color-bg-disabled: #e2e2e2;                 // Фон отключенных э
 // ------------------------------------------------------------
 // Границы и разделители
 // ------------------------------------------------------------
-$color-border-primary: #9070ec;              // Основные границы (фиолетовый)
+$color-border-primary: #9070ec;             // Основные границы (фиолетовый)
 $color-border-secondary: #e2e2e2;            // Вторичные границы (серый)
 $color-border-focus: #593cac;                // Focus state (темно-фиолетовый)
 $color-border-disabled: #e2e2e2;             // Отключенные границы
@@ -55,7 +55,9 @@ $color-border-disabled: #e2e2e2;             // Отключенные гран�
 // Состояния
 // ------------------------------------------------------------
 $color-disabled: #bdbdbd;                    // Отключенные элементы
-
+$color-hover: #9070ec;                       // Hover состояние
+$color-active: #593cac;                      // Active состояние
+$color-focus: #9070ec;                      // Focus состояние
 
 // ============================================================
 // ✍️ ТИПОГРАФИКА
@@ -195,7 +197,7 @@ $container-max-width-desktop: 1440px;        // Максимальная шир�
 // ------------------------------------------------------------
 
 // Mobile
-$section-padding-top-mobile: 40px;
+$section-padding-top-mobile: 20px;
 $section-padding-bottom-mobile: 40px;
 
 // Tablet
@@ -216,18 +218,18 @@ $section-padding-bottom-desktop: 60px;
 // ------------------------------------------------------------
 
 // Размеры - Mobile
-$button-height-mobile: 46px;
+$button-height-mobile: 36px;
 $button-padding-x-mobile: 20px;
 $button-padding-y-mobile: 8px;
 $button-border-radius: 4px;
 
 // Размеры - Tablet
-$button-height-tablet: 46px;
+$button-height-tablet: 36px;
 $button-padding-x-tablet: 20px;
 $button-padding-y-tablet: 8px;
 
 // Размеры - Desktop
-$button-height-desktop: 46px;
+$button-height-desktop: 36px;
 $button-padding-x-desktop: 20px;
 $button-padding-y-desktop: 8px;
 
