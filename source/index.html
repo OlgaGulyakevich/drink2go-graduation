@@ -1,22 +1,118 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>Название проекта</title>
+    <title>Drink2Go — Интернет-магазин кофейных напитков</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="preload" href="#" type="font/woff2" as="font">
+    <meta name="description" content="Drink2Go — широкий ассортимент кофейных напитков с доставкой. Удобная сортировка по странам произрастания зерна и концентрации молока.">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/index.js" defer></script>
   </head>
-  <body class="page__body">
-    <header class="header">
+  <body>
+
+    <!-- ============================================ -->
+    <!-- HEADER -->
+    <!-- ============================================ -->
+    <header class="header" data-test="header">
+      <div class="container">
+
+        <!-- Логотип (адаптивный с кадрированием) -->
+        <a class="header__logo logo" href="index.html" aria-label="Drink2Go - Главная страница">
+          <picture>
+            <!-- Desktop -->
+            <source
+              type="image/webp"
+              media="(min-width: 1440px)"
+              srcset="images/logo-desktop@1x.webp 1x, images/logo-desktop@2x.webp 2x">
+            <source
+              media="(min-width: 1440px)"
+              srcset="images/logo-desktop@1x.png 1x, images/logo-desktop@2x.png 2x">
+
+            <!-- Tablet -->
+            <source
+              type="image/webp"
+              media="(min-width: 768px)"
+              srcset="images/logo-tablet@1x.webp 1x, images/logo-tablet@2x.webp 2x">
+            <source
+              media="(min-width: 768px)"
+              srcset="images/logo-tablet@1x.png 1x, images/logo-tablet@2x.png 2x">
+
+            <!-- Mobile (fallback) -->
+            <source
+              type="image/webp"
+              srcset="images/logo-mobile@1x.webp 1x, images/logo-mobile@2x.webp 2x">
+            <img
+              class="logo__image"
+              src="images/logo-mobile@1x.png"
+              srcset="images/logo-mobile@2x.png 2x"
+              alt="Drink2Go"
+              width="82"
+              height="36">
+          </picture>
+          <span class="logo__tagline">Интернет-магазин кофейных напитков</span>
+        </a>
+
+        <!-- Навигация (Desktop/Tablet) -->
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link nav__link--current" href="index.html">Главная</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#catalog">Каталог</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#delivery">Доставка</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#about">О нас</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Кнопка бургер-меню (Mobile/Tablet) -->
+        <button class="header__toggle js-toggle-button" type="button" aria-label="Открыть меню">
+          <span class="visually-hidden">Открыть меню</span>
+          <svg class="header__toggle-icon" width="20" height="20">
+            <use href="icons/stack.svg#menu"></use>
+          </svg>
+        </button>
+
+        <!-- Иконки пользователя и корзины -->
+        <div class="header__user-nav user-nav">
+          <a class="user-nav__link user-nav__link--user" href="#login" aria-label="Войти в личный кабинет">
+            <svg class="user-nav__icon" width="16" height="16">
+              <use href="icons/stack.svg#user"></use>
+            </svg>
+            <span class="user-nav__text">Войти</span>
+          </a>
+          <a class="user-nav__link user-nav__link--cart" href="#cart" aria-label="Корзина">
+            <svg class="user-nav__icon" width="20" height="20">
+              <use href="icons/stack.svg#cart"></use>
+            </svg>
+            <span class="user-nav__text">Корзина</span>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================================ -->
+    <main>
       <h1>Drink2Go - Интернет-магазин кофейных напитков</h1>
       <p>Проект находится в разработке</p>
-    </header>
-    <main>
     </main>
-    <footer>
-      <p>© 2025 Drink2Go. HTML Academy graduation project.</p>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="footer" data-test="footer">
+      <div class="container">
+        <p>© 2025 Drink2Go. HTML Academy graduation project.</p>
+      </div>
     </footer>
+
   </body>
 </html>
