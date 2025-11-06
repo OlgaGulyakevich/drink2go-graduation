@@ -1,0 +1,56 @@
+// ============================================================
+// Drink2Go - Logo Component
+// ============================================================
+// Адаптивный логотип с переключением версий для разных экранов
+// ============================================================
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo__image {
+  display: block;
+  flex-shrink: 0;
+}
+
+// Адаптивное отображение логотипов
+.logo__image--mobile {
+  display: block;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.logo__image--tablet {
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
+.logo__image--desktop {
+  display: none;
+
+  @media (min-width: $breakpoint-desktop) {
+    display: block;
+  }
+}
+
+.logo__tagline {
+  font-size: 12px;
+  line-height: 1.2;
+  color: $color-text-secondary;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 14px;
+  }
+}

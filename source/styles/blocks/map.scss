@@ -1,0 +1,15 @@
+// Стили для секции Map
+// TODO: Добавить полные стили на этапе стилизации
+
+// Временные базовые стили для корректного отображения адаптивной карты
+.map__image-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.map__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
