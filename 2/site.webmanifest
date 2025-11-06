@@ -1,0 +1,30 @@
+{
+  "name": "Drink2Go — Интернет-магазин кофейных напитков",
+  "short_name": "Drink2Go",
+  "description": "Широкий ассортимент кофейных напитков с доставкой",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#7859CF",
+  "background_color": "#F3EBF3",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/images/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/logo-mobile.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
