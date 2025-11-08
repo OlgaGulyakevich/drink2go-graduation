@@ -1,2 +1,477 @@
-// Стили для секции Footer
-// TODO: Добавить стили на этапе стилизации
+// ============================================
+// FOOTER
+// ============================================
+
+.footer {
+  background-color: $color-bg-secondary;
+  padding: 40px 0 0;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+// ============================================
+// BRAND (Logo + Social)
+// ============================================
+
+.footer__brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $container-padding-mobile 30px;
+  position: relative;
+
+  // Линия на всю ширину экрана
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: $color-border-secondary;
+  }
+}
+
+.footer__logo {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+
+  // Переопределение отображения логотипов для footer
+  .logo__image--mobile {
+    display: none; // Скрываем mobile версию в footer
+  }
+
+  .logo__image--tablet {
+    display: block; // На mobile показываем tablet версию (82x36)
+
+    @media (min-width: $breakpoint-tablet) {
+      display: none; // На tablet+ скрываем
+    }
+  }
+
+  .logo__image--desktop {
+    display: none; // На mobile скрываем
+
+    @media (min-width: $breakpoint-tablet) {
+      display: block; // На tablet+ показываем desktop версию (170x36)
+    }
+  }
+
+  .logo__tagline {
+    margin-top: 10px;
+    font-size: $font-size-small-mobile;
+    line-height: $line-height-normal;
+    color: $color-text-primary;
+  }
+}
+
+// ============================================
+// SOCIAL
+// ============================================
+
+.footer__social {
+  // margin-top убран, так как social теперь в одной линии с logo
+}
+
+.social__list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social__item {
+  // Стили элемента списка
+}
+
+.social__link {
+  display: inline-flex;
+  text-decoration: none;
+  transition: $transition-opacity;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.social__icon {
+  display: block;
+  // Иконка уже содержит фон и fill, не добавляем дополнительное оформление
+}
+
+// ============================================
+// NAVIGATION
+// ============================================
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px $container-padding-mobile;
+  position: relative;
+
+  // Линия на всю ширину экрана
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: $color-border-secondary;
+  }
+}
+
+.footer-nav__title {
+  margin: 0 0 10px;
+  font-size: $font-size-body-mobile;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  color: $color-primary;
+}
+
+.footer-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-nav__item {
+  // Стили элемента списка
+}
+
+.footer-nav__link {
+  font-size: $font-size-body-mobile;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  text-decoration: none;
+  transition: $transition-color;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $color-primary-active;
+  }
+}
+
+// ============================================
+// CONTACTS
+// ============================================
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px $container-padding-mobile;
+  position: relative;
+
+  // Линия на всю ширину экрана
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: $color-border-secondary;
+  }
+}
+
+.contacts__title {
+  margin: 0 0 10px;
+  font-size: $font-size-body-mobile;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-normal;
+  color: $color-primary;
+}
+
+.contacts__address {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-style: normal;
+}
+
+.contacts__link {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: $font-size-body-mobile;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  text-decoration: none;
+  transition: $transition-color;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $color-primary-active;
+  }
+}
+
+.contacts__icon {
+  flex-shrink: 0;
+  width: 13px;
+  height: 16px;
+  fill: currentColor;
+  margin-top: 2px;
+}
+
+// ============================================
+// COPYRIGHT
+// ============================================
+
+// Обертка для контента (на mobile просто блок)
+.footer__content {
+  display: contents; // Прозрачная обертка на mobile
+}
+
+.footer__copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 30px $container-padding-mobile 20px;
+}
+
+.footer__academy-text {
+  font-size: $font-size-small-mobile;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+}
+
+.footer__academy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: $transition-opacity;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.footer__academy-logo {
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+// ============================================
+// TABLET (768px+)
+// ============================================
+
+@media (min-width: $breakpoint-tablet) {
+  .footer {
+    padding: 50px 0 30px;
+  }
+
+  .footer__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px 0;
+    padding: 0 $container-padding-tablet;
+    grid-template-areas:
+      "content"
+      "copyright";
+  }
+
+  // Обертка для верхнего контента
+  .footer__content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px 40px;
+    grid-template-areas:
+      "brand brand brand"
+      "nav2 nav1 contacts";
+  }
+
+  .footer__brand {
+    grid-area: brand;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+
+    // Убираем линию на tablet+
+    &::after {
+      display: none;
+    }
+  }
+
+  .footer__logo {
+    .logo__tagline {
+      margin-top: 10px;
+      font-size: $font-size-small-tablet;
+    }
+  }
+
+  .footer__social {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .footer__nav {
+    padding: 0;
+
+    // Убираем линии на tablet+
+    &::after {
+      display: none;
+    }
+  }
+
+  .footer__nav:nth-of-type(1) {
+    grid-area: nav1;
+  }
+
+  .footer__nav:nth-of-type(2) {
+    grid-area: nav2;
+  }
+
+  .footer__contacts {
+    grid-area: contacts;
+    padding: 0;
+
+    // Убираем линию на tablet+
+    &::after {
+      display: none;
+    }
+  }
+
+  .footer-nav__title {
+    font-size: $font-size-body-tablet;
+  }
+
+  .footer-nav__link {
+    font-size: $font-size-body-tablet;
+  }
+
+  .contacts__title {
+    font-size: $font-size-body-tablet;
+  }
+
+  .contacts__link {
+    font-size: $font-size-body-tablet;
+  }
+
+  .footer__copyright {
+    grid-area: copyright;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0 0;
+  }
+
+  .footer__academy-text {
+    font-size: $font-size-small-tablet;
+  }
+}
+
+// ============================================
+// DESKTOP (1440px+)
+// ============================================
+
+@media (min-width: $breakpoint-desktop) {
+  .footer {
+    padding: 60px 0 40px;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px 0;
+    grid-template-areas:
+      "content"
+      "copyright";
+  }
+
+  // Обертка для верхнего контента
+  .footer__content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 280px 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px 60px;
+    grid-template-areas:
+      "brand nav2 nav1 contacts"
+      "social . . .";
+  }
+
+  .footer__brand {
+    grid-area: brand;
+    flex-direction: column;
+  }
+
+  .footer__logo {
+    .logo__tagline {
+      font-size: $font-size-small-desktop;
+    }
+  }
+
+  .footer__social {
+    grid-area: social;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .footer-nav__title {
+    font-size: $font-size-body-desktop;
+  }
+
+  .footer-nav__link {
+    font-size: $font-size-body-desktop;
+  }
+
+  .contacts__title {
+    font-size: $font-size-body-desktop;
+  }
+
+  .contacts__link {
+    font-size: $font-size-body-desktop;
+  }
+
+  .footer__copyright {
+    grid-area: copyright;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding: 30px 0 0;
+  }
+
+  .footer__academy-text {
+    font-size: $font-size-small-desktop;
+  }
+}

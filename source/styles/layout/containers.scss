@@ -12,9 +12,10 @@
 .container {
   // Mobile-first
   width: 100%;
-  max-width: $container-max-width-mobile;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 $container-padding-mobile;
+  box-sizing: border-box;
 
   // Tablet
   @media (min-width: $breakpoint-tablet) {

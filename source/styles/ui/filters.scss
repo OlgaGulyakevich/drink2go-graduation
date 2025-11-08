@@ -1,1 +1,156 @@
-// TODO: Добавить стили на этапе стилизации
+/* ============================================
+   FILTERS
+   ============================================ */
+
+.filters {
+  width: 100%;
+}
+
+.filters__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
+}
+
+.filters__group {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filters__legend {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.filters__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filters__item {
+  margin: 0;
+}
+
+.filters__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.filters__label-text {
+  font-size: 14px;
+  color: #333333;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+/* Custom Radio and Checkbox Marks */
+.filters__radio-mark,
+.filters__checkbox-mark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0e0e0;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.filters__radio-mark {
+  border-radius: 50%;
+}
+
+.filters__checkbox-mark {
+  border-radius: 4px;
+}
+
+/* Checked State */
+.filters__radio:checked + .filters__radio-mark {
+  border-color: #7859cf;
+  background-color: #7859cf;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+}
+
+.filters__checkbox:checked + .filters__checkbox-mark {
+  border-color: #7859cf;
+  background-color: #7859cf;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 6px;
+    height: 10px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+/* Focus State */
+.filters__radio:focus + .filters__radio-mark,
+.filters__checkbox:focus + .filters__checkbox-mark {
+  outline: 2px solid #7859cf;
+  outline-offset: 2px;
+}
+
+/* Buttons */
+.filters__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.filters__button {
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: auto;
+    flex: 1;
+  }
+}

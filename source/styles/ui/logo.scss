@@ -26,16 +26,37 @@
 
 .logo__image {
   display: block;
-  width: auto;
-  height: 36px;
   flex-shrink: 0;
+}
+
+/* Mobile logo (32x36) - показывается только на mobile */
+.logo__image--mobile {
+  display: block;
 
   @media (min-width: 768px) {
-    height: 40px;
+    display: none;
+  }
+}
+
+/* Tablet logo (82x36) - показывается на tablet */
+.logo__image--tablet {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
   }
 
   @media (min-width: 1440px) {
-    height: 44px;
+    display: none;
+  }
+}
+
+/* Desktop logo (170x36) - показывается на desktop */
+.logo__image--desktop {
+  display: none;
+
+  @media (min-width: 1440px) {
+    display: block;
   }
 }
 

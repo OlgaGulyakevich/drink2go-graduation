@@ -1,1 +1,90 @@
-// TODO: Добавить стили на этапе стилизации
+// ============================================================
+// INPUT (Text/Number fields)
+// ============================================================
+// Базовые стили для полей ввода
+// Состояния: default, hover, focus, active, disabled
+// ============================================================
+
+.range-slider__input {
+  // Reset
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+
+  // Убираем стрелки у number input
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  // Размеры и отступы
+  width: 100%;
+  height: 40px;
+  padding: $input-padding-y $input-padding-x;
+
+  // Типографика
+  font-family: $font-family-primary;
+  font-size: $font-size-input-mobile;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $input-text;
+
+  // Внешний вид
+  background-color: $input-bg;
+  border: $input-border-width solid $input-border;
+  border-radius: $input-border-radius;
+
+  // Переходы
+  transition: border-color $transition-base,
+              box-shadow $transition-base;
+
+  // Placeholder
+  &::placeholder {
+    color: $input-placeholder;
+    opacity: 1;
+  }
+
+  // ============================================
+  // HOVER STATE
+  // ============================================
+  &:hover:not(:disabled):not(:focus) {
+    border-color: $color-primary;
+  }
+
+  // ============================================
+  // FOCUS STATE
+  // ============================================
+  &:focus {
+    outline: none;
+    border-color: $input-border-focus;
+    box-shadow: 0 0 0 2px rgba(89, 60, 172, 0.1);
+  }
+
+  // ============================================
+  // DISABLED STATE
+  // ============================================
+  &:disabled {
+    background-color: $color-bg-disabled;
+    border-color: $color-border-disabled;
+    color: $color-text-disabled;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: $color-text-disabled;
+    }
+  }
+
+  // ============================================
+  // АДАПТИВНОСТЬ
+  // ============================================
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-input-tablet;
+    height: 46px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-input-desktop;
+  }
+}

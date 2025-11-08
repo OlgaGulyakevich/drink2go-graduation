@@ -1,1 +1,145 @@
-// TODO: Добавить стили на этапе стилизации
+/* ============================================
+   PRODUCT CARD
+   ============================================ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  @media (min-width: 768px) {
+    padding: 24px;
+  }
+}
+
+.card__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  min-height: 188px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.card__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333333;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.card__description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666666;
+  flex-grow: 1;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.card__price-old {
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  text-decoration: line-through;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.card__price-current {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333333;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+.card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    padding: 12px 20px;
+  }
+}
+
+.button--cart {
+  background-color: #7859cf;
+
+  &:hover {
+    background-color: #9075d9;
+  }
+
+  &:active {
+    background-color: #6849b8;
+  }
+
+  .button__icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .button__text {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}

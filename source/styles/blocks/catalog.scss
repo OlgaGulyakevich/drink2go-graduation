@@ -1,2 +1,154 @@
-// Стили для секции Catalog
-// TODO: Добавить стили на этапе стилизации
+/* ============================================
+   CATALOG SECTION
+   ============================================ */
+
+.catalog {
+  padding: 40px 0;
+  background-color: #f8f8f8;
+
+  @media (min-width: 768px) {
+    padding: 50px 0;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 60px 0;
+  }
+}
+
+.catalog__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog__badge {
+  margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.catalog__title {
+  margin: 0 0 32px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333333;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+    font-size: 42px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 50px;
+  }
+}
+
+/* ============================================
+   CATALOG WRAPPER (Grid container)
+   ============================================ */
+
+.catalog__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    gap: 40px;
+  }
+
+  @media (min-width: 1440px) {
+    display: grid;
+    grid-template-columns: 315px 1fr;
+    gap: 50px;
+  }
+}
+
+/* ============================================
+   CATALOG MAIN (Products area)
+   ============================================ */
+
+.catalog__main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
+}
+
+/* ============================================
+   SORT
+   ============================================ */
+
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.sort__label {
+  font-size: 14px;
+  color: #666666;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.sort__select {
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #7859cf;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #9075d9;
+  }
+
+  &:focus {
+    outline: 2px solid #7859cf;
+    outline-offset: 2px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   CATALOG LIST (Products grid)
+   ============================================ */
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+.catalog__item {
+  display: flex;
+}

@@ -8,7 +8,7 @@ const initPriceSlider = () => {
 
   // Создаем slider
   noUiSlider.create(priceSlider, {
-    start: [0, 1000], // Начальные значения
+    start: [0, 900], // Начальные значения
     connect: true,    // Соединить handles
     range: {
       'min': 0,

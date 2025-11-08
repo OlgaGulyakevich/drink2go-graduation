@@ -9,7 +9,7 @@
 .nav__list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -27,11 +27,33 @@
 
 .nav__item {
   margin: 0;
+  text-align: center;
+  position: relative;
+
+  // Линия на всю ширину экрана для mobile
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: #e2e2e2;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 }
 
 .nav__link {
   display: inline-block;
-  padding: 8px 0;
+  padding: 20px 0;
   color: #333333;
   text-decoration: none;
   font-size: 16px;
@@ -42,41 +64,95 @@
   position: relative;
   transition: color 0.3s ease;
 
+  // ============================================
+  // Фон на всю ширину экрана для mobile (при active)
+  // ============================================
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+    transition: background-color 0.3s ease;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
   @media (min-width: 768px) {
     font-size: 12px;
     padding: 12px 0;
   }
 
-  /* Hover state */
-  &:hover {
-    color: #7859cf;
+  /* Подчеркивание (анимация из центра) для tablet/desktop */
+  @media (min-width: 768px) {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      bottom: 0;
+      height: 2px;
+      background-color: #7859cf;
+      transition: left 0.3s ease, right 0.3s ease;
+    }
   }
 
-  /* Focus state */
-  &:focus {
-    outline: 2px solid #7859cf;
-    outline-offset: 4px;
-    color: #7859cf;
+  /* Hover state - только для tablet/desktop */
+  @media (min-width: 768px) {
+    &:hover {
+      color: #7859cf;
+
+      /* Убираем подчеркивание при hover */
+      &::after {
+        left: 50%;
+        right: 50%;
+      }
+    }
+  }
+
+  /* Focus state - только для tablet/desktop */
+  @media (min-width: 768px) {
+    &:focus {
+      outline: 2px solid #7859cf;
+      outline-offset: 4px;
+      color: #7859cf;
+
+      /* Убираем подчеркивание при focus */
+      &::after {
+        left: 50%;
+        right: 50%;
+      }
+    }
   }
 
   /* Active state */
   &:active {
-    color: #6849b8;
+    // Фон на всю ширину через ::before (mobile)
+    &::before {
+      background-color: #f0ebff;
+    }
+
+    // Tablet/Desktop: фон + цвет текста
+    @media (min-width: 768px) {
+      color: #6849b8;
+      background-color: #f0ebff;
+    }
   }
 
   /* Current page (активная ссылка) */
   &--current {
     color: #7859cf;
 
-    /* Подчеркивание снизу */
+    /* Подчеркивание снизу (полное) */
     &::after {
-      content: "";
-      position: absolute;
       left: 0;
       right: 0;
-      bottom: 0;
-      height: 2px;
-      background-color: #7859cf;
     }
 
     /* На mobile убираем подчеркивание */

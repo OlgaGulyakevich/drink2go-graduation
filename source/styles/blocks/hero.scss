@@ -1,2 +1,19 @@
-// Стили для секции Hero (Slider)
-// TODO: Добавить стили на этапе стилизации
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  background-color: #f3ebe1;
+  position: relative;
+  overflow: hidden;
+
+  // Tablet: градиент с четкой границей (70% бежевый, 30% белый)
+  @media (min-width: 768px) {
+    background: linear-gradient(180deg, #f3ebe1 70%, #ffffff 30%);
+  }
+
+  // Desktop: возвращаем сплошной бежевый фон
+  @media (min-width: 1440px) {
+    background: #f3ebe1;
+  }
+}

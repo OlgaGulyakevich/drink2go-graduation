@@ -1,1 +1,127 @@
-// TODO: Добавить стили на этапе стилизации
+// ============================================================
+// RADIO BUTTON (Custom Styled)
+// ============================================================
+// Кастомные радиокнопки для фильтров
+// Состояния: default, hover, focus, checked, disabled
+// ============================================================
+
+// Label уже определен в checkbox.scss, используем ту же структуру
+// .filters__label - общий для radio и checkbox
+
+.filters__radio {
+  // Скрываем нативный radio
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ============================================
+// КАСТОМНАЯ РАДИОКНОПКА (::before)
+// ============================================
+.filters__radio-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $radio-size;
+  height: $radio-size;
+  flex-shrink: 0;
+
+  // Кастомный круг радиокнопки
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $radio-bg;
+    border: $radio-border-width solid $radio-border;
+    border-radius: $radio-border-radius;
+    transition: border-color $transition-base,
+                background-color $transition-base;
+  }
+
+  // Внутренняя точка (изначально скрыта)
+  &::after {
+    content: "";
+    position: relative;
+    width: $radio-inner-size;
+    height: $radio-inner-size;
+    background-color: $radio-bg-checked;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity $transition-base,
+                transform $transition-base;
+    z-index: 1;
+  }
+}
+
+// ============================================
+// HOVER STATE (unchecked)
+// ============================================
+.filters__radio:not(:checked):not(:disabled):hover + .filters__radio-mark::before,
+.filters__label:hover .filters__radio:not(:checked):not(:disabled) + .filters__radio-mark::before {
+  border-color: $color-primary;
+}
+
+// ============================================
+// FOCUS STATE
+// ============================================
+.filters__radio:focus-visible + .filters__radio-mark::before {
+  outline: 2px solid $color-border-focus;
+  outline-offset: 2px;
+}
+
+// ============================================
+// CHECKED STATE
+// ============================================
+.filters__radio:checked + .filters__radio-mark {
+  // Рамка остается прежней (не меняется)
+  &::before {
+    border-color: $radio-border;
+  }
+
+  // Точка появляется (фиолетовая)
+  &::after {
+    opacity: 1;
+    transform: scale(1);
+    background-color: $radio-bg-checked; // Фиолетовая точка
+  }
+}
+
+// ============================================
+// DISABLED STATE
+// ============================================
+.filters__radio:disabled + .filters__radio-mark {
+  cursor: not-allowed;
+
+  // Unchecked disabled
+  &::before {
+    background-color: $radio-disabled-bg;
+    border-color: $radio-disabled-border;
+  }
+}
+
+// Checked + Disabled
+.filters__radio:checked:disabled + .filters__radio-mark {
+  &::before {
+    background-color: $radio-disabled-bg;
+    border-color: $radio-disabled-border;
+  }
+
+  &::after {
+    background-color: $color-disabled;
+    opacity: 0.5;
+  }
+}
+
+// ============================================
+// LABEL TEXT (уже определен в checkbox.scss)
+// ============================================
+// .filters__label-text - используется общий стиль

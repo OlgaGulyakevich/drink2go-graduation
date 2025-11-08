@@ -1,1 +1,160 @@
-// TODO: Добавить стили на этапе стилизации
+// ============================================================
+// CHECKBOX (Toggle Switch - капсула)
+// ============================================================
+// Кастомные toggle switches для фильтров
+// Состояния: default, hover, focus, checked, disabled
+// ============================================================
+
+.filters__label {
+  display: flex;
+  align-items: center;
+  gap: $checkbox-gap;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+
+  // Disabled состояние для всего лейбла
+  &:has(.filters__checkbox:disabled) {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.filters__checkbox {
+  // Скрываем нативный checkbox
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ============================================
+// TOGGLE SWITCH (капсула)
+// ============================================
+.filters__checkbox-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 44px;  // Ширина капсулы
+  height: 24px; // Высота капсулы
+  flex-shrink: 0;
+
+  // Капсула (фон)
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $checkbox-bg-unchecked; // Серый фон
+    border: $checkbox-border-width solid transparent;
+    border-radius: 12px; // Капсульная форма
+    transition: background-color $transition-base,
+                border-color $transition-base;
+  }
+
+  // Кружок (переключатель)
+  &::after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: $checkbox-checkmark; // Белый кружок
+    border-radius: 50%;
+    transition: left $transition-base,
+                background-color $transition-base;
+    z-index: 1;
+  }
+}
+
+// ============================================
+// HOVER STATE (unchecked)
+// ============================================
+.filters__checkbox:not(:checked):not(:disabled):hover + .filters__checkbox-mark::before,
+.filters__label:hover .filters__checkbox:not(:checked):not(:disabled) + .filters__checkbox-mark::before {
+  border-color: $color-primary;
+}
+
+// ============================================
+// FOCUS STATE
+// ============================================
+.filters__checkbox:focus-visible + .filters__checkbox-mark::before {
+  outline: 2px solid $color-border-focus;
+  outline-offset: 2px;
+}
+
+// ============================================
+// CHECKED STATE
+// ============================================
+.filters__checkbox:checked + .filters__checkbox-mark {
+  // Фон меняется на фиолетовый
+  &::before {
+    background-color: $checkbox-bg-checked;
+    border-color: transparent;
+  }
+
+  // Кружок перемещается вправо
+  &::after {
+    left: 22px; // Перемещение вправо
+  }
+}
+
+// ============================================
+// DISABLED STATE
+// ============================================
+.filters__checkbox:disabled + .filters__checkbox-mark {
+  cursor: not-allowed;
+
+  // Unchecked disabled
+  &::before {
+    background-color: $checkbox-disabled-bg;
+    border-color: transparent;
+  }
+
+  &::after {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+// Checked + Disabled
+.filters__checkbox:checked:disabled + .filters__checkbox-mark {
+  &::before {
+    background-color: $color-disabled;
+    border-color: transparent;
+  }
+
+  &::after {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+// ============================================
+// LABEL TEXT
+// ============================================
+.filters__label-text {
+  font-family: $font-family-primary;
+  font-size: $font-size-body-mobile;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-body-tablet;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-body-desktop;
+  }
+}
+
+// Disabled text
+.filters__checkbox:disabled ~ .filters__label-text {
+  color: $checkbox-disabled-text;
+}

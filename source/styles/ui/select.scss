@@ -1,1 +1,107 @@
-// TODO: Добавить стили на этапе стилизации
+// ============================================================
+// SELECT (Custom Styled Dropdown)
+// ============================================================
+// Кастомный select для сортировки
+// Состояния: default, hover, focus, active (open), disabled
+// ============================================================
+
+.catalog__sorting-select,
+.select {
+  // Reset
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  // Размеры и отступы
+  width: 100%;
+  min-width: 200px;
+  height: 46px;
+  padding: 10px 40px 10px 16px;
+
+  // Типографика
+  font-family: $font-family-primary;
+  font-size: $font-size-body-mobile;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $color-primary;
+  text-align: left;
+
+  // Внешний вид
+  background-color: $color-bg-primary;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10.6667L4 6.66667H12L8 10.6667Z' fill='%237859cf'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+
+  border: 2px solid transparent;
+  border-radius: $input-border-radius;
+  cursor: pointer;
+
+  // Переходы
+  transition: background-color $transition-base,
+              border-color $transition-base,
+              color $transition-base;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-body-tablet;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-size: $font-size-body-desktop;
+    min-width: 280px;
+  }
+
+  // ============================================
+  // HOVER STATE
+  // ============================================
+  &:hover:not(:disabled) {
+    background-color: $color-primary-light; // Светло-фиолетовый
+    border-color: transparent;
+  }
+
+  // ============================================
+  // FOCUS STATE
+  // ============================================
+  &:focus {
+    outline: none;
+    background-color: $color-primary-light;
+    border-color: $color-border-focus;
+  }
+
+  // ============================================
+  // ACTIVE/OPEN STATE (когда dropdown открыт)
+  // ============================================
+  &:active,
+  &[aria-expanded="true"] {
+    background-color: $color-primary-light;
+    // Стрелка вверх
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5.33333L12 9.33333H4L8 5.33333Z' fill='%237859cf'/%3E%3C/svg%3E");
+  }
+
+  // ============================================
+  // DISABLED STATE
+  // ============================================
+  &:disabled {
+    background-color: $color-bg-disabled;
+    color: $color-text-disabled;
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10.6667L4 6.66667H12L8 10.6667Z' fill='%23bdbdbd'/%3E%3C/svg%3E");
+  }
+}
+
+// ============================================
+// OPTIONS (нативные опции select)
+// ============================================
+.catalog__sorting-select option,
+.select option {
+  font-family: $font-family-primary;
+  font-size: $font-size-body-mobile;
+  color: $color-text-primary;
+  background-color: $color-bg-primary;
+  padding: 8px 12px;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-body-tablet;
+  }
+}

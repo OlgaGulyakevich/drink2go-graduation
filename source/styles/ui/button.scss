@@ -1,1 +1,78 @@
-// TODO: Добавить стили на этапе стилизации
+/* ============================================
+   BUTTON
+   ============================================ */
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  color: #ffffff;
+  background-color: #333333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: #555555;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus {
+    outline: 2px solid #7859cf;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    background-color: #222222;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  @media (min-width: 768px) {
+    padding: 14px 28px;
+    font-size: 18px;
+  }
+}
+
+/* Primary button variant */
+.button--primary {
+  background-color: #7859cf;
+
+  &:hover {
+    background-color: #9075d9;
+    box-shadow: 0 4px 12px rgba(120, 89, 207, 0.4);
+  }
+
+  &:active {
+    background-color: #6849b8;
+  }
+}
+
+/* Secondary button variant */
+.button--secondary {
+  background-color: transparent;
+  color: #333333;
+  border: 2px solid #333333;
+
+  &:hover {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  &:active {
+    background-color: #222222;
+    border-color: #222222;
+  }
+}
