@@ -10,6 +10,7 @@
   // Tablet: градиент с четкой границей (70% бежевый, 30% белый)
   @media (min-width: 768px) {
     background: linear-gradient(180deg, #f3ebe1 70%, #ffffff 30%);
+    background-repeat: no-repeat;
   }
 
   // Desktop: возвращаем сплошной бежевый фон
