@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="UTF-8">
     <title>Drink2Go — Интернет-магазин кофейных напитков</title>
@@ -15,7 +15,7 @@
     <script src="vendor/nouislider/nouislider.min.js" defer></script>
     <script src="scripts/index.js" type="module"></script>
   </head>
-  <body>
+  <body class="page__body">
 
     <!-- ============================================ -->
     <!-- HEADER -->
@@ -41,7 +41,7 @@
         <nav class="header__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a class="nav__link" href="index.html">Главная</a>
+              <a class="nav__link nav__link--current" href="index.html">Главная</a>
             </li>
             <li class="nav__item">
               <a class="nav__link" href="#catalog">Каталог</a>
@@ -431,7 +431,7 @@
                   <ul class="filters__list">
                     <li class="filters__item">
                       <label class="filters__label">
-                        <input class="filters__checkbox visually-hidden" type="checkbox" name="country" value="brazil">
+                        <input class="filters__checkbox visually-hidden" type="checkbox" name="country" value="brazil" checked>
                         <span class="filters__checkbox-mark"></span>
                         <span class="filters__label-text">Бразилия</span>
                       </label>
@@ -495,7 +495,7 @@
               <!-- Список товаров -->
               <ul class="catalog__list">
 
-                <!-- Товар 1: Декаф Флэт Уайт -->
+                <!-- Товар 1 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -518,7 +518,6 @@
                       <p class="card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
                       <div class="card__footer">
                         <div class="card__price">
-                          <span class="card__price-old">295₽</span>
                           <span class="card__price-current">225₽</span>
                         </div>
                         <button class="card__button button button--cart" type="button">
@@ -532,7 +531,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 2: Лавандовый Латте -->
+                <!-- Товар 2 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -545,14 +544,14 @@
                         class="card__image"
                         src="images/product-2@1x.png"
                         srcset="images/product-2@2x.png 2x"
-                        alt="Лавандовый Латте"
+                        alt="Декаф Флэт Уайт"
                         width="130"
                         height="188"
                         loading="lazy">
                     </picture>
                     <div class="card__content">
-                      <h3 class="card__title">Лавандовый Латте</h3>
-                      <p class="card__description">Невероятное сочетание перуанской арабики с молоком ламы</p>
+                      <h3 class="card__title">Декаф Флэт Уайт</h3>
+                      <p class="card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
                       <div class="card__footer">
                         <div class="card__price">
                           <span class="card__price-current">225₽</span>
@@ -568,7 +567,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 3: Тройной Эспрессо -->
+                <!-- Товар 3 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -581,14 +580,14 @@
                         class="card__image"
                         src="images/product-3@1x.png"
                         srcset="images/product-3@2x.png 2x"
-                        alt="Тройной Эспрессо"
+                        alt="Декаф Флэт Уайт"
                         width="130"
                         height="188"
                         loading="lazy">
                     </picture>
                     <div class="card__content">
-                      <h3 class="card__title">Тройной Эспрессо</h3>
-                      <p class="card__description">Мощнейший эспрессо из Колумбии для настоящей бодрости</p>
+                      <h3 class="card__title">Декаф Флэт Уайт</h3>
+                      <p class="card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
                       <div class="card__footer">
                         <div class="card__price">
                           <span class="card__price-current">225₽</span>
@@ -604,7 +603,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 4: Капучино -->
+                <!-- Товар 4 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -617,17 +616,17 @@
                         class="card__image"
                         src="images/product-4@1x.png"
                         srcset="images/product-4@2x.png 2x"
-                        alt="Капучино"
+                        alt="Декаф Флэт Уайт"
                         width="130"
                         height="188"
                         loading="lazy">
                     </picture>
                     <div class="card__content">
-                      <h3 class="card__title">Капучино</h3>
-                      <p class="card__description">Классический напиток с идеальным балансом кофе и молока</p>
+                      <h3 class="card__title">Декаф Флэт Уайт</h3>
+                      <p class="card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
                       <div class="card__footer">
                         <div class="card__price">
-                          <span class="card__price-current">180₽</span>
+                          <span class="card__price-current">225₽</span>
                         </div>
                         <button class="card__button button button--cart" type="button">
                           <svg class="button__icon" width="20" height="16" aria-hidden="true">
@@ -640,7 +639,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 5: Американо -->
+                <!-- Товар 5 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -653,17 +652,17 @@
                         class="card__image"
                         src="images/product-5@1x.png"
                         srcset="images/product-5@2x.png 2x"
-                        alt="Американо"
+                        alt="Декаф Флэт Уайт"
                         width="130"
                         height="188"
                         loading="lazy">
                     </picture>
                     <div class="card__content">
-                      <h3 class="card__title">Американо</h3>
-                      <p class="card__description">Крепкий эспрессо с добавлением горячей воды</p>
+                      <h3 class="card__title">Декаф Флэт Уайт</h3>
+                      <p class="card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
                       <div class="card__footer">
                         <div class="card__price">
-                          <span class="card__price-current">150₽</span>
+                          <span class="card__price-current">225₽</span>
                         </div>
                         <button class="card__button button button--cart" type="button">
                           <svg class="button__icon" width="20" height="16" aria-hidden="true">
@@ -676,7 +675,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 6: Латте -->
+                <!-- Товар 6 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -689,17 +688,17 @@
                         class="card__image"
                         src="images/product-6@1x.png"
                         srcset="images/product-6@2x.png 2x"
-                        alt="Латте"
+                        alt="Декаф Флэт Уайт"
                         width="130"
                         height="188"
                         loading="lazy">
                     </picture>
                     <div class="card__content">
-                      <h3 class="card__title">Латте</h3>
-                      <p class="card__description">Нежный кофейный напиток с большим количеством молока</p>
+                      <h3 class="card__title">Декаф Флэт Уайт</h3>
+                      <p class="card__description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
                       <div class="card__footer">
                         <div class="card__price">
-                          <span class="card__price-current">200₽</span>
+                          <span class="card__price-current">225₽</span>
                         </div>
                         <button class="card__button button button--cart" type="button">
                           <svg class="button__icon" width="20" height="16" aria-hidden="true">
@@ -718,7 +717,12 @@
               <div class="catalog__pagination pagination">
                 <ul class="pagination__list">
                   <li class="pagination__item">
-                    <a class="pagination__link pagination__link--prev" href="#prev" aria-label="Предыдущая страница">Назад</a>
+                    <a class="pagination__link pagination__link--prev" href="#prev" aria-label="Предыдущая страница">
+                      <svg class="pagination__icon" width="10" height="6" aria-hidden="true">
+                        <use href="icons/stack.svg#arrow-left"></use>
+                      </svg>
+                      <span class="pagination__text">Назад</span>
+                    </a>
                   </li>
                   <li class="pagination__item">
                     <a class="pagination__link" href="#page1">1</a>
@@ -730,7 +734,12 @@
                     <a class="pagination__link" href="#page3">3</a>
                   </li>
                   <li class="pagination__item">
-                    <a class="pagination__link pagination__link--next" href="#next" aria-label="Следующая страница">Вперед</a>
+                    <a class="pagination__link pagination__link--next" href="#next" aria-label="Следующая страница">
+                      <svg class="pagination__icon" width="10" height="6" aria-hidden="true">
+                        <use href="icons/stack.svg#arrow-right"></use>
+                      </svg>
+                      <span class="pagination__text">Вперед</span>
+                    </a>
                   </li>
                 </ul>
               </div>

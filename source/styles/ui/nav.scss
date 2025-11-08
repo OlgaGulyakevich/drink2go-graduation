@@ -16,12 +16,13 @@
 
   @media (min-width: 768px) {
     flex-direction: row;
-    gap: 32px;
+    flex-wrap: wrap; // Разрешаем перенос пунктов меню на новую строку
+    // gap: 32px;
     justify-content: center;
   }
 
   @media (min-width: 1440px) {
-    gap: 40px;
+    // gap: 40px;
   }
 }
 
@@ -29,6 +30,24 @@
   margin: 0;
   text-align: center;
   position: relative;
+  max-height: 57px;
+  min-width: 0; // Для корректной работы в flex-контейнере
+
+  // Линия сверху для первого пункта меню (mobile)
+  &:first-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 1px;
+    background-color: #f0ebff;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
 
   // Линия на всю ширину экрана для mobile
   &::after {
@@ -39,7 +58,7 @@
     transform: translateX(-50%);
     width: 100vw;
     height: 1px;
-    background-color: #e2e2e2;
+    background-color: #f0ebff;
 
     @media (min-width: 768px) {
       display: none;
@@ -48,21 +67,24 @@
 
   @media (min-width: 768px) {
     text-align: left;
+    white-space: nowrap; // Чтобы текст в пункте не переносился
   }
 }
 
 .nav__link {
   display: inline-block;
-  padding: 20px 0;
+  padding: 20px;
   color: #333333;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 133%;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.02em;
   position: relative;
   transition: color 0.3s ease;
+  overflow-wrap: anywhere; // Для длинных слов
+  min-width: 0; // Для корректной работы в flex-контейнере
 
   // ============================================
   // Фон на всю ширину экрана для mobile (при active)
@@ -85,8 +107,11 @@
   }
 
   @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
     font-size: 12px;
-    padding: 12px 0;
+    padding-bottom: 32px;
+    white-space: nowrap; // Пункты меню в одну строку
   }
 
   /* Подчеркивание (анимация из центра) для tablet/desktop */
