@@ -3,15 +3,18 @@
    ============================================ */
 
 .features {
-  padding: 40px 0;
+  padding-top: 50px;
+  padding-bottom: 60px;
   background-color: #ffffff;
 
   @media (min-width: 768px) {
-    padding: 50px 0;
+    padding-top: 60px;
+    padding-bottom: 100px;
   }
 
   @media (min-width: 1440px) {
-    padding: 60px 0;
+    padding-top: 100px;
+    padding-bottom: 120px;
   }
 }
 
@@ -23,53 +26,50 @@
 }
 
 .features__badge {
-  margin-bottom: 16px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 20px;
-  }
-
-  @media (min-width: 1440px) {
-    margin-bottom: 24px;
-  }
+  margin-bottom: 4px;
 }
 
 .features__title {
-  margin: 0 0 40px;
   font-size: 24px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 150%;
   color: #333333;
+  padding: 0 12px;
+  margin-bottom: 36px;
+  max-width: 280px;
+  overflow-wrap: break-word;
+
 
   @media (min-width: 768px) {
-    margin-bottom: 50px;
     font-size: 42px;
+    line-height: 152%;
+    max-width: 728px;
+    margin-bottom: 60px;
   }
 
   @media (min-width: 1440px) {
-    margin-bottom: 60px;
-    font-size: 42px;
+    margin-bottom: 80px;
+    max-width: 1360px;
   }
 }
 
 .features__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-direction: column;
   gap: 32px;
   width: 100%;
 
+
+
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 50px 30px;
   }
 
   @media (min-width: 1440px) {
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: 30px;
   }
 }
 
@@ -82,54 +82,59 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 16px;
+  max-width: 280px;
+  max-height: 142px;
 
   @media (min-width: 768px) {
-    gap: 20px;
+    max-width: 339px;
+    // max-height: 94px;
   }
 
   @media (min-width: 1440px) {
-    gap: 24px;
+    max-width: 318px;
+    max-height: 170px;
   }
+
 }
 
 .feature-card__icon {
   flex-shrink: 0;
   fill: #7859cf;
   transition: transform 0.3s ease;
+  margin-bottom: 10px;
 
   .feature-card:hover & {
     transform: scale(1.1);
   }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 20px;
+  }
 }
 
 .feature-card__title {
-  margin: 0;
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 178%;
   color: #333333;
+  padding: 0 12px;
+  overflow-wrap: break-word;
+  margin-bottom: 4px;
 
   @media (min-width: 768px) {
     font-size: 24px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 10px;
   }
 }
 
 .feature-card__description {
-  margin: 0;
   font-size: 14px;
-  line-height: 1.5;
-  color: #666666;
+  color: #333333;
+  padding: 0 15px;
+  overflow-wrap: break-word;
 
   @media (min-width: 768px) {
-    font-size: 16px;
-  }
-
-  @media (min-width: 1440px) {
     font-size: 16px;
   }
 }

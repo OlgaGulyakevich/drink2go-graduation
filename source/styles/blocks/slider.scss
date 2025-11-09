@@ -4,6 +4,7 @@
 
 .slider {
   position: relative;
+  overflow: hidden; // Предотвращаем переполнение контента
 }
 
 /* ============================================
@@ -12,6 +13,7 @@
 
 .slider__slide {
   display: none;
+  min-width: 0; // Разрешаем сжиматься в flex-контексте
 
   &--active {
     display: block;
@@ -25,6 +27,7 @@
   padding-top: 20px;
   padding-bottom: 40px;
   max-height: 656px;
+  min-width: 0;
 
   @media (min-width: 768px) {
     align-items: center;
@@ -55,6 +58,7 @@
   align-items: center;
   text-align: center;
   order: 1; /* Контент после картинки на mobile */
+  min-width: 0; // КРИТИЧНО: разрешаем сжиматься, чтобы текст переносился
 
   @media (min-width: 768px) {
     order: -1; /* Контент сверху на tablet */
@@ -89,6 +93,7 @@
   margin-bottom: 10px;
   max-width: 280px;
   overflow-wrap: break-word;
+  text-wrap: balance;
 
   @media (min-width: 768px) {
     font-size: 56px;
@@ -110,7 +115,7 @@
   color: #333333;
   max-width: 280px;
   min-height: 100px;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   padding: 0 14px;
   margin-bottom: 20px;
 
@@ -179,6 +184,7 @@
   justify-content: center;
   align-items: center;
   order: 0; /* Картинка первая на mobile */
+  min-width: 0; // Разрешаем сжиматься в flex-контексте
 
   @media (min-width: 768px) {
     order: 0; /* Картинка внизу на tablet */
