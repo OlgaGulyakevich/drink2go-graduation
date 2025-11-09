@@ -14,7 +14,8 @@
   align-items: center;
   justify-content: space-between;
   min-height: 60px;
-  overflow: visible; // Позволяем бургеру выходить за пределы контейнера
+  overflow-x: hidden; // Предотвращаем горизонтальный скролл
+  overflow-y: visible; // Позволяем мобильному меню выходить вниз
 
   @media (min-width: 768px) {
     min-height: 80px;

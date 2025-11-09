@@ -9,11 +9,9 @@
 .filters__form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
+  max-width: 280px;
 
-  @media (min-width: 768px) {
-    gap: 32px;
-  }
 }
 
 .filters__group {
@@ -22,17 +20,20 @@
   border: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .filters__legend {
   margin: 0;
   padding: 0;
+  font-family: $font-family-primary;
   font-size: 16px;
-  font-weight: 600;
-  color: #333333;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-heading;
+  color: $color-text-primary;
+  margin-bottom: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     font-size: 18px;
   }
 }
@@ -51,106 +52,63 @@
 }
 
 .filters__label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
   cursor: pointer;
   user-select: none;
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    opacity: 0.8;
-  }
+  transition: color $transition-base;
 }
 
 .filters__label-text {
-  font-size: 14px;
-  color: #333333;
+  font-family: $font-family-primary;
+  font-size: $font-size-body-mobile;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  transition: color $transition-base;
 
-  @media (min-width: 768px) {
-    font-size: 16px;
+  @media (min-width: $breakpoint-tablet) {
+    font-size: $font-size-body-tablet;
   }
 }
 
-/* Custom Radio and Checkbox Marks */
-.filters__radio-mark,
-.filters__checkbox-mark {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #e0e0e0;
-  flex-shrink: 0;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+.filters__label:hover .filters__label-text,
+.filters__label:focus-within .filters__label-text {
+  color: $color-primary;
 }
 
-.filters__radio-mark {
-  border-radius: 50%;
+.filters__checkbox:disabled ~ .filters__label-text,
+.filters__radio:disabled ~ .filters__label-text {
+  color: $color-text-disabled;
+  cursor: not-allowed;
 }
 
-.filters__checkbox-mark {
-  border-radius: 4px;
+.filters__checkbox:disabled + .filters__checkbox-mark,
+.filters__radio:disabled + .filters__radio-mark {
+  cursor: not-allowed;
 }
 
-/* Checked State */
-.filters__radio:checked + .filters__radio-mark {
-  border-color: #7859cf;
-  background-color: #7859cf;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    background-color: #ffffff;
-    border-radius: 50%;
-  }
+.filters__checkbox:disabled + .filters__checkbox-mark + .filters__label-text,
+.filters__radio:disabled + .filters__radio-mark + .filters__label-text {
+  pointer-events: none;
 }
 
-.filters__checkbox:checked + .filters__checkbox-mark {
-  border-color: #7859cf;
-  background-color: #7859cf;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 5px;
-    width: 6px;
-    height: 10px;
-    border: solid #ffffff;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-  }
-}
-
-/* Focus State */
-.filters__radio:focus + .filters__radio-mark,
-.filters__checkbox:focus + .filters__checkbox-mark {
-  outline: 2px solid #7859cf;
-  outline-offset: 2px;
-}
-
-/* Buttons */
 .filters__buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 8px;
+  gap: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     flex-direction: row;
-    gap: 16px;
+    gap: 20px;
   }
 }
 
 .filters__button {
   width: 100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     width: auto;
-    flex: 1;
   }
 }

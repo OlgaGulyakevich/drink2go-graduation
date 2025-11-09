@@ -1,27 +1,10 @@
 // ============================================================
-// CHECKBOX (Toggle Switch - капсула)
+// CHECKBOX → TOGGLE SWITCH (переключатель-капля)
 // ============================================================
-// Кастомные toggle switches для фильтров
-// Состояния: default, hover, focus, checked, disabled
+// Кастомные toggle switches для фильтров (default, hover, focus, checked, disabled)
 // ============================================================
-
-.filters__label {
-  display: flex;
-  align-items: center;
-  gap: $checkbox-gap;
-  cursor: pointer;
-  user-select: none;
-  position: relative;
-
-  // Disabled состояние для всего лейбла
-  &:has(.filters__checkbox:disabled) {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
-}
 
 .filters__checkbox {
-  // Скрываем нативный checkbox
   position: absolute;
   width: 1px;
   height: 1px;
@@ -33,128 +16,78 @@
   border: 0;
 }
 
-// ============================================
-// TOGGLE SWITCH (капсула)
-// ============================================
 .filters__checkbox-mark {
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: 44px;  // Ширина капсулы
-  height: 24px; // Высота капсулы
+  width: 44px; // Ширина переключателя
+  height: 24px; // Высота переключателя
   flex-shrink: 0;
+  border-radius: 12px; // Полностью скругленный
+  background-color: #bdbdbd; // Серый фон для выключенного состояния
+  border: none;
+  transition: background-color $transition-base, box-shadow $transition-base;
 
-  // Капсула (фон)
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: $checkbox-bg-unchecked; // Серый фон
-    border: $checkbox-border-width solid transparent;
-    border-radius: 12px; // Капсульная форма
-    transition: background-color $transition-base,
-                border-color $transition-base;
-  }
-
-  // Кружок (переключатель)
+  // Кружок-переключатель (капля)
   &::after {
     content: "";
     position: absolute;
-    left: 2px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 2px; // Отступ от края
+    top: 2px;
     width: 20px;
     height: 20px;
-    background-color: $checkbox-checkmark; // Белый кружок
-    border-radius: 50%;
-    transition: left $transition-base,
-                background-color $transition-base;
-    z-index: 1;
+    border-radius: 50%; // Круглый
+    background-color: #ffffff;
+    transition: transform $transition-base, box-shadow $transition-base;
   }
 }
 
-// ============================================
-// HOVER STATE (unchecked)
-// ============================================
-.filters__checkbox:not(:checked):not(:disabled):hover + .filters__checkbox-mark::before,
-.filters__label:hover .filters__checkbox:not(:checked):not(:disabled) + .filters__checkbox-mark::before {
-  border-color: $color-primary;
+// HOVER STATE (не checked)
+.filters__checkbox:not(:disabled):not(:checked):hover + .filters__checkbox-mark {
+  background-color: #a89bce; // Чуть светлее серого
+  box-shadow: 0 0 0 2px rgba(120, 89, 207, 0.12);
 }
 
-// ============================================
 // FOCUS STATE
-// ============================================
-.filters__checkbox:focus-visible + .filters__checkbox-mark::before {
+.filters__checkbox:focus-visible + .filters__checkbox-mark {
   outline: 2px solid $color-border-focus;
   outline-offset: 2px;
 }
 
-// ============================================
-// CHECKED STATE
-// ============================================
+// CHECKED STATE (включен)
 .filters__checkbox:checked + .filters__checkbox-mark {
-  // Фон меняется на фиолетовый
-  &::before {
-    background-color: $checkbox-bg-checked;
-    border-color: transparent;
-  }
+  background-color: #7859cf; // Фиолетовый фон
 
-  // Кружок перемещается вправо
+  // Сдвигаем кружок вправо
   &::after {
-    left: 22px; // Перемещение вправо
+    transform: translateX(20px); // Сдвиг на 20px (44 - 20 - 4)
   }
 }
 
-// ============================================
-// DISABLED STATE
-// ============================================
+// CHECKED + HOVER
+.filters__checkbox:checked:not(:disabled):hover + .filters__checkbox-mark {
+  background-color: #9070ec; // Светлее фиолетовый при hover
+  box-shadow: 0 0 0 2px rgba(120, 89, 207, 0.12);
+}
+
+// DISABLED STATE (выключен)
 .filters__checkbox:disabled + .filters__checkbox-mark {
+  background-color: #e0e0e0;
   cursor: not-allowed;
-
-  // Unchecked disabled
-  &::before {
-    background-color: $checkbox-disabled-bg;
-    border-color: transparent;
-  }
+  opacity: 0.5;
 
   &::after {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: #f5f5f5;
   }
 }
 
-// Checked + Disabled
+// DISABLED STATE (включен)
 .filters__checkbox:checked:disabled + .filters__checkbox-mark {
-  &::before {
-    background-color: $color-disabled;
-    border-color: transparent;
-  }
+  background-color: #bdbdbd;
 
   &::after {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: #ffffff;
+    opacity: 0.6;
   }
 }
 
-// ============================================
-// LABEL TEXT
-// ============================================
-.filters__label-text {
-  font-family: $font-family-primary;
-  font-size: $font-size-body-mobile;
-  font-weight: $font-weight-regular;
-  line-height: $line-height-normal;
-  color: $color-text-primary;
-
-  @media (min-width: $breakpoint-tablet) {
-    font-size: $font-size-body-tablet;
-  }
-
-  @media (min-width: $breakpoint-desktop) {
-    font-size: $font-size-body-desktop;
-  }
-}
-
-// Disabled text
-.filters__checkbox:disabled ~ .filters__label-text {
-  color: $checkbox-disabled-text;
-}
