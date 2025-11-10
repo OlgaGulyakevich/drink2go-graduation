@@ -3,21 +3,21 @@
    ============================================ */
 
 .header {
-  background-color: #ffffff;
+  background-color: $color-bg-primary;
   position: sticky;
   top: 0;
-  z-index: 200;
+  z-index: $z-index-sticky;
 }
 
 .header__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 60px;
+  min-height: $header-height-mobile;
   overflow: hidden visible; // Предотвращаем горизонтальный скролл // Позволяем мобильному меню выходить вниз
 
-  @media (min-width: 768px) {
-    min-height: 80px;
+  @media (min-width: $breakpoint-tablet) {
+    min-height: $header-height-tablet;
   }
 }
 
@@ -27,7 +27,7 @@
 
 .header__logo {
   flex-shrink: 0;
-  z-index: 101;
+  z-index: $z-index-header-logo;
 }
 
 /* ============================================
@@ -51,17 +51,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: $header-button-size-mobile;
+  height: $header-button-size-mobile;
   padding: 0;
-  margin-right: -20px; // Компенсируем padding контейнера для прижатия к краю
+  margin-right: -$container-padding-mobile; // Компенсируем padding контейнера для прижатия к краю
   background: none;
   border: none;
   cursor: pointer;
-  color: #333333;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  color: $color-text-primary;
+  transition: color $transition-ui, background-color $transition-ui;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     display: none;
     margin-right: 0; // Сбрасываем на tablet/desktop
   }
@@ -70,13 +70,13 @@
   // MOBILE: только фон при active, иконка черная
   // ============================================
   &:active {
-    background-color: #f0ebff;
+    background-color: $color-primary-light;
   }
 }
 
 .header__toggle-icon {
-  width: 16px;
-  height: 16px;
+  width: $header-icon-size;
+  height: $header-icon-size;
   fill: currentColor;
 }
 
@@ -90,13 +90,13 @@
   gap: 0;
   margin-left: auto;
 
-  @media (min-width: 768px) {
-    margin-left: 40px;
-    gap: 20px;
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: $spacing-4xl;
+    gap: $spacing-xl;
   }
 
-  // @media (min-width: 1440px) {
-  //   gap: 32px;
+  // @media (min-width: $breakpoint-desktop) {
+  //   gap: $spacing-3xl;
   // }
 }
 
@@ -104,48 +104,48 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: $spacing-md;
   padding: 0;
-  width: 60px;
-  height: 60px;
-  color: #333333;
+  width: $header-button-size-mobile;
+  height: $header-button-size-mobile;
+  color: $color-text-primary;
   text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 133%;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: $font-size-caption-mobile;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-footer-nav;
+  text-transform: $text-transform-badge;
+  letter-spacing: $letter-spacing-normal;
+  transition: color $transition-ui, background-color $transition-ui;
 
   // ============================================
   // MOBILE: только фон при active, иконки черные
   // ============================================
   &:active {
-    background-color: #f0ebff;
+    background-color: $color-primary-light;
   }
 
-  @media (min-width: 768px) {
-    width: 60px;
-    height: 60px;
+  @media (min-width: $breakpoint-tablet) {
+    width: $header-button-size-mobile;
+    height: $header-button-size-mobile;
   }
 
   // ============================================
   // DESKTOP: иконки меняют цвет и размеры
   // ============================================
-  @media (min-width: 1440px) {
+  @media (min-width: $breakpoint-desktop) {
     &:hover {
-      color: #7859cf;
+      color: $color-primary;
     }
 
     &:focus {
-      outline: 2px solid #7859cf;
+      outline: 2px solid $color-primary;
       outline-offset: 2px;
-      color: #7859cf;
+      color: $color-primary;
     }
 
     &:active {
-      color: #6849b8;
-      background-color: #f0ebff;
+      color: $color-primary-dark;
+      background-color: $color-primary-light;
     }
   }
 
@@ -153,9 +153,9 @@
   // DESKTOP: Размеры для иконки пользователя
   // ============================================
   &--user {
-    @media (min-width: 1440px) {
+    @media (min-width: $breakpoint-desktop) {
       width: 112px;
-      height: 80px;
+      height: $header-button-size-desktop;
     }
   }
 
@@ -163,16 +163,16 @@
   // DESKTOP: Размеры для иконки корзины
   // ============================================
   &--cart {
-    @media (min-width: 1440px) {
+    @media (min-width: $breakpoint-desktop) {
       width: 129px;
-      height: 80px;
+      height: $header-button-size-desktop;
     }
   }
 }
 
 .user-nav__icon {
-  width: 16px;
-  height: 16px;
+  width: $header-icon-size;
+  height: $header-icon-size;
   flex-shrink: 0;
   fill: currentColor;
 }
@@ -180,7 +180,7 @@
 .user-nav__text {
   display: none;
 
-  @media (min-width: 1440px) {
+  @media (min-width: $breakpoint-desktop) {
     display: inline;
   }
 }
@@ -194,14 +194,14 @@
   .header__nav {
     display: block;
     position: fixed;
-    inset: 60px 0 0;
-    background-color: #ffffff;
-    padding: 0 20px;
+    inset: $header-height-mobile 0 0;
+    background-color: $color-bg-primary;
+    padding: 0 $container-padding-mobile;
     overflow-y: auto;
-    z-index: 99;
+    z-index: $z-index-mobile-menu;
 
-    @media (min-width: 768px) {
-      top: 80px;
+    @media (min-width: $breakpoint-tablet) {
+      top: $header-height-tablet;
     }
   }
 }

@@ -5,28 +5,28 @@
 .pagination {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: $spacing-xl;
 
-  @media (min-width: 768px) {
-    margin-top: 40px;
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: $spacing-4xl;
     justify-content: flex-end;
   }
 
-  @media (min-width: 1440px) {
-    margin-top: 30px;
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: $section-padding-bottom-tablet;
   }
 }
 
 .pagination__list {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: $spacing-md;
   margin: 0;
   padding: 0;
   list-style: none;
 
-  @media (min-width: 768px) {
-    gap: 12px;
+  @media (min-width: $breakpoint-tablet) {
+    gap: $spacing-sm * 2;
   }
 }
 
@@ -38,36 +38,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 40px;
-  min-height: 40px;
-  padding: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #7859cf;
+  min-width: $pagination-button-size;
+  min-height: $pagination-button-size;
+  padding: $spacing-md;
+  font-size: $font-size-small-mobile;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
   text-decoration: none;
-  background-color: #ffffff;
-  border-radius: 4px;
+  background-color: $color-bg-primary;
+  border-radius: $border-radius-md;
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
+    background-color $transition-ui,
+    color $transition-ui,
+    border-color $transition-ui;
 
   &:hover:not(.pagination__link--current) {
-    color: #7859cf;
+    color: $color-primary;
   }
 
   &:focus {
-    outline: 2px solid #7859cf;
+    outline: 2px solid $color-primary;
     outline-offset: 2px;
   }
 
   &:active:not(.pagination__link--current) {
     background-color: transparent;
-    color: #333333;
+    color: $color-text-primary;
   }
 
   &--current {
-    color: #333333;
+    color: $color-text-primary;
     background-color: transparent;
     cursor: default;
     pointer-events: none;
@@ -75,23 +75,23 @@
 
   &--prev,
   &--next {
-    font-size: 16px;
-    line-height: 150%;
-    color: #7859cf;
+    font-size: $font-size-input-mobile;
+    line-height: $line-height-button;
+    color: $color-primary;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     // Кнопка "Назад" (prev)
     &--prev {
-      @media (min-width: 768px) {
-        min-width: 91px;
+      @media (min-width: $breakpoint-tablet) {
+        min-width: $pagination-button-prev-width-tablet;
       }
     }
 
     // Кнопка "Вперед" (next)
     &--next {
-      @media (min-width: 768px) {
-        min-width: 104px;
+      @media (min-width: $breakpoint-tablet) {
+        min-width: $pagination-button-next-width-tablet;
       }
     }
   }
@@ -99,11 +99,11 @@
 
 .pagination__icon {
   display: block;
-  width: 10px;
-  height: 6px;
+  width: $pagination-icon-width;
+  height: $pagination-icon-height;
   fill: currentColor;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     display: none;
   }
 }
@@ -111,7 +111,7 @@
 .pagination__text {
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     display: inline;
   }
 }

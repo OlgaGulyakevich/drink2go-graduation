@@ -4,32 +4,32 @@
 
 .button {
   display: inline-block;
-  padding: 8px 20px;
+  padding: $button-padding-y-mobile $button-padding-x-mobile;
   font-family: inherit;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 150%;
+  font-size: $font-size-input-mobile;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-button;
   text-align: center;
   text-decoration: none;
   text-transform: none;
-  color: #ffffff;
-  background-color: #333333;
+  color: $color-text-inverse;
+  background-color: $color-text-primary;
   border: none;
-  border-radius: 4px;
+  border-radius: $button-border-radius;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color $transition-ui, box-shadow $transition-ui;
 
   &:hover {
-    background-color: #555555;
+    background-color: $color-text-medium;
   }
 
   &:focus {
-    outline: 2px solid #7859cf;
+    outline: 2px solid $color-primary;
     outline-offset: 2px;
   }
 
   &:active {
-    background-color: #222222;
+    background-color: $color-text-dark;
   }
 
   &:disabled {
@@ -41,19 +41,19 @@
 
 /* Primary button variant */
 .button--primary {
-  background-color: #7859cf;
+  background-color: $button-primary-bg;
 
   &:hover {
-    background-color: #9070ec;
+    background-color: $button-primary-bg-hover;
   }
 
   &:active {
-    background-color: #593cac;
+    background-color: $button-primary-bg-active;
   }
 
   &:disabled {
-    background-color: #e2e2e2;
-    color: #ffffff;
+    background-color: $button-disabled-bg;
+    color: $button-primary-text;
     cursor: not-allowed;
     pointer-events: none;
   }
@@ -61,23 +61,23 @@
 
 /* Secondary button variant */
 .button--secondary {
-  background-color: #ffffff;
-  color: #7859cf;
+  background-color: $button-secondary-bg;
+  color: $button-secondary-text;
   border: none;
 
   &:hover {
-    background-color: #9070ec;
-    color: #ffffff;
+    background-color: $button-secondary-bg-hover;
+    color: $button-primary-text;
   }
 
   &:active {
-    background-color: #593cac;
-    color: #ffffff;
+    background-color: $button-secondary-bg-active;
+    color: $button-primary-text;
   }
 
   &:disabled {
-    background-color: #e2e2e2;
-    color: #ffffff;
+    background-color: $button-disabled-bg;
+    color: $button-primary-text;
     cursor: not-allowed;
     pointer-events: none;
   }

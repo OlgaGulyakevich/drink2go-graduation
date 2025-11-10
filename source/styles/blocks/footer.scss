@@ -4,7 +4,7 @@
 
 .footer {
   background-color: $color-bg-secondary;
-  padding: 20px 0 0;
+  padding: $section-padding-top-mobile 0 0;
 }
 
 .footer__container {
@@ -22,7 +22,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0 20px;
+  padding: 0 0 $section-padding-top-mobile;
   position: relative;
   min-width: 0;
 
@@ -34,7 +34,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    height: 1px;
+    height: 1px; // Тонкая линия-разделитель
     background-color: $color-border-secondary;
   }
 }
@@ -44,7 +44,7 @@
   flex-direction: column;
   text-decoration: none;
   align-items: start;
-  gap: 10px;
+  gap: $spacing-lg;
   min-width: 0;
 
   // Переопределение отображения логотипов для footer
@@ -65,15 +65,15 @@
 
     @media (min-width: $breakpoint-tablet) {
       display: block; // На tablet+ показываем desktop версию (170x36)
-      gap: 8px;
+      gap: $spacing-md;
     }
   }
 
   .logo__tagline {
-    font-size: 14px;
-    color: #666666;
-    line-height: 143%;
-    letter-spacing: 0.02em;
+    font-size: $font-size-small-mobile;
+    color: $color-text-muted;
+    line-height: $line-height-footer-tagline;
+    letter-spacing: $letter-spacing-normal;
     min-width: 0;
   }
 }
@@ -91,7 +91,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: $spacing-xl;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -101,24 +101,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #bdbdbd;
-  width: 40px;
-  height: 40px;
+  color: $color-text-disabled;
+  width: $footer-social-icon-size;
+  height: $footer-social-icon-size;
   flex-shrink: 0;
 }
 
 .social__link {
   display: inline-flex;
   text-decoration: none;
-  color: #bdbdbd; // Начальный цвет
+  color: $color-text-disabled; // Начальный цвет
   transition: color $transition-base; // Изменено с opacity на color
 
   &:hover {
-    color: #7859cf;
+    color: $color-primary;
   }
 
   &:active {
-    color: #7859cf;
+    color: $color-primary;
   }
 }
 
@@ -136,7 +136,7 @@
 .footer__nav {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding: $section-padding-top-mobile 0;
   position: relative;
   min-width: 0;
 
@@ -148,17 +148,17 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    height: 1px;
+    height: 1px; // Тонкая линия-разделитель
     background-color: $color-border-secondary;
   }
 }
 
 .footer-nav__title {
-  font-size: 14px;
-  font-weight: 700;
+  font-size: $font-size-small-mobile;
+  font-weight: $font-weight-bold;
   color: $color-primary;
-  letter-spacing: 0.02em;
-  margin-bottom: 20px;
+  letter-spacing: $letter-spacing-normal;
+  margin-bottom: $spacing-xl;
   min-width: 0;
   overflow-wrap: break-word;
 }
@@ -166,25 +166,25 @@
 .footer-nav__list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: $spacing-xl;
   min-width: 0;
 }
 
 .footer-nav__item {
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 133%;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #666666;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-caption-mobile;
+  line-height: $line-height-footer-nav;
+  letter-spacing: $letter-spacing-normal;
+  text-transform: $text-transform-badge;
+  color: $color-text-muted;
   min-width: 0;
 }
 
 .footer-nav__link {
-  font-size: 12px;
-  line-height: 133%;
-  letter-spacing: 0.02em;
-  color: #666666;
+  font-size: $font-size-caption-mobile;
+  line-height: $line-height-footer-nav;
+  letter-spacing: $letter-spacing-normal;
+  color: $color-text-muted;
   text-decoration: none;
   transition: $transition-color;
   overflow-wrap: break-word;
@@ -207,7 +207,7 @@
 .footer__contacts {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding: $section-padding-top-mobile 0;
   position: relative;
   min-width: 0;
 
@@ -219,17 +219,17 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    height: 1px;
+    height: 1px; // Тонкая линия-разделитель
     background-color: $color-border-secondary;
   }
 }
 
 .contacts__title {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-size: $font-size-small-mobile;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-normal;
   color: $color-primary;
-  margin-bottom: 12px;
+  margin-bottom: $spacing-sm * 2;
   min-width: 0;
   overflow-wrap: break-word;
 }
@@ -237,7 +237,7 @@
 .contacts__address {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: $spacing-lg;
   font-style: normal;
   min-width: 0;
 }
@@ -245,9 +245,9 @@
 .contacts__link {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  font-size: 14px;
-  color: #666666;
+  gap: $spacing-md * 2;
+  font-size: $font-size-small-mobile;
+  color: $color-text-muted;
   text-decoration: none;
   max-width: 261px;
   min-width: 0;
@@ -265,10 +265,10 @@
 
 .contacts__icon {
   flex-shrink: 0;
-  width: 13px;
-  height: 16px;
+  width: $footer-contact-icon-width;
+  height: $footer-contact-icon-height;
   fill: currentColor;
-  margin-top: 2px;
+  margin-top: $spacing-xs / 2;
 }
 
 // ============================================
@@ -286,15 +286,15 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
-  padding: 20px 0 30px;
+  gap: $spacing-md;
+  padding: $section-padding-top-mobile 0 30px;
   min-width: 0;
 }
 
 .footer__academy-text {
   font-size: $font-size-small-mobile;
   line-height: $line-height-normal;
-  color: #bdbdbd;
+  color: $color-text-disabled;
   min-width: 0;
   overflow-wrap: break-word;
 }
@@ -302,9 +302,9 @@
 .footer__academy {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: $spacing-md;
   text-decoration: none;
-  color: #bdbdbd; // Начальный цвет для всей ссылки
+  color: $color-text-disabled; // Начальный цвет для всей ссылки
   transition: color $transition-base; // Изменено с opacity на color
   min-width: 0;
 
@@ -314,11 +314,11 @@
   }
 
   &:hover {
-    color: #7859cf; // Меняет цвет всей ссылки (текст + логотип)
+    color: $color-primary; // Меняет цвет всей ссылки (текст + логотип)
   }
 
   &:active {
-    color: #593cac; // Меняет цвет всей ссылки (текст + логотип)
+    color: $color-primary-active; // Меняет цвет всей ссылки (текст + логотип)
   }
 }
 
@@ -333,7 +333,7 @@
 
 @media (min-width: $breakpoint-tablet) {
   .footer {
-    padding: 42px 0 40px;
+    padding: 42px 0 $spacing-4xl;
   }
 
   .footer__container {
@@ -352,7 +352,7 @@
     grid-template:
       "brand brand brand"
       "nav2 nav1 contacts" / 1fr 1fr 1fr;
-    gap: 30px;
+    gap: $section-padding-bottom-tablet;
     min-width: 0;
   }
 
@@ -372,10 +372,10 @@
 
   .footer__logo {
     .logo__tagline {
-      font-size: 14px;
-      max-width: 318px;
+      font-size: $font-size-small-mobile;
+      max-width: $filter-width-desktop;
       overflow-wrap: anywhere;
-      color: #666666;
+      color: $color-text-muted;
       min-width: 0;
     }
   }
@@ -415,7 +415,7 @@
 
 
   .footer-nav__link {
-    font-size: 12px;
+    font-size: $font-size-caption-mobile;
   }
 
   .contacts__link {
@@ -429,7 +429,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px 0 0;
+    padding: $section-padding-bottom-tablet 0 0;
   }
 
   .footer__academy-text {
@@ -443,7 +443,7 @@
 
 @media (min-width: $breakpoint-desktop) {
   .footer {
-    padding: 40px 0;
+    padding: $spacing-4xl 0;
   }
 
   .footer__container {
@@ -460,15 +460,15 @@
     grid-template:
       "brand nav2 nav1 contacts"
       "social . . ." / 280px 1fr 1fr 1fr;
-    gap: 0 30px;
+    gap: 0 $section-padding-bottom-tablet;
     min-width: 0;
   }
 
   .footer__brand {
     grid-area: brand;
     flex-direction: column;
-    row-gap: 40px;
-    margin-bottom: 50px;
+    row-gap: $spacing-4xl;
+    margin-bottom: $spacing-5xl;
     min-width: 0;
   }
 
@@ -499,7 +499,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 0;
-    padding: 20px 0 0;
+    padding: $section-padding-top-mobile 0 0;
   }
 
   .footer__academy-text {

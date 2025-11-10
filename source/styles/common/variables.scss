@@ -17,6 +17,7 @@
 $color-primary: #7859cf;                     // Основной цвет бренда
 $color-primary-hover: #9070ec;               // Hover состояние
 $color-primary-active: #593cac;              // Active состояние
+$color-primary-dark: #6849b8;                // Темный вариант (active states)
 $color-primary-light: #f0ebff;               // Светлый вариант (фоны)
 $color-primary-transparent: rgba(120, 89, 207, 0.25); // Прозрачный вариант
 
@@ -34,6 +35,9 @@ $color-text-primary: #333333;                // Основной текст
 $color-text-secondary: #7859cf;              // Акцентный текст (бренд)
 $color-text-inverse: #ffffff;                // Инверсный текст (на темном фоне)
 $color-text-disabled: #bdbdbd;               // Отключенный текст
+$color-text-muted: #666666;                  // Приглушенный текст (footer, secondary)
+$color-text-dark: #222222;                   // Очень темный текст
+$color-text-medium: #555555;                 // Средний серый текст
 
 // ------------------------------------------------------------
 // Фоны
@@ -141,6 +145,9 @@ $line-height-h4: 1.43;
 $line-height-body: 1.43;
 $line-height-price: 1.6;
 $line-height-badge: 1.33;
+$line-height-footer-nav: 1.33;               // Footer navigation (133%)
+$line-height-footer-tagline: 1.43;          // Footer tagline (143%)
+$line-height-button: 1.5;                    // Buttons (150%)
 
 // ------------------------------------------------------------
 // Letter spacing
@@ -172,6 +179,9 @@ $spacing-lg: 10px;                           // Large
 $spacing-xl: 20px;                           // Extra large
 $spacing-2xl: 22px;                          // 2X Large
 $spacing-3xl: 32px;                          // 3X Large
+$spacing-4xl: 40px;                          // 4X Large
+$spacing-5xl: 50px;                          // 5X Large
+$spacing-6xl: 60px;                          // 6X Large
 
 // ------------------------------------------------------------
 // Контейнеры
@@ -207,6 +217,38 @@ $section-padding-bottom-tablet: 50px;
 // Desktop
 $section-padding-top-desktop: 60px;
 $section-padding-bottom-desktop: 60px;
+
+// ------------------------------------------------------------
+// Header размеры
+// ------------------------------------------------------------
+$header-height-mobile: 60px;
+$header-height-tablet: 80px;
+$header-icon-size: 16px;                     // Размер иконок в header
+$header-button-size-mobile: 60px;            // Размер кнопок на mobile
+$header-button-size-desktop: 80px;           // Размер кнопок на desktop
+
+// ------------------------------------------------------------
+// Footer размеры
+// ------------------------------------------------------------
+$footer-social-icon-size: 40px;              // Размер иконок соцсетей
+$footer-contact-icon-width: 13px;            // Ширина иконки контакта
+$footer-contact-icon-height: 16px;          // Высота иконки контакта
+
+// ------------------------------------------------------------
+// Иконки общие
+// ------------------------------------------------------------
+$icon-size-sm: 10px;                         // Маленькие иконки
+$icon-size-md: 16px;                         // Средние иконки
+$icon-size-lg: 40px;                         // Большие иконки
+
+// ------------------------------------------------------------
+// Pagination размеры
+// ------------------------------------------------------------
+$pagination-button-size: 40px;               // Размер кнопок пагинации
+$pagination-icon-width: 10px;                // Ширина иконки пагинации
+$pagination-icon-height: 6px;                // Высота иконки пагинации
+$pagination-button-prev-width-tablet: 91px; // Ширина кнопки "Назад" на tablet
+$pagination-button-next-width-tablet: 104px; // Ширина кнопки "Вперед" на tablet
 
 
 // ============================================================
@@ -494,6 +536,7 @@ $border-radius-pill: 999px;
 $transition-fast: 150ms ease-in-out;
 $transition-base: 250ms ease-in-out;
 $transition-slow: 350ms ease-in-out;
+$transition-ui: 0.3s ease;                   // UI элементы (кнопки, ссылки)
 
 // Специфичные переходы
 $transition-color: color $transition-base;
@@ -529,3 +572,7 @@ $z-index-modal-backdrop: 400;                // Backdrop модальных ок
 $z-index-modal: 500;                         // Модальные окна
 $z-index-popover: 600;                       // Popover/Tooltip
 $z-index-toast: 700;                         // Уведомления
+
+// Специфичные z-index значения
+$z-index-header-logo: 101;                    // Логотип в header
+$z-index-mobile-menu: 99;                    // Мобильное меню
