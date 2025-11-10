@@ -40,8 +40,9 @@
     width: 100%;
     height: 100%;
     background-color: $radio-bg;
-    border: $radio-border-width solid $radio-border;
+    border: $radio-border-width solid #BDBDBD;
     border-radius: $radio-border-radius;
+    box-shadow: none;
     transition: border-color $transition-base,
                 background-color $transition-base;
   }
@@ -50,8 +51,8 @@
   &::after {
     content: "";
     position: relative;
-    width: $radio-inner-size;
-    height: $radio-inner-size;
+    width: 16px;
+    height: 16px;
     background-color: $radio-bg-checked;
     border-radius: 50%;
     opacity: 0;
@@ -68,6 +69,7 @@
 .filters__radio:not(:checked):not(:disabled):hover + .filters__radio-mark::before,
 .filters__label:hover .filters__radio:not(:checked):not(:disabled) + .filters__radio-mark::before {
   border-color: $color-primary;
+  box-shadow: 0 0 0 2px rgba(120, 89, 207, 0.12);
 }
 
 // ============================================
@@ -84,7 +86,7 @@
 .filters__radio:checked + .filters__radio-mark {
   // Рамка остается прежней (не меняется)
   &::before {
-    border-color: $radio-border;
+    border-color: $radio-border-checked;
   }
 
   // Точка появляется (фиолетовая)

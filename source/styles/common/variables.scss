@@ -311,7 +311,7 @@ $checkbox-border-checked: #7859cf;
 $checkbox-checkmark: #ffffff;                // Цвет внутреннего круга
 $checkbox-disabled-bg: #f8f8f8;
 $checkbox-disabled-border: #e2e2e2;
-$checkbox-disabled-text: #bdbdbd;
+$checkbox-disabled-text: #E2E2E2;
 
 // Spacing
 $checkbox-gap: 10px;                         // Gap между toggle и текстом
@@ -335,7 +335,7 @@ $radio-border-checked: #7859cf;
 $radio-dot: #ffffff;                         // Цвет внутреннего круга
 $radio-disabled-bg: #f8f8f8;
 $radio-disabled-border: #e2e2e2;
-$radio-disabled-text: #bdbdbd;
+$radio-disabled-text: #E2E2E2;
 
 // Spacing
 $radio-gap: 10px;                            // Gap между radio и текстом
@@ -345,19 +345,20 @@ $radio-gap: 10px;                            // Gap между radio и текс
 // ------------------------------------------------------------
 
 // Track (дорожка)
-$range-slider-track-bg: #e2e2e2;             // Неактивная часть
+$range-slider-track-bg: #bdbdbd;             // Неактивная часть
 $range-slider-track-height: 2px;
 
 // Connect (активная часть)
 $range-slider-connect-bg: #9070ec;
+$range-slider-connect-height: 4px;
 
 // Handle (ползунок)
-$range-slider-handle-size: 20px;
+$range-slider-handle-size: 12px; // Диаметр внешней окружности ползунка
 $range-slider-handle-bg: #ffffff;
 $range-slider-handle-border: #9070ec;
 $range-slider-handle-border-width: 2px;
-$range-slider-handle-hover-border: #7859cf;
-$range-slider-handle-active-border: #593cac;
+$range-slider-handle-hover-border: rgba(120, 89, 207, 0.25);
+$range-slider-handle-active-border: #7859cf;
 
 // ------------------------------------------------------------
 // Filter Group Widths

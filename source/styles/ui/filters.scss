@@ -4,153 +4,168 @@
 
 .filters {
   width: 100%;
+  min-width: 0;
 }
 
 .filters__form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 30px;
+  min-width: 0;
 
   @media (min-width: 768px) {
-    gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(226px, 1fr));
+    gap: 30px;
+    grid-template-areas:
+      "price milk country"
+      "buttons buttons buttons";
+  }
+
+  @media (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 }
 
 .filters__group {
-  margin: 0;
-  padding: 0;
   border: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-.filters__legend {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333333;
+  max-width: 280px;
+  min-width: 0;
 
   @media (min-width: 768px) {
-    font-size: 18px;
+    max-width: none;
+    min-width: 0;
+
+    &:nth-child(1) {
+      grid-area: price;
+    }
+
+    &:nth-child(2) {
+      grid-area: milk;
+    }
+
+    &:nth-child(3) {
+      grid-area: country;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 280px;
   }
 }
 
+.filters__legend {
+  font-family: $font-family-primary;
+  font-size: 16px;
+  font-weight: $font-weight-semibold;
+  line-height: 150%;
+  color: #333333;
+  margin-bottom: 20px;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
 .filters__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
+  min-width: 0;
 }
 
 .filters__item {
   margin: 0;
+  min-width: 0;
 }
 
 .filters__label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   cursor: pointer;
   user-select: none;
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    opacity: 0.8;
-  }
+  transition: color $transition-base;
+  min-width: 0;
+  width: 100%;
 }
 
 .filters__label-text {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #666666;
+  transition: color $transition-base;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
+  flex: 1;
+}
+
+.filters__label:hover .filters__label-text,
+.filters__label:focus-within .filters__label-text {
   color: #333333;
-
-  @media (min-width: 768px) {
-    font-size: 16px;
-  }
 }
 
-/* Custom Radio and Checkbox Marks */
-.filters__radio-mark,
-.filters__checkbox-mark {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #e0e0e0;
-  flex-shrink: 0;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+.filters__checkbox:disabled ~ .filters__label-text,
+.filters__radio:disabled ~ .filters__label-text {
+  color: $color-text-disabled;
+  cursor: not-allowed;
 }
 
-.filters__radio-mark {
-  border-radius: 50%;
+.filters__checkbox:disabled + .filters__checkbox-mark,
+.filters__radio:disabled + .filters__radio-mark {
+  cursor: not-allowed;
 }
 
-.filters__checkbox-mark {
-  border-radius: 4px;
+.filters__checkbox:disabled + .filters__checkbox-mark + .filters__label-text,
+.filters__radio:disabled + .filters__radio-mark + .filters__label-text {
+  pointer-events: none;
 }
 
-/* Checked State */
-.filters__radio:checked + .filters__radio-mark {
-  border-color: #7859cf;
-  background-color: #7859cf;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    background-color: #ffffff;
-    border-radius: 50%;
-  }
-}
-
-.filters__checkbox:checked + .filters__checkbox-mark {
-  border-color: #7859cf;
-  background-color: #7859cf;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 5px;
-    width: 6px;
-    height: 10px;
-    border: solid #ffffff;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-  }
-}
-
-/* Focus State */
-.filters__radio:focus + .filters__radio-mark,
-.filters__checkbox:focus + .filters__checkbox-mark {
-  outline: 2px solid #7859cf;
-  outline-offset: 2px;
-}
-
-/* Buttons */
 .filters__buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 8px;
+  gap: 20px;
+  margin-bottom: 10px;
+  min-width: 280px;
+  min-width: 0;
 
   @media (min-width: 768px) {
+    grid-area: buttons;
     flex-direction: row;
-    gap: 16px;
+    justify-content: center;
+    margin-bottom: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 1440px) {
+    min-width: 318px;
   }
 }
 
 .filters__button {
   width: 100%;
+  min-width: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     width: auto;
-    flex: 1;
+    min-width: 120px;
+
+        // Первая кнопка (Применить)
+    &.button--primary {
+      min-width: 137px;
+    }
+
+    // Вторая кнопка (Сбросить)
+    &.button--secondary {
+      min-width: 120px;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 149px;
   }
 }

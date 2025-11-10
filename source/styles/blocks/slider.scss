@@ -4,6 +4,7 @@
 
 .slider {
   position: relative;
+  overflow: hidden; // Предотвращаем переполнение контента
 }
 
 /* ============================================
@@ -12,6 +13,7 @@
 
 .slider__slide {
   display: none;
+  min-width: 0; // Разрешаем сжиматься в flex-контексте
 
   &--active {
     display: block;
@@ -21,21 +23,28 @@
 .slider__container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px 0;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  max-height: 656px;
+  min-width: 0;
 
   @media (min-width: 768px) {
     align-items: center;
-    gap: 40px;
-    padding: 60px 0;
+    gap: 0;
+    padding-top: 60px;
+    padding-bottom: 0;
+    max-height: 828px;
   }
 
   @media (min-width: 1440px) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
-    padding: 80px 0;
+    gap: 30px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    max-height: 714px;
   }
 }
 
@@ -48,11 +57,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 16px;
   order: 1; /* Контент после картинки на mobile */
+  min-width: 0; // КРИТИЧНО: разрешаем сжиматься, чтобы текст переносился
 
   @media (min-width: 768px) {
-    gap: 20px;
     order: -1; /* Контент сверху на tablet */
   }
 
@@ -60,7 +68,6 @@
     align-items: flex-start;
     text-align: left;
     max-width: 600px;
-    gap: 24px;
     order: 0; /* Контент слева на desktop */
   }
 }
@@ -68,6 +75,7 @@
 .slider__badge {
   display: inline-block;
   align-self: center;
+  margin-bottom: 4px;
 
   @media (min-width: 1440px) {
     align-self: flex-start;
@@ -78,30 +86,49 @@
   margin: 0;
   font-size: 36px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 133%;
+  letter-spacing: 0.02em;
   color: #333333;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  max-width: 280px;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 
   @media (min-width: 768px) {
     font-size: 56px;
+    line-height: 143%;
+    letter-spacing: 0.02em;
+    max-width: 608px;
+    margin-bottom: 16px;
   }
 
   @media (min-width: 1440px) {
-    font-size: 72px;
+    max-width: 625px;
   }
 }
 
 .slider__description {
-  margin: 0;
   font-size: 14px;
-  line-height: 1.5;
+  font-weight: 400;
+  line-height: 143%;
   color: #666666;
+  max-width: 280px;
+  min-height: 100px;
+  overflow-wrap: anywhere;
+  padding: 0 14px;
+  margin-bottom: 20px;
 
   @media (min-width: 768px) {
-    font-size: 16px;
+    font-size: 20px;
+    line-height: 160%;
+    max-width: 608px;
+
   }
 
   @media (min-width: 1440px) {
-    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 625px;
   }
 }
 
@@ -111,6 +138,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+  margin-bottom: 20px;
 
   @media (min-width: 1440px) {
     justify-content: flex-start;
@@ -119,41 +147,32 @@
 
 .slider__price {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
+  align-items: center;
+  gap: 6px;
 }
 
 .slider__price-old {
-  font-size: 16px;
-  font-weight: 400;
-  color: #999999;
+  line-height: 200%;
+  color: #7859cf;
   text-decoration: line-through;
 
   @media (min-width: 768px) {
-    font-size: 18px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
+
 .slider__price-new {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 160%;
   color: #333333;
-
-  @media (min-width: 768px) {
-    font-size: 32px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 42px;
-  }
 }
 
 .slider__button {
-  // Стили теперь управляются через .slider__actions
+  padding: 8px 20px;
+  line-height: 150%;
+  min-width: 113px;
 }
 
 /* ============================================
@@ -165,6 +184,7 @@
   justify-content: center;
   align-items: center;
   order: 0; /* Картинка первая на mobile */
+  min-width: 0; // Разрешаем сжиматься в flex-контексте
 
   @media (min-width: 768px) {
     order: 0; /* Картинка внизу на tablet */
@@ -203,12 +223,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
+  width: 20px;
   height: 100%;
   padding: 0;
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 80px;
+  }
 
   // Используем color для управления цветом SVG через currentColor
   color: #7859cf;
@@ -342,7 +366,7 @@
   // ACTIVE STATE (текущий слайд)
   // ============================================
   &--active {
-    height: 8px;
+    height: 4px;
     background-color: #7859cf;
     cursor: default;
   }

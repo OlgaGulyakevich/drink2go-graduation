@@ -4,18 +4,18 @@
 
 .badge {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 0px 12px;
   font-size: 12px;
-  font-weight: 500;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 133%;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.04em;
   color: #7859cf;
   background-color: transparent;
   border: none;
 
-  @media (min-width: 768px) {
-    font-size: 14px;
-    padding: 6px 14px;
-  }
+
+  // @media (min-width: 768px) {
+  //   padding: 6px 14px;
+  // }
 }

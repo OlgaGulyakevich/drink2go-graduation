@@ -5,10 +5,11 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   text-decoration: none;
   color: #333333;
   transition: opacity 0.3s ease;
+  min-width: 0; // Для корректной работы в flex-контейнере
 
   &:hover {
     opacity: 0.8;
@@ -44,10 +45,12 @@
 
   @media (min-width: 768px) {
     display: block;
+    margin-right: 67px;
   }
 
   @media (min-width: 1440px) {
     display: none;
+
   }
 }
 
@@ -66,10 +69,12 @@
 
   @media (min-width: 1440px) {
     display: block;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #666666;
+    font-size: 12px;
+    line-height: 133%;
+    color: #333333;
     font-weight: 400;
-    max-width: 160px;
+    max-width: 130px;
+    overflow-wrap: anywhere; 
+    min-width: 0;
   }
 }

@@ -19,7 +19,20 @@
 .range-slider {
   // Контейнер для всего range-slider
   width: 100%;
-  margin: $spacing-xl 0;
+  max-width: 280px;
+  margin: 0 auto; // auto по горизонтали для центрирования (отступ сверху управляется gap в .filters__group)
+  box-sizing: border-box; // Включаем padding в ширину
+
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 318px;
+  }
+}
+
+// Обертка для самого слайдера (ползунки и дорожка)
+.range-slider__slider-wrapper {
+  padding: 8px 6px; // 8px вертикально (ползунки видны), 6px горизонтально (ползунки не вылезают)
+  overflow: visible; // Ползунки должны быть видны
+  margin-bottom: 24px;
 }
 
 
@@ -28,70 +41,94 @@
 // ============================================================
 
 // ------------------------------------------------------------
-// Track (дорожка слайдера)
+// Track (дорожка слайдера) - неактивная часть
 // ------------------------------------------------------------
 .noUi-target {
-  background-color: $range-slider-track-bg;
+  position: relative;
+  background-color: transparent; // Прозрачный фон (серую дорожку рисуем через ::before)
   border: none;
   box-shadow: none;
-  height: $range-slider-track-height;
-  border-radius: 0; // Прямоугольная дорожка
+  height: 4px; // Высота контейнера 4px для фиолетовой части
+  border-radius: 4px;
+  box-sizing: border-box; // Включаем padding в ширину
+  overflow: visible; // Разрешаем overflow для ползунков
+
+  // Серая фоновая дорожка (2px по центру, на всю ширину)
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0; // От левого края
+    right: 0; // До правого края
+    height: 2px;
+    transform: translateY(-50%);
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    z-index: 0;
+  }
 }
 
 // Горизонтальная ориентация
 .noUi-horizontal {
-  height: $range-slider-track-height;
+  height: 4px;
 }
 
 // ------------------------------------------------------------
-// Connect (активная часть дорожки)
+// Connect (активная часть дорожки между handles)
 // ------------------------------------------------------------
 .noUi-connect {
-  background-color: $range-slider-connect-bg;
-  box-shadow: none;
+  background-color: #9070ec; // Фиолетовая активная часть
+  height: 4px; // Фиолетовая часть 4px (занимает всю высоту контейнера)
+  border-radius: 4px;
+  z-index: 1;
+  position: relative;
 }
 
 // ------------------------------------------------------------
 // Handle (ползунок)
 // ------------------------------------------------------------
 .noUi-handle {
-  // Размеры и форма
-  width: $range-slider-handle-size;
-  height: $range-slider-handle-size;
-  border-radius: $border-radius-full; // Круглый
+  // Размеры и форма - УМЕНЬШЕННЫЕ
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; // Круглый
 
   // Цвета
-  background-color: $range-slider-handle-bg;
-  border: $range-slider-handle-border-width solid $range-slider-handle-border;
+  background-color: #ffffff;
+  border: 2px solid #9070ec; // Фиолетовая обводка
   box-shadow: none;
 
   // Позиционирование
   top: 50%;
   transform: translateY(-50%);
-  right: -($range-slider-handle-size / 2); // Центрируем по дорожке
+  right: -6px; // Центрируем по дорожке (половина ширины)
 
   // Курсор
   cursor: pointer;
 
-  // Убираем стрелочку ::before и ::after
+  // Убираем стрелочки
   &::before,
   &::after {
     display: none;
   }
 
-  // Состояния
-  &:hover {
-    border-color: $range-slider-handle-hover-border;
-  }
-
-  &:active {
-    border-color: $range-slider-handle-active-border;
-  }
-
-  // Focus для доступности
+  // ============================================
+  // HOVER & FOCUS STATE
+  // ============================================
+  &:hover,
   &:focus {
-    outline: 2px solid $color-border-focus;
-    outline-offset: 2px;
+    // background-color: rgba(144, 112, 236, 0.25); // Полупрозрачный фиолетовый
+    border-color: #9070ec;
+    outline: none;
+  }
+
+  // ============================================
+  // ACTIVE STATE
+  // ============================================
+  &:active {
+    background-color: #7859cf; // Сплошной фиолетовый
+    border-color: #7859cf;
+    box-shadow: inset 0 0 0 2px #ffffff; // Белая внутренняя обводка
   }
 }
 
@@ -129,17 +166,21 @@
 // Disabled state
 // ------------------------------------------------------------
 .noUi-target[disabled] {
-  opacity: 0.5;
   cursor: not-allowed;
+
+  // Серая дорожка в disabled
+  &::before {
+    background-color: #bdbdbd;
+  }
 
   .noUi-handle {
     cursor: not-allowed;
-    background-color: $checkbox-disabled-bg;
-    border-color: $checkbox-disabled-border;
+    background-color: #ffffff;
+    border-color: #bdbdbd;
   }
 
   .noUi-connect {
-    background-color: $color-disabled;
+    background-color: #bdbdbd;
   }
 }
 
@@ -151,25 +192,38 @@
 .range-slider__inputs {
   display: flex;
   align-items: center;
-  gap: $spacing-md;
+  justify-content: space-between;
+  gap: 12px;
   margin-top: $spacing-xl;
+}
+
+.range-slider__label {
+  display: flex;
+  flex-direction: column;
+  flex: 1; // Равномерное распределение ширины
+  min-width: 0; // Для корректной работы в flex
 }
 
 .range-slider__input {
   // Используем стили из input.scss
   // Здесь только специфичные размеры для фильтров
+  width: 118px;
+  text-align: center;
+  font-weight: $font-weight-medium;
 
-  // Mobile
-  width: 100%;
+   // Стиль для поля с нулевым значением
+   &[value="0"] {
+    color: #bdbdbd;
+  }
 
   // Tablet
   @media (min-width: $breakpoint-tablet) {
-    width: $filter-input-width-tablet-min;
+    width: 87px;
   }
 
   // Desktop
   @media (min-width: $breakpoint-desktop) {
-    width: $filter-input-width-desktop;
+    width: 134px;
   }
 }
 
@@ -184,20 +238,8 @@
 // ============================================================
 // 📱 АДАПТИВНОСТЬ
 // ============================================================
-
-// Tablet
-@media (min-width: $breakpoint-tablet) {
-  .range-slider {
-    // Возможно изменение размеров
-  }
-}
-
-// Desktop
-@media (min-width: $breakpoint-desktop) {
-  .range-slider {
-    // Возможно изменение размеров
-  }
-}
+// Адаптивность реализована через переменные и общие стили
+// Специфичные изменения для разных разрешений не требуются
 
 
 // ============================================================

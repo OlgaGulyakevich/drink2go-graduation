@@ -3,15 +3,22 @@
    ============================================ */
 
 .catalog {
-  padding: 40px 0;
+  padding-top: 50px;
+  padding-bottom: 44px;
   background-color: #f8f8f8;
+  min-height: 3760px;
+
 
   @media (min-width: 768px) {
-    padding: 50px 0;
+    padding-top: 80px;
+    padding-bottom: 90px;
+    min-height: 2186px;
   }
 
   @media (min-width: 1440px) {
-    padding: 60px 0;
+    padding-top: 100px;
+    padding-bottom: 120px;
+    min-height: 1448px;
   }
 }
 
@@ -22,28 +29,30 @@
 }
 
 .catalog__badge {
-  margin-bottom: 16px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 4px;
 }
 
 .catalog__title {
-  margin: 0 0 32px;
   font-size: 24px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 150%;
   color: #333333;
+  padding: 0 12px;
+  margin-bottom: 20px;
+  max-width: 280px;
+  overflow-wrap: break-word;
   text-align: center;
 
   @media (min-width: 768px) {
-    margin-bottom: 40px;
     font-size: 42px;
+    line-height: 152%;
+    max-width: 728px;
+    margin-bottom: 20px;
   }
 
   @media (min-width: 1440px) {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    max-width: 1360px;
   }
 }
 
@@ -54,7 +63,7 @@
 .catalog__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 30px;
   width: 100%;
 
   @media (min-width: 768px) {
@@ -75,10 +84,15 @@
 .catalog__main {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
+
 
   @media (min-width: 768px) {
-    gap: 32px;
+    gap: 30px;
+  }
+
+  @media (min-width: 1440px) {
+    gap: 26px;
   }
 }
 
@@ -94,35 +108,62 @@
 }
 
 .sort__label {
-  font-size: 14px;
-  color: #666666;
+ font-weight: 600;
+ font-size: 16px;
+ line-height: 150%;
+ color: #333333;
 
-  @media (min-width: 768px) {
-    font-size: 16px;
-  }
 }
 
 .sort__select {
-  padding: 8px 12px;
-  font-family: inherit;
-  font-size: 14px;
+  width: 165px;
+  min-width: 165px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 4px 32px 4px 10px;
+  font-family: $font-family-primary;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
   color: #7859cf;
-  background-color: transparent;
+  background: transparent url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.59 0.589844L6 5.16984L1.41 0.589844L0 1.99984L6 7.99984L12 1.99984L10.59 0.589844Z' fill='%237859cf'/%3E%3C/svg%3E") no-repeat right 10px center / 10px 10px;
   border: none;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color $transition-base,
+              text-decoration $transition-base,
+              background-image $transition-base;
+              width: $transition-base;
 
   &:hover {
-    color: #9075d9;
+    color: #7859cf;
+    background-color: #f0ebff;
+    border-radius: 4px;
+    text-decoration: none;
+
   }
 
-  &:focus {
-    outline: 2px solid #7859cf;
-    outline-offset: 2px;
+  &:focus-visible {
+    outline: none;
+    text-decoration: none;
   }
 
-  @media (min-width: 768px) {
-    font-size: 16px;
+// Активное состояние (когда dropdown открыт) - стрелка вверх
+&:focus {
+  color: #7859cf;
+  text-decoration: none;
+  border-radius: 4px;
+  // Стрелка вверх (повернутая SVG)
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 7.41016L6 2.83016L10.59 7.41016L12 5.99984L6 -0.00015625L0 5.99984L1.41 7.41016Z' fill='%237859cf'/%3E%3C/svg%3E");
+  background-position: right 10px center;
+}
+
+  &:disabled {
+    color: $color-text-disabled;
+    text-decoration: none;
+    cursor: not-allowed;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.59 0.589844L6 5.16984L1.41 0.589844L0 1.99984L6 7.99984L12 1.99984L10.59 0.589844Z' fill='%23bdbdbd'/%3E%3C/svg%3E");
+    background-position: right 10px center;
   }
 }
 
@@ -135,17 +176,16 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(280px, 1fr);
   gap: 20px;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(2, minmax(349px, 1fr));
+    gap: 30px;
   }
 
   @media (min-width: 1440px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(3, minmax(317px, 1fr));
   }
 }
 
