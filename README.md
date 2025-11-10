@@ -13,6 +13,17 @@
 
 **Drink2Go** is a responsive e-commerce website for a coffee shop featuring convenient filtering by coffee origin countries and milk concentration. The project demonstrates pixel-perfect implementation, mobile-first responsive design, and modern frontend development practices.
 
+## 📸 Screenshots
+
+<div align="center">
+  <picture>
+    <source media="(max-width: 767px)" srcset="snap/mobile.jpg">
+    <source media="(max-width: 1439px)" srcset="snap/tablet.jpg">
+    <img src="snap/desktop.jpg" alt="Drink2Go responsive design showcase" width="100%">
+  </picture>
+  <p><em>Responsive design across mobile (320px), tablet (768px), and desktop (1440px) breakpoints</em></p>
+</div>
+
 ### Key Features
 
 - ✅ **Pixel-perfect design** implementation matching Figma mockups
