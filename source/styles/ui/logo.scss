@@ -74,7 +74,7 @@
     color: #333333;
     font-weight: 400;
     max-width: 130px;
-    overflow-wrap: anywhere; // Для переноса длинного текста
-    min-width: 0; // Чтобы max-width работал корректно в flex
+    overflow-wrap: anywhere; 
+    min-width: 0;
   }
 }

@@ -4,7 +4,7 @@
 
 .footer {
   background-color: $color-bg-secondary;
-  padding: 40px 0 0;
+  padding: 20px 0 0;
 }
 
 .footer__container {
@@ -22,7 +22,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 $container-padding-mobile 30px;
+  padding: 0 0 20px;
   position: relative;
 
   // Линия на всю ширину экрана
@@ -42,6 +42,8 @@
   display: inline-flex;
   flex-direction: column;
   text-decoration: none;
+  align-items: start;
+  gap: 10px;
 
   // Переопределение отображения логотипов для footer
   .logo__image--mobile {
@@ -61,13 +63,12 @@
 
     @media (min-width: $breakpoint-tablet) {
       display: block; // На tablet+ показываем desktop версию (170x36)
+      gap: 8px;
     }
   }
 
   .logo__tagline {
-    margin-top: 10px;
-    font-size: $font-size-small-mobile;
-    line-height: $line-height-normal;
+    font-size: 14px;
     color: $color-text-primary;
   }
 }
@@ -82,6 +83,7 @@
 
 .social__list {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 20px;
   margin: 0;
@@ -90,26 +92,34 @@
 }
 
 .social__item {
-  // Стили элемента списка
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bdbdbd;
+  width: 40px;
+  height: 40px;
 }
 
 .social__link {
   display: inline-flex;
   text-decoration: none;
-  transition: $transition-opacity;
+  color: #bdbdbd; // Начальный цвет
+  transition: color $transition-base; // Изменено с opacity на color
 
   &:hover {
-    opacity: 0.7;
+    color: #7859cf;
   }
 
   &:active {
-    opacity: 0.5;
+    color: #7859CF;
   }
 }
 
 .social__icon {
   display: block;
-  // Иконка уже содержит фон и fill, не добавляем дополнительное оформление
+  fill: currentColor; // Наследует цвет от родителя
+  width: 100%;
+  height: 100%;
 }
 
 // ============================================
@@ -119,8 +129,7 @@
 .footer__nav {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 30px $container-padding-mobile;
+  padding: 20px 0;
   position: relative;
 
   // Линия на всю ширину экрана
@@ -137,24 +146,26 @@
 }
 
 .footer-nav__title {
-  margin: 0 0 10px;
-  font-size: $font-size-body-mobile;
-  font-weight: $font-weight-medium;
-  line-height: $line-height-normal;
+  font-size: 14px;
+  font-weight: 700;
   color: $color-primary;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
 }
 
 .footer-nav__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 12px;
 }
 
 .footer-nav__item {
-  // Стили элемента списка
+font-weight: 500;
+font-size: 12px;
+line-height: 133%;
+letter-spacing: 0.02em;
+text-transform: uppercase;
+color: #666666
 }
 
 .footer-nav__link {
@@ -180,8 +191,7 @@
 .footer__contacts {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 30px $container-padding-mobile;
+  padding: 20px 0;
   position: relative;
 
   // Линия на всю ширину экрана
@@ -198,11 +208,11 @@
 }
 
 .contacts__title {
-  margin: 0 0 10px;
-  font-size: $font-size-body-mobile;
-  font-weight: $font-weight-medium;
-  line-height: $line-height-normal;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: $color-primary;
+  margin-bottom: 12px;
 }
 
 .contacts__address {
@@ -215,12 +225,11 @@
 .contacts__link {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: $font-size-body-mobile;
-  line-height: $line-height-normal;
-  color: $color-text-primary;
+  gap: 16px;
+  font-size: 14px;
+  color: #666666;
   text-decoration: none;
-  transition: $transition-color;
+  max-width: 261px;
 
   &:hover {
     color: $color-primary;
@@ -254,7 +263,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 30px $container-padding-mobile 20px;
+  padding: 20px 0 30px;
 }
 
 .footer__academy-text {
@@ -268,14 +277,20 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  transition: $transition-opacity;
+  color: #bdbdbd; // Начальный цвет для всей ссылки
+  transition: color $transition-base; // Изменено с opacity на color
+
+  // Текст внутри ссылки наследует цвет от родителя
+  .footer__academy-text {
+    color: inherit;
+  }
 
   &:hover {
-    opacity: 0.7;
+    color: #7859CF; // Меняет цвет всей ссылки (текст + логотип)
   }
 
   &:active {
-    opacity: 0.5;
+    color: #593CAC; // Меняет цвет всей ссылки (текст + логотип)
   }
 }
 
@@ -290,7 +305,7 @@
 
 @media (min-width: $breakpoint-tablet) {
   .footer {
-    padding: 50px 0 30px;
+    padding: 42px 0 40px;
   }
 
   .footer__container {
@@ -310,7 +325,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 30px 40px;
+    gap: 30px;
     grid-template-areas:
       "brand brand brand"
       "nav2 nav1 contacts";
@@ -331,8 +346,9 @@
 
   .footer__logo {
     .logo__tagline {
-      margin-top: 10px;
-      font-size: $font-size-small-tablet;
+      font-size: 14px;
+        max-width: 318px;
+        overflow-wrap: anywhere;
     }
   }
 
@@ -368,21 +384,15 @@
     }
   }
 
-  .footer-nav__title {
-    font-size: $font-size-body-tablet;
-  }
 
   .footer-nav__link {
-    font-size: $font-size-body-tablet;
-  }
-
-  .contacts__title {
-    font-size: $font-size-body-tablet;
+    font-size: 12px;
   }
 
   .contacts__link {
-    font-size: $font-size-body-tablet;
+    max-width: 180px;
   }
+
 
   .footer__copyright {
     grid-area: copyright;
@@ -404,16 +414,16 @@
 
 @media (min-width: $breakpoint-desktop) {
   .footer {
-    padding: 60px 0 40px;
+    padding: 40px 0 40px;
   }
 
   .footer__container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    gap: 40px 0;
     grid-template-areas:
       "content"
       "copyright";
+      gap: 0;
   }
 
   // Обертка для верхнего контента
@@ -422,7 +432,7 @@
     display: grid;
     grid-template-columns: 280px 1fr 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 40px 60px;
+    gap: 0 30px;
     grid-template-areas:
       "brand nav2 nav1 contacts"
       "social . . .";
@@ -431,13 +441,9 @@
   .footer__brand {
     grid-area: brand;
     flex-direction: column;
+    row-gap: 50px;
   }
 
-  .footer__logo {
-    .logo__tagline {
-      font-size: $font-size-small-desktop;
-    }
-  }
 
   .footer__social {
     grid-area: social;
@@ -468,7 +474,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 0;
-    padding: 30px 0 0;
+    padding: 20px 0 0;
   }
 
   .footer__academy-text {
