@@ -1,6 +1,14 @@
 {
-  "name": "htmlacademy-gulp-template",
-  "version": "2.0.6",
+  "name": "drink2go-ecommerce",
+  "version": "1.0.0",
+  "description": "Pixel-perfect responsive e-commerce website for a coffee shop - HTML Academy graduation project",
+  "author": "Olga Gulyakevich <olga.gulyakevich@gmail.com>",
+  "homepage": "https://olgagulyakevich.github.io/drink2go-graduation/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OlgaGulyakevich/drink2go-shop.git"
+  },
+  "keywords": ["responsive", "e-commerce", "scss", "bem", "vanilla-javascript", "pixel-perfect", "gulp"],
   "private": true,
   "type": "module",
   "engines": {

@@ -4,21 +4,17 @@
 
 .catalog {
   padding-top: 50px;
-  padding-bottom: 44px;
+  padding-bottom: $section-padding-bottom-mobile;
   background-color: #f8f8f8;
-  min-height: 3760px;
-
 
   @media (min-width: 768px) {
     padding-top: 80px;
-    padding-bottom: 90px;
-    min-height: 2186px;
+    padding-bottom: $section-padding-bottom-tablet;
   }
 
   @media (min-width: 1440px) {
     padding-top: 100px;
-    padding-bottom: 120px;
-    min-height: 1448px;
+    padding-bottom: $section-padding-bottom-desktop;
   }
 }
 
