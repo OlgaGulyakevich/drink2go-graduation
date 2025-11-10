@@ -11,6 +11,7 @@
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
+  min-width: 0;
 
   &:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -27,6 +28,8 @@
   align-items: center;
   margin-bottom: 24px;
   min-height: 188px;
+  min-width: 0;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     margin-bottom: 30px;
@@ -39,12 +42,15 @@
   width: auto;
   height: auto;
   max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .card__content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .card__title {
@@ -55,6 +61,7 @@
   margin-bottom: 4px;
   overflow-wrap: break-word;
   word-break: break-word;
+  min-width: 0;
 
   @media (min-width: 768px) {
     font-size: 24px;
@@ -70,6 +77,7 @@
   margin-bottom: 16px;
   overflow-wrap: break-word;
   word-break: break-word;
+  min-width: 0;
 
   @media (min-width: 768px) {
     margin-bottom: 20px;
@@ -82,6 +90,7 @@
   justify-content: space-between;
   gap: 50px;
   margin-top: auto;
+  min-width: 0;
 
   @media (min-width: 768px) {
     gap: 50px;
@@ -94,6 +103,10 @@
   line-height: 160%;
   font-weight: 600;
   color: #333333;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
+  white-space: nowrap;
 }
 
 .card__button {
@@ -110,6 +123,7 @@
   line-height: 143%;
   background-color: #7859cf;
   min-width: 141px;
+  overflow-wrap: break-word;
 
 
   &:hover {
@@ -128,5 +142,6 @@
     width: 16px;
     height: 16px;
     fill: currentColor;
+    flex-shrink: 0;
   }
 }
