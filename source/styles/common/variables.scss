@@ -183,6 +183,11 @@ $spacing-4xl: 40px;                          // 4X Large
 $spacing-5xl: 50px;                          // 5X Large
 $spacing-6xl: 60px;                          // 6X Large
 
+// Вычисляемые значения (для избежания деления/умножения в SCSS)
+$spacing-xs-half: 2px;                       // $spacing-xs / 2
+$spacing-sm-double: 12px;                    // $spacing-sm * 2
+$spacing-md-double: 16px;                    // $spacing-md * 2
+
 // ------------------------------------------------------------
 // Контейнеры
 // ------------------------------------------------------------

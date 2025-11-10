@@ -229,7 +229,7 @@
   font-weight: $font-weight-bold;
   letter-spacing: $letter-spacing-normal;
   color: $color-primary;
-  margin-bottom: $spacing-sm * 2;
+  margin-bottom: $spacing-sm-double;
   min-width: 0;
   overflow-wrap: break-word;
 }
@@ -245,7 +245,7 @@
 .contacts__link {
   display: flex;
   align-items: flex-start;
-  gap: $spacing-md * 2;
+  gap: $spacing-md-double;
   font-size: $font-size-small-mobile;
   color: $color-text-muted;
   text-decoration: none;
@@ -268,7 +268,7 @@
   width: $footer-contact-icon-width;
   height: $footer-contact-icon-height;
   fill: currentColor;
-  margin-top: $spacing-xs / 2;
+  margin-top: $spacing-xs-half;
 }
 
 // ============================================

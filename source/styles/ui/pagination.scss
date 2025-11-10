@@ -26,7 +26,7 @@
   list-style: none;
 
   @media (min-width: $breakpoint-tablet) {
-    gap: $spacing-sm * 2;
+    gap: $spacing-sm-double;
   }
 }
 
