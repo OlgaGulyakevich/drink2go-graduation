@@ -8,7 +8,7 @@
   width: 100%;
   padding: 20px;
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease;
 
@@ -25,12 +25,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   min-height: 188px;
 
   @media (min-width: 768px) {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
+
 }
 
 .card__image {
@@ -43,31 +44,35 @@
 .card__content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   flex-grow: 1;
 }
 
 .card__title {
-  margin: 0;
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 178%;
   color: #333333;
+  margin-bottom: 4px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 
   @media (min-width: 768px) {
-    font-size: 20px;
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 10px;
   }
 }
 
 .card__description {
-  margin: 0;
   font-size: 14px;
-  line-height: 1.5;
   color: #666666;
   flex-grow: 1;
+  margin-bottom: 16px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 
   @media (min-width: 768px) {
-    font-size: 15px;
+    margin-bottom: 20px;
   }
 }
 
@@ -75,71 +80,53 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 50px;
   margin-top: auto;
-  padding-top: 16px;
-}
-
-.card__price {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.card__price-old {
-  font-size: 14px;
-  font-weight: 400;
-  color: #999999;
-  text-decoration: line-through;
 
   @media (min-width: 768px) {
-    font-size: 16px;
+    gap: 50px;
   }
 }
+
 
 .card__price-current {
   font-size: 20px;
-  font-weight: 700;
+  line-height: 160%;
+  font-weight: 600;
   color: #333333;
-
-  @media (min-width: 768px) {
-    font-size: 24px;
-  }
 }
 
 .card__button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 10px 16px;
+  gap: 6px;
+  padding: 8px 16px;
   flex-shrink: 0;
-
-  @media (min-width: 768px) {
-    padding: 12px 20px;
-  }
 }
 
 .button--cart {
+  font-size: 14px;
+  line-height: 143%;
   background-color: #7859cf;
+  min-width: 141px;
+
 
   &:hover {
-    background-color: #9075d9;
+    background-color: #9070ec;
   }
 
   &:active {
-    background-color: #6849b8;
+    background-color: #593cac;
+  }
+
+  &:disabled {
+    background-color: #bdbdbd;
   }
 
   .button__icon {
     width: 16px;
     height: 16px;
     fill: currentColor;
-  }
-
-  .button__text {
-    @media (max-width: 767px) {
-      display: none;
-    }
   }
 }
