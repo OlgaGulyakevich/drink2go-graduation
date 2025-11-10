@@ -24,6 +24,7 @@
   justify-content: space-between;
   padding: 0 0 20px;
   position: relative;
+  min-width: 0;
 
   // Линия на всю ширину экрана
   &::after {
@@ -44,6 +45,7 @@
   text-decoration: none;
   align-items: start;
   gap: 10px;
+  min-width: 0;
 
   // Переопределение отображения логотипов для footer
   .logo__image--mobile {
@@ -72,6 +74,7 @@
     color: #666666;
     line-height: 143%;
     letter-spacing: 0.02em;
+    min-width: 0;
   }
 }
 
@@ -81,6 +84,7 @@
 
 .footer__social {
   // margin-top убран, так как social теперь в одной линии с logo
+  min-width: 0;
 }
 
 .social__list {
@@ -100,6 +104,7 @@
   color: #bdbdbd;
   width: 40px;
   height: 40px;
+  flex-shrink: 0;
 }
 
 .social__link {
@@ -133,6 +138,7 @@
   flex-direction: column;
   padding: 20px 0;
   position: relative;
+  min-width: 0;
 
   // Линия на всю ширину экрана
   &::after {
@@ -153,12 +159,15 @@
   color: $color-primary;
   letter-spacing: 0.02em;
   margin-bottom: 20px;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .footer-nav__list {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
 }
 
 .footer-nav__item {
@@ -167,7 +176,8 @@ font-size: 12px;
 line-height: 133%;
 letter-spacing: 0.02em;
 text-transform: uppercase;
-color: #666666
+color: #666666;
+min-width: 0;
 }
 
 .footer-nav__link {
@@ -177,6 +187,9 @@ color: #666666
   color: #666666;
   text-decoration: none;
   transition: $transition-color;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 
   &:hover {
     color: $color-primary;
@@ -196,6 +209,7 @@ color: #666666
   flex-direction: column;
   padding: 20px 0;
   position: relative;
+  min-width: 0;
 
   // Линия на всю ширину экрана
   &::after {
@@ -216,6 +230,8 @@ color: #666666
   letter-spacing: 0.02em;
   color: $color-primary;
   margin-bottom: 12px;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .contacts__address {
@@ -223,6 +239,7 @@ color: #666666
   flex-direction: column;
   gap: 10px;
   font-style: normal;
+  min-width: 0;
 }
 
 .contacts__link {
@@ -233,6 +250,9 @@ color: #666666
   color: #666666;
   text-decoration: none;
   max-width: 261px;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 
   &:hover {
     color: $color-primary;
@@ -258,6 +278,7 @@ color: #666666
 // Обертка для контента (на mobile просто блок)
 .footer__content {
   display: contents; // Прозрачная обертка на mobile
+  min-width: 0;
 }
 
 .footer__copyright {
@@ -267,12 +288,15 @@ color: #666666
   flex-wrap: wrap;
   gap: 8px;
   padding: 20px 0 30px;
+  min-width: 0;
 }
 
 .footer__academy-text {
   font-size: $font-size-small-mobile;
   line-height: $line-height-normal;
   color: #bdbdbd;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .footer__academy {
@@ -282,6 +306,7 @@ color: #666666
   text-decoration: none;
   color: #bdbdbd; // Начальный цвет для всей ссылки
   transition: color $transition-base; // Изменено с opacity на color
+  min-width: 0;
 
   // Текст внутри ссылки наследует цвет от родителя
   .footer__academy-text {
@@ -332,6 +357,7 @@ color: #666666
     grid-template-areas:
       "brand brand brand"
       "nav2 nav1 contacts";
+    min-width: 0;
   }
 
   .footer__brand {
@@ -340,6 +366,7 @@ color: #666666
     align-items: flex-start;
     justify-content: space-between;
     padding: 0;
+    min-width: 0;
 
     // Убираем линию на tablet+
     &::after {
@@ -353,6 +380,7 @@ color: #666666
         max-width: 318px;
         overflow-wrap: anywhere;
         color: #666666;
+        min-width: 0;
     }
   }
 
@@ -363,7 +391,7 @@ color: #666666
 
   .footer__nav {
     padding: 0;
-
+    min-width: 0;
     // Убираем линии на tablet+
     &::after {
       display: none;
@@ -381,6 +409,7 @@ color: #666666
   .footer__contacts {
     grid-area: contacts;
     padding: 0;
+    min-width: 0;
 
     // Убираем линию на tablet+
     &::after {
@@ -424,10 +453,11 @@ color: #666666
   .footer__container {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
+    gap: 0;
     grid-template-areas:
       "content"
       "copyright";
-      gap: 0;
+
   }
 
   // Обертка для верхнего контента
@@ -440,6 +470,7 @@ color: #666666
     grid-template-areas:
       "brand nav2 nav1 contacts"
       "social . . .";
+    min-width: 0;
   }
 
   .footer__brand {
@@ -447,6 +478,7 @@ color: #666666
     flex-direction: column;
     row-gap: 40px;
     margin-bottom: 50px;
+    min-width: 0;
   }
 
 
