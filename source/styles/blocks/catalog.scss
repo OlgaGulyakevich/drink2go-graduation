@@ -108,19 +108,15 @@
 }
 
 .sort__label {
- font-weight: 600;
- font-size: 16px;
- line-height: 150%;
- color: #333333;
-
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #333333;
 }
 
 .sort__select {
-  width: 165px;
   min-width: 165px;
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   padding: 4px 32px 4px 10px;
   font-family: $font-family-primary;
   font-size: 16px;
@@ -130,17 +126,17 @@
   background: transparent url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.59 0.589844L6 5.16984L1.41 0.589844L0 1.99984L6 7.99984L12 1.99984L10.59 0.589844Z' fill='%237859cf'/%3E%3C/svg%3E") no-repeat right 10px center / 10px 10px;
   border: none;
   cursor: pointer;
-  transition: color $transition-base,
-              text-decoration $transition-base,
-              background-image $transition-base;
-              width: $transition-base;
+  transition:
+    color $transition-base,
+    text-decoration $transition-base,
+    background-image $transition-base;
+  width: $transition-base;
 
   &:hover {
     color: #7859cf;
     background-color: #f0ebff;
     border-radius: 4px;
     text-decoration: none;
-
   }
 
   &:focus-visible {
@@ -148,15 +144,15 @@
     text-decoration: none;
   }
 
-// Активное состояние (когда dropdown открыт) - стрелка вверх
-&:focus {
-  color: #7859cf;
-  text-decoration: none;
-  border-radius: 4px;
-  // Стрелка вверх (повернутая SVG)
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 7.41016L6 2.83016L10.59 7.41016L12 5.99984L6 -0.00015625L0 5.99984L1.41 7.41016Z' fill='%237859cf'/%3E%3C/svg%3E");
-  background-position: right 10px center;
-}
+  // Активное состояние (когда dropdown открыт) - стрелка вверх
+  &:focus {
+    color: #7859cf;
+    text-decoration: none;
+    border-radius: 4px;
+    // Стрелка вверх (повернутая SVG)
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41 7.41016L6 2.83016L10.59 7.41016L12 5.99984L6 -0.00015625L0 5.99984L1.41 7.41016Z' fill='%237859cf'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+  }
 
   &:disabled {
     color: $color-text-disabled;

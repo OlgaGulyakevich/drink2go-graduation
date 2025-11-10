@@ -47,10 +47,13 @@
   text-decoration: none;
   background-color: #ffffff;
   border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 
-  &:hover:not(&--current) {
-    color: #7859cf;;
+  &:hover:not(.pagination__link--current) {
+    color: #7859cf;
   }
 
   &:focus {
@@ -58,7 +61,7 @@
     outline-offset: 2px;
   }
 
-  &:active:not(&--current) {
+  &:active:not(.pagination__link--current) {
     background-color: transparent;
     color: #333333;
   }
@@ -75,25 +78,22 @@
     font-size: 16px;
     line-height: 150%;
     color: #7859cf;
-
-
   }
 
   @media (min-width: 768px) {
-      // Кнопка "Назад" (prev)
-  &--prev {
-    @media (min-width: 768px) {
-      min-width: 91px;
+    // Кнопка "Назад" (prev)
+    &--prev {
+      @media (min-width: 768px) {
+        min-width: 91px;
+      }
     }
-  }
 
-  // Кнопка "Вперед" (next)
-  &--next {
-    @media (min-width: 768px) {
-      min-width: 104px;
+    // Кнопка "Вперед" (next)
+    &--next {
+      @media (min-width: 768px) {
+        min-width: 104px;
+      }
     }
-  }
-
   }
 }
 

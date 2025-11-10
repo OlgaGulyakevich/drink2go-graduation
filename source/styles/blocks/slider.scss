@@ -123,7 +123,6 @@
     font-size: 20px;
     line-height: 160%;
     max-width: 608px;
-
   }
 
   @media (min-width: 1440px) {
@@ -342,21 +341,22 @@
   border: none;
   border-radius: 2px;
   cursor: pointer;
-  transition: background-color 0.3s ease,
-              transform 0.3s ease,
-              height 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    height 0.3s ease;
 
   // ============================================
   // HOVER STATE: rgba(120, 89, 207, 0.25)
   // ============================================
-  &:hover:not(&--active):not(:disabled) {
+  &:hover:not(.slider-pagination__button--active):not(:disabled) {
     background-color: rgba(120, 89, 207, 0.25);
   }
 
   // ============================================
   // FOCUS STATE: rgba(120, 89, 207, 0.25)
   // ============================================
-  &:focus-visible:not(&--active):not(:disabled) {
+  &:focus-visible:not(.slider-pagination__button--active):not(:disabled) {
     outline: 2px solid #7859cf;
     outline-offset: 2px;
     background-color: rgba(120, 89, 207, 0.25);

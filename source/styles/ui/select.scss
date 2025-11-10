@@ -9,8 +9,6 @@
 .select {
   // Reset
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 
   // Размеры и отступы
   width: 100%;
@@ -38,9 +36,10 @@
   cursor: pointer;
 
   // Переходы
-  transition: background-color $transition-base,
-              border-color $transition-base,
-              color $transition-base;
+  transition:
+    background-color $transition-base,
+    border-color $transition-base,
+    color $transition-base;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: $font-size-body-tablet;

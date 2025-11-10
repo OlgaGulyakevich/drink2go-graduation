@@ -14,8 +14,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 60px;
-  overflow-x: hidden; // Предотвращаем горизонтальный скролл
-  overflow-y: visible; // Позволяем мобильному меню выходить вниз
+  overflow: hidden visible; // Предотвращаем горизонтальный скролл // Позволяем мобильному меню выходить вниз
 
   @media (min-width: 768px) {
     min-height: 80px;
@@ -195,10 +194,7 @@
   .header__nav {
     display: block;
     position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 60px 0 0;
     background-color: #ffffff;
     padding: 0 20px;
     overflow-y: auto;

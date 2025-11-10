@@ -28,8 +28,7 @@ body {
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; // Предотвращаем горизонтальный скролл
-  overflow-y: auto; // Явно разрешаем вертикальную прокрутку
+  overflow: hidden auto; // Предотвращаем горизонтальный скролл // Явно разрешаем вертикальную прокрутку
   max-width: 100vw; // Ограничиваем ширину viewport
 
   /* Sticky footer */
@@ -113,4 +112,3 @@ button {
   white-space: nowrap;
   border: 0;
 }
-

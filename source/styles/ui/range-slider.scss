@@ -211,8 +211,8 @@
   text-align: center;
   font-weight: $font-weight-medium;
 
-   // Стиль для поля с нулевым значением
-   &[value="0"] {
+  // Стиль для поля с нулевым значением
+  &[value="0"] {
     color: #bdbdbd;
   }
 

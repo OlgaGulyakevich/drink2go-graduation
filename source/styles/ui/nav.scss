@@ -15,8 +15,7 @@
   list-style: none;
 
   @media (min-width: 768px) {
-    flex-direction: row;
-    flex-wrap: wrap; // Разрешаем перенос пунктов меню на новую строку
+    flex-flow: row wrap; // Разрешаем перенос пунктов меню на новую строку
     // gap: 32px;
     justify-content: center;
   }

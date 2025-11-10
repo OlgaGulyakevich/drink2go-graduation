@@ -8,14 +8,12 @@
 .range-slider__input {
   // Reset
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: textfield;
   margin: 0;
 
   // Убираем стрелки у number input
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    appearance: none;
     margin: 0;
   }
 
@@ -37,8 +35,9 @@
   border-radius: $input-border-radius;
 
   // Переходы
-  transition: border-color $transition-base,
-              box-shadow $transition-base;
+  transition:
+    border-color $transition-base,
+    box-shadow $transition-base;
 
   // Placeholder
   &::placeholder {
