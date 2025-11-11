@@ -1,4 +1,4 @@
-// Инициализация range-slider цены
+// Initialize price range slider
 const initPriceSlider = () => {
   const priceSlider = document.getElementById('price-slider');
   const minPriceInput = document.getElementById('price-min');
@@ -6,28 +6,28 @@ const initPriceSlider = () => {
 
   if (!priceSlider) return;
 
-  // Создаем slider
+  // Create slider
   noUiSlider.create(priceSlider, {
-    start: [0, 900], // Начальные значения
-    connect: true,    // Соединить handles
+    start: [0, 900], // Initial values
+    connect: true,    // Connect handles
     range: {
       'min': 0,
       'max': 1000
     },
-    step: 10,         // Шаг изменения
+    step: 10,         // Step increment
     format: {
       to: (value) => Math.round(value),
       from: (value) => Number(value)
     }
   });
 
-  // Обновление инпутов при изменении slider
+  // Update inputs when slider changes
   priceSlider.noUiSlider.on('update', (values) => {
     minPriceInput.value = values[0];
     maxPriceInput.value = values[1];
   });
 
-  // Обновление slider при изменении инпутов
+  // Update slider when inputs change
   minPriceInput.addEventListener('change', () => {
     priceSlider.noUiSlider.set([minPriceInput.value, null]);
   });
@@ -37,5 +37,5 @@ const initPriceSlider = () => {
   });
 };
 
-// Экспорт
+// Export
 export { initPriceSlider };

@@ -1,18 +1,18 @@
-/* в этот файл добавляет скрипты*/
+/* Main entry point for all scripts */
 
-// Бургер-меню
+// Mobile menu
 import initMenu from './menu.js';
 
-// Слайдер
+// Slider
 import initSlider from './slider.js';
 
-// Фильтры (Range-slider цены)
+// Filters (Price range slider)
 import { initPriceSlider } from './filters.js';
 
-// Навигация (Active link)
+// Navigation (Active link)
 import initNavigation from './nav.js';
 
-// Инициализация
+// Initialize all modules
 initMenu();
 initSlider();
 initPriceSlider();

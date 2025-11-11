@@ -81,14 +81,14 @@
   }
 
   @media (min-width: $breakpoint-tablet) {
-    // Кнопка "Назад" (prev)
+    // "Previous" button (prev)
     &--prev {
       @media (min-width: $breakpoint-tablet) {
         min-width: $pagination-button-prev-width-tablet;
       }
     }
 
-    // Кнопка "Вперед" (next)
+    // "Next" button (next)
     &--next {
       @media (min-width: $breakpoint-tablet) {
         min-width: $pagination-button-next-width-tablet;

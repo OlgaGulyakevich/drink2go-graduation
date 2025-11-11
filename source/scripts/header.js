@@ -1,13 +1,13 @@
 // ============================================================
 // Drink2Go - Header Mobile Menu Toggle
 // ============================================================
-// Управление открытием/закрытием мобильного меню
+// Manage mobile menu open/close functionality
 // ============================================================
 
 
 /**
- * Инициализирует функциональность мобильного меню в header
- * Переключает видимость меню и меняет иконку бургера на крестик
+ * Initialize mobile menu functionality in header
+ * Toggles menu visibility and changes burger icon to close icon
  * @returns {void}
  */
 const initMobileMenu = () => {
@@ -16,19 +16,19 @@ const initMobileMenu = () => {
   const nav = document.querySelector('.header__nav');
 
   if (!toggleButton || !nav) {
-    return; // Если элементы не найдены, выходим
+    return; // Exit if elements not found
   }
 
-  // Создаем контейнер для мобильного меню
+  // Create container for mobile menu
   const createMobileMenu = () => {
-    // Проверяем, не создан ли уже контейнер
+    // Check if container already exists
     let mobileMenu = document.querySelector('.header__mobile-menu');
 
     if (!mobileMenu) {
       mobileMenu = document.createElement('div');
       mobileMenu.classList.add('header__mobile-menu');
 
-      // Клонируем навигацию для мобильного меню
+      // Clone navigation for mobile menu
       const mobileNav = nav.cloneNode(true);
       mobileNav.classList.add('header__mobile-nav');
 
@@ -42,8 +42,8 @@ const initMobileMenu = () => {
   const mobileMenu = createMobileMenu();
 
   /**
-   * Переключает состояние мобильного меню (открыто/закрыто)
-   * Меняет иконку бургера на крестик и обратно
+   * Toggle mobile menu state (open/closed)
+   * Changes burger icon to close icon and back
    * @returns {void}
    */
   const toggleMenu = () => {
@@ -51,24 +51,24 @@ const initMobileMenu = () => {
     const toggleIcon = toggleButton.querySelector('.header__toggle-icon use');
 
     if (isOpen) {
-      // Закрываем меню
+      // Close menu
       toggleButton.classList.remove('header__toggle--open');
       mobileMenu.classList.remove('header__mobile-menu--open');
-      toggleButton.setAttribute('aria-label', 'Открыть меню');
+      toggleButton.setAttribute('aria-label', 'Open menu');
       toggleIcon.setAttribute('href', 'icons/stack.svg#menu');
-      document.body.style.overflow = ''; // Разрешаем скролл
+      document.body.style.overflow = ''; // Allow scroll
     } else {
-      // Открываем меню
+      // Open menu
       toggleButton.classList.add('header__toggle--open');
       mobileMenu.classList.add('header__mobile-menu--open');
-      toggleButton.setAttribute('aria-label', 'Закрыть меню');
+      toggleButton.setAttribute('aria-label', 'Close menu');
       toggleIcon.setAttribute('href', 'icons/stack.svg#close');
-      document.body.style.overflow = 'hidden'; // Блокируем скролл
+      document.body.style.overflow = 'hidden'; // Block scroll
     }
   };
 
   /**
-   * Закрывает мобильное меню при клике на ссылку
+   * Close mobile menu on link click
    * @returns {void}
    */
   const handleLinkClick = () => {
@@ -78,7 +78,7 @@ const initMobileMenu = () => {
   };
 
   /**
-   * Закрывает меню при изменении размера окна (переход на desktop)
+   * Close menu on window resize (transition to desktop)
    * @returns {void}
    */
   const handleResize = () => {
@@ -90,16 +90,16 @@ const initMobileMenu = () => {
   // Event listeners
   toggleButton.addEventListener('click', toggleMenu);
 
-  // Закрываем меню при клике на любую ссылку внутри
+  // Close menu on click on any link inside
   const menuLinks = mobileMenu.querySelectorAll('.nav__link');
   menuLinks.forEach((link) => {
     link.addEventListener('click', handleLinkClick);
   });
 
-  // Закрываем меню при изменении размера окна
+  // Close menu on window resize
   window.addEventListener('resize', handleResize);
 
-  // Accessibility: закрываем меню по Escape
+  // Accessibility: close menu on Escape
   document.addEventListener('keydown', (evt) => {
     if (evt.key === 'Escape' && toggleButton.classList.contains('header__toggle--open')) {
       toggleMenu();

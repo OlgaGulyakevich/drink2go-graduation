@@ -74,7 +74,8 @@ drink2go-shop/
 │   ├── images/           # Optimized images (WebP + PNG)
 │   ├── icons/            # SVG icons (compiled to sprite)
 │   ├── fonts/            # Web fonts (Montserrat)
-│   └── index.html        # Main page
+│   ├── index.html        # Main page
+│   └── 404.html          # Error 404 page
 ├── build/                # Production build (generated)
 ├── raw/                  # Raw assets (not committed)
 └── gulpfile.js           # Gulp configuration

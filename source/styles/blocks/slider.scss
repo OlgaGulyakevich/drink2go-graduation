@@ -4,7 +4,7 @@
 
 .slider {
   position: relative;
-  overflow: hidden; // Предотвращаем переполнение контента
+  overflow: hidden; // Prevent content overflow
 }
 
 /* ============================================
@@ -13,7 +13,7 @@
 
 .slider__slide {
   display: none;
-  min-width: 0; // Разрешаем сжиматься в flex-контексте
+  min-width: 0; // Allow shrinking in flex context
 
   &--active {
     display: block;
@@ -57,18 +57,18 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  order: 1; /* Контент после картинки на mobile */
-  min-width: 0; // КРИТИЧНО: разрешаем сжиматься, чтобы текст переносился
+  order: 1; /* Content after image on mobile */
+  min-width: 0; // CRITICAL: allow shrinking so text wraps
 
   @media (min-width: 768px) {
-    order: -1; /* Контент сверху на tablet */
+    order: -1; /* Content on top on tablet */
   }
 
   @media (min-width: 1440px) {
     align-items: flex-start;
     text-align: left;
     max-width: 600px;
-    order: 0; /* Контент слева на desktop */
+    order: 0; /* Content on left on desktop */
   }
 }
 
@@ -182,15 +182,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  order: 0; /* Картинка первая на mobile */
-  min-width: 0; // Разрешаем сжиматься в flex-контексте
+  order: 0; /* Image first on mobile */
+  min-width: 0; // Allow shrinking in flex context
 
   @media (min-width: 768px) {
-    order: 0; /* Картинка внизу на tablet */
+    order: 0; /* Image at bottom on tablet */
   }
 
   @media (min-width: 1440px) {
-    order: 0; /* Картинка справа на desktop */
+    order: 0; /* Image on right on desktop */
   }
 
   img {
@@ -233,12 +233,12 @@
     width: 80px;
   }
 
-  // Используем color для управления цветом SVG через currentColor
+  // Use color to control SVG color via currentColor
   color: #7859cf;
   transition: background 0.3s ease, color 0.3s ease;
 
   svg {
-    // currentColor наследует цвет от родителя (button)
+    // currentColor inherits color from parent (button)
     fill: currentColor;
     width: 16px;
     height: 16px;
@@ -277,7 +277,7 @@
     cursor: not-allowed;
     pointer-events: none;
     background-color: transparent;
-    color: #bdbdbd; // ✅ Меняем color, SVG подхватит через currentColor
+    color: #bdbdbd; // Change color, SVG will inherit via currentColor
   }
 
   @media (min-width: 768px) {
@@ -298,7 +298,7 @@
 .slider__button-prev {
   left: 0;
 
-  // Градиент в обратную сторону для левой кнопки
+  // Reverse gradient for left button
   &:hover:not(:disabled),
   &:focus-visible:not(:disabled) {
     background: linear-gradient(90deg, rgba(120, 89, 207, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
@@ -320,7 +320,7 @@
 .slider__pagination {
   display: none;
 
-  // Показываем пагинацию ТОЛЬКО на desktop
+  // Show pagination ONLY on desktop
   @media (min-width: 1440px) {
     display: flex;
     justify-content: center;
@@ -363,7 +363,7 @@
   }
 
   // ============================================
-  // ACTIVE STATE (текущий слайд)
+  // ACTIVE STATE (current slide)
   // ============================================
   &--active {
     height: 4px;
@@ -372,7 +372,7 @@
   }
 
   // ============================================
-  // DISABLED STATE: #7859cf с opacity 0.26
+  // DISABLED STATE: #7859cf with opacity 0.26
   // ============================================
   &:disabled {
     background-color: #7859cf;

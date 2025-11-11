@@ -23,7 +23,7 @@
     <header class="header" data-test="header">
       <div class="header__container container">
 
-        <!-- Логотип -->
+        <!-- Logo -->
         <a class="header__logo logo" href="index.html" aria-label="Drink2Go - Главная страница">
           <svg class="logo__image logo__image--mobile" width="32" height="36" aria-hidden="true">
             <use href="icons/stack.svg#logo-mobile"></use>
@@ -37,7 +37,7 @@
           <span class="logo__tagline">Интернет-магазин кофейных напитков</span>
         </a>
 
-        <!-- Навигация (Desktop/Tablet) -->
+        <!-- Navigation (Desktop/Tablet) -->
         <nav class="header__nav nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -55,7 +55,7 @@
           </ul>
         </nav>
 
-        <!-- Иконки пользователя и корзины -->
+        <!-- User and cart icons -->
         <div class="header__user-nav user-nav">
           <a class="user-nav__link user-nav__link--user" href="#login" aria-label="Войти в личный кабинет">
             <svg class="user-nav__icon" width="16" height="16">
@@ -71,7 +71,7 @@
           </a>
         </div>
 
-        <!-- Кнопка бургер-меню (Mobile/Tablet) -->
+        <!-- Burger menu button (Mobile/Tablet) -->
         <button class="header__toggle js-toggle-button" type="button" aria-label="Открыть меню">
           <span class="visually-hidden">Открыть меню</span>
           <svg class="header__toggle-icon" width="16" height="16">
@@ -95,7 +95,7 @@
 
         <div class="hero__slider slider">
 
-          <!-- Слайд 1: Декаф Флэт Уайт -->
+          <!-- Slide 1: Decaf Flat White -->
           <div class="slider__slide slider__slide--active">
             <div class="slider__container container">
               <div class="slider__content">
@@ -158,7 +158,7 @@
             </div>
           </div>
 
-          <!-- Слайд 2: Лавандовый Латте -->
+          <!-- Slide 2: Lavender Latte -->
           <div class="slider__slide">
             <div class="slider__container container">
               <div class="slider__content">
@@ -221,7 +221,7 @@
             </div>
           </div>
 
-          <!-- Слайд 3: Тройной Эспрессо -->
+          <!-- Slide 3: Triple Espresso -->
           <div class="slider__slide">
             <div class="slider__container container">
               <div class="slider__content">
@@ -284,7 +284,7 @@
             </div>
           </div>
 
-          <!-- Кнопки навигации -->
+          <!-- Navigation buttons -->
           <button class="slider__button-prev slider-button-prev" type="button" aria-label="Предыдущий слайд">
             <svg width="11" height="20">
               <use href="icons/stack.svg#arrow-left"></use>
@@ -296,7 +296,7 @@
             </svg>
           </button>
 
-          <!-- Пагинация (Desktop only) -->
+          <!-- Pagination (Desktop only) -->
           <div class="slider__pagination slider-pagination">
             <button class="slider-pagination__button slider-pagination__button--active" type="button" aria-label="Слайд 1"></button>
             <button class="slider-pagination__button" type="button" aria-label="Слайд 2"></button>
@@ -315,7 +315,7 @@
           <h2 class="features__title">Главные причины выбрать Drink2Go</h2>
 
           <ul class="features__list">
-            <!-- Преимущество 1: Скорость -->
+            <!-- Advantage 1: Speed -->
             <li class="features__item feature-card">
               <svg class="feature-card__icon" width="52" height="56" aria-hidden="true">
                 <use href="icons/stack.svg#feature-speed"></use>
@@ -324,7 +324,7 @@
               <p class="feature-card__description">Готовый напиток всегда под рукой — просто открой банку</p>
             </li>
 
-            <!-- Преимущество 2: Удобство -->
+            <!-- Advantage 2: Convenience -->
             <li class="features__item feature-card">
               <svg class="feature-card__icon" width="52" height="56" aria-hidden="true">
                 <use href="icons/stack.svg#feature-fit"></use>
@@ -333,7 +333,7 @@
               <p class="feature-card__description">Легко помещается и в карман, <br>и в маленькую сумочку</p>
             </li>
 
-            <!-- Преимущество 3: Бодрость -->
+            <!-- Advantage 3: Energy -->
             <li class="features__item feature-card">
               <svg class="feature-card__icon" width="52" height="56" aria-hidden="true">
                 <use href="icons/stack.svg#feature-energy"></use>
@@ -342,7 +342,7 @@
               <p class="feature-card__description">Сбалансированная доза кофеина даст мощный заряд энергии</p>
             </li>
 
-            <!-- Преимущество 4: Экологичность -->
+            <!-- Advantage 4: Eco-friendliness -->
             <li class="features__item feature-card">
               <svg class="feature-card__icon" width="52" height="56" aria-hidden="true">
                 <use href="icons/stack.svg#feature-eco"></use>
@@ -365,13 +365,13 @@
           <div class="catalog__wrapper">
 
             <!-- ============================================ -->
-            <!-- SIDEBAR: Форма фильтров -->
+            <!-- SIDEBAR: Filters form -->
             <!-- ============================================ -->
             <aside class="catalog__filters filters">
               <h3 class="visually-hidden">Фильтры товаров</h3>
               <form class="filters__form" action="https://echo.htmlacademy.ru" method="POST">
 
-                <!-- Цена -->
+                <!-- Price -->
                 <fieldset class="filters__group">
                   <legend class="filters__legend">Цена</legend>
                   <div class="filters__range range-slider">
@@ -392,7 +392,7 @@
                   </div>
                 </fieldset>
 
-                <!-- Наличие молока -->
+                <!-- Milk availability -->
                 <fieldset class="filters__group">
                   <legend class="filters__legend">Наличие молока</legend>
                   <ul class="filters__list">
@@ -427,7 +427,7 @@
                   </ul>
                 </fieldset>
 
-                <!-- Страна произрастания -->
+                <!-- Country of origin -->
                 <fieldset class="filters__group">
                   <legend class="filters__legend">Страна произрастания</legend>
                   <ul class="filters__list">
@@ -469,7 +469,7 @@
                   </ul>
                 </fieldset>
 
-                <!-- Кнопки -->
+                <!-- Buttons -->
                 <div class="filters__buttons">
                   <button class="filters__button button button--primary" type="submit" aria-label="Применить фильтры">Применить</button>
                   <button class="filters__button button button--secondary" type="reset" aria-label="Сбросить фильтры">Сбросить</button>
@@ -479,11 +479,11 @@
             </aside>
 
             <!-- ============================================ -->
-            <!-- MAIN: Товары -->
+            <!-- MAIN: Products -->
             <!-- ============================================ -->
             <div class="catalog__main">
 
-              <!-- Сортировка -->
+              <!-- Sorting -->
               <div class="catalog__sort sort">
                 <label class="sort__label" for="sort-select">Сортировка:</label>
                 <select class="sort__select" id="sort-select" name="sort">
@@ -494,10 +494,10 @@
                 </select>
               </div>
 
-              <!-- Список товаров -->
+              <!-- List of products -->
               <ul class="catalog__list">
 
-                <!-- Товар 1 -->
+                <!-- Product 1 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -533,7 +533,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 2 -->
+                <!-- Product 2 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -569,7 +569,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 3 -->
+                <!-- Product 3 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -605,7 +605,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 4 -->
+                <!-- Product 4 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -641,7 +641,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 5 -->
+                <!-- Product 5 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -677,7 +677,7 @@
                   </article>
                 </li>
 
-                <!-- Товар 6 -->
+                <!-- Product 6 -->
                 <li class="catalog__item">
                   <article class="card">
                     <picture class="card__image-wrapper">
@@ -715,7 +715,7 @@
 
               </ul>
 
-              <!-- Пагинация -->
+              <!-- Pagination -->
               <div class="catalog__pagination pagination">
                 <ul class="pagination__list">
                   <li class="pagination__item">
@@ -759,7 +759,7 @@
         <h2 class="visually-hidden">Контактная информация</h2>
 
         <div class="map__wrapper">
-          <!-- Статичное изображение карты -->
+          <!-- Static map image -->
           <picture class="map__image-wrapper">
             <!-- Desktop -->
             <source
@@ -805,7 +805,7 @@
               loading="lazy">
           </picture>
 
-          <!-- Иконка с пином -->
+          <!-- Pin icon -->
             <div class="map__pin">
               <svg class="map__pin-icon" width="38" height="50" aria-hidden="true">
                 <use href="icons/stack.svg#pin"></use>
@@ -823,10 +823,10 @@
     <footer class="footer" data-test="footer">
       <div class="footer__container container">
 
-        <!-- Обертка для верхней части footer (brand, nav, contacts) -->
+        <!-- Wrapper for the top part of the footer (brand, nav, contacts) -->
         <div class="footer__content">
 
-        <!-- Логотип и социальные сети -->
+        <!-- Logo and social networks -->
         <div class="footer__brand">
           <a class="footer__logo logo" href="index.html" aria-label="Drink2Go - Главная страница">
             <svg class="logo__image logo__image--mobile" width="32" height="36" aria-hidden="true">
@@ -841,7 +841,7 @@
             <span class="logo__tagline">Интернет-магазин кофейных напитков</span>
           </a>
 
-          <!-- Социальные сети -->
+          <!-- Social networks -->
           <div class="footer__social social">
             <h2 class="visually-hidden">Мы в соцсетях</h2>
             <ul class="social__list">
@@ -870,7 +870,7 @@
           </div>
         </div>
 
-        <!-- Навигация: Интернет-магазин -->
+        <!-- Navigation: Online store -->
         <div class="footer__nav footer-nav">
           <h2 class="footer-nav__title">Интернет-магазин</h2>
           <ul class="footer-nav__list">
@@ -889,7 +889,7 @@
           </ul>
         </div>
 
-        <!-- Навигация: Медиа -->
+        <!-- Navigation: Media -->
         <div class="footer__nav footer-nav">
           <h2 class="footer-nav__title">Медиа</h2>
           <ul class="footer-nav__list">
@@ -905,7 +905,7 @@
           </ul>
         </div>
 
-        <!-- Контакты -->
+        <!-- Contacts-->
         <div class="footer__contacts contacts">
           <h2 class="contacts__title">Контакты</h2>
           <address class="contacts__address">
@@ -924,7 +924,7 @@
           </address>
         </div>
 
-        </div><!-- /.footer__content -->
+        </div>
 
         <!-- HTML Academy -->
         <div class="footer__copyright">

@@ -1,6 +1,6 @@
 /**
- * Бургер-меню (Mobile/Tablet)
- * Переключение видимости навигации
+ * Mobile menu (Mobile/Tablet)
+ * Toggle navigation visibility
  */
 
 const initMenu = () => {
@@ -10,22 +10,22 @@ const initMenu = () => {
   const nav = document.querySelector('.header__nav');
 
   if (!toggleButton || !header || !nav) {
-    return; // Если элементы не найдены, выходим
+    return; // Exit if elements not found
   }
 
-  // Состояние меню
+  // Menu state
   let isMenuOpen = false;
 
   /**
-   * Открыть меню
+   * Open menu
    */
   const openMenu = () => {
     isMenuOpen = true;
     header.classList.add('header--menu-open');
     body.classList.add('menu-open');
-    toggleButton.setAttribute('aria-label', 'Закрыть меню');
+    toggleButton.setAttribute('aria-label', 'Close menu');
 
-    // Меняем иконку с menu на close
+    // Change icon from menu to close
     const icon = toggleButton.querySelector('use');
     if (icon) {
       icon.setAttribute('href', 'icons/stack.svg#close');
@@ -33,15 +33,15 @@ const initMenu = () => {
   };
 
   /**
-   * Закрыть меню
+   * Close menu
    */
   const closeMenu = () => {
     isMenuOpen = false;
     header.classList.remove('header--menu-open');
     body.classList.remove('menu-open');
-    toggleButton.setAttribute('aria-label', 'Открыть меню');
+    toggleButton.setAttribute('aria-label', 'Open menu');
 
-    // Меняем иконку с close на menu
+    // Change icon from close to menu
     const icon = toggleButton.querySelector('use');
     if (icon) {
       icon.setAttribute('href', 'icons/stack.svg#menu');
@@ -49,7 +49,7 @@ const initMenu = () => {
   };
 
   /**
-   * Переключить меню
+   * Toggle menu
    */
   const toggleMenu = () => {
     if (isMenuOpen) {
@@ -60,12 +60,12 @@ const initMenu = () => {
   };
 
   /**
-   * Обработчик клика на кнопку бургера
+   * Burger button click handler
    */
   toggleButton.addEventListener('click', toggleMenu);
 
   /**
-   * Закрытие меню по клавише ESC
+   * Close menu on ESC key
    */
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && isMenuOpen) {
@@ -74,8 +74,8 @@ const initMenu = () => {
   });
 
   /**
-   * Закрытие меню при изменении размера окна (desktop)
-   * На desktop бургер-меню скрыто, поэтому закрываем меню автоматически
+   * Close menu on window resize (desktop)
+   * On desktop burger menu is hidden, so close menu automatically
    */
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 1440 && isMenuOpen) {
@@ -84,7 +84,7 @@ const initMenu = () => {
   });
 
   /**
-   * Закрытие меню при клике на ссылку в навигации (для mobile)
+   * Close menu on navigation link click (for mobile)
    */
   const navLinks = nav.querySelectorAll('.nav__link');
   navLinks.forEach((link) => {
@@ -96,7 +96,7 @@ const initMenu = () => {
   });
 };
 
-// Инициализация при загрузке DOM
+// Initialize on DOM load
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initMenu);
 } else {

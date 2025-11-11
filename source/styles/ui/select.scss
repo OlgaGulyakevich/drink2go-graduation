@@ -1,8 +1,8 @@
 // ============================================================
 // SELECT (Custom Styled Dropdown)
 // ============================================================
-// Кастомный select для сортировки
-// Состояния: default, hover, focus, active (open), disabled
+// Custom select for sorting
+// States: default, hover, focus, active (open), disabled
 // ============================================================
 
 .catalog__sorting-select,
@@ -10,13 +10,13 @@
   // Reset
   appearance: none;
 
-  // Размеры и отступы
+  // Sizes and padding
   width: 100%;
   min-width: 200px;
   height: 46px;
   padding: 10px 40px 10px 16px;
 
-  // Типографика
+  // Typography
   font-family: $font-family-primary;
   font-size: $font-size-body-mobile;
   font-weight: $font-weight-regular;
@@ -24,7 +24,7 @@
   color: $color-primary;
   text-align: left;
 
-  // Внешний вид
+  // Appearance
   background-color: $color-bg-primary;
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10.6667L4 6.66667H12L8 10.6667Z' fill='%237859cf'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -35,7 +35,7 @@
   border-radius: $input-border-radius;
   cursor: pointer;
 
-  // Переходы
+  // Transitions
   transition:
     background-color $transition-base,
     border-color $transition-base,
@@ -54,7 +54,7 @@
   // HOVER STATE
   // ============================================
   &:hover:not(:disabled) {
-    background-color: $color-primary-light; // Светло-фиолетовый
+    background-color: $color-primary-light; // Light purple
     border-color: transparent;
   }
 
@@ -68,12 +68,12 @@
   }
 
   // ============================================
-  // ACTIVE/OPEN STATE (когда dropdown открыт)
+  // ACTIVE/OPEN STATE (when dropdown is open)
   // ============================================
   &:active,
   &[aria-expanded="true"] {
     background-color: $color-primary-light;
-    // Стрелка вверх
+    // Arrow up
     background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 5.33333L12 9.33333H4L8 5.33333Z' fill='%237859cf'/%3E%3C/svg%3E");
   }
 
@@ -90,7 +90,7 @@
 }
 
 // ============================================
-// OPTIONS (нативные опции select)
+// OPTIONS (native select options)
 // ============================================
 .catalog__sorting-select option,
 .select option {

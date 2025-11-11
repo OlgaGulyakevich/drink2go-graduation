@@ -1,15 +1,15 @@
 // ============================================================
 // RADIO BUTTON (Custom Styled)
 // ============================================================
-// Кастомные радиокнопки для фильтров
-// Состояния: default, hover, focus, checked, disabled
+// Custom radio buttons for filters
+// States: default, hover, focus, checked, disabled
 // ============================================================
 
-// Label уже определен в checkbox.scss, используем ту же структуру
-// .filters__label - общий для radio и checkbox
+// Label already defined in checkbox.scss, use same structure
+// .filters__label - shared for radio and checkbox
 
 .filters__radio {
-  // Скрываем нативный radio
+  // Hide native radio
   position: absolute;
   width: 1px;
   height: 1px;
@@ -22,7 +22,7 @@
 }
 
 // ============================================
-// КАСТОМНАЯ РАДИОКНОПКА (::before)
+// CUSTOM RADIO BUTTON (::before)
 // ============================================
 .filters__radio-mark {
   position: relative;
@@ -33,7 +33,7 @@
   height: $radio-size;
   flex-shrink: 0;
 
-  // Кастомный круг радиокнопки
+  // Custom radio button circle
   &::before {
     content: "";
     position: absolute;
@@ -48,7 +48,7 @@
       background-color $transition-base;
   }
 
-  // Внутренняя точка (изначально скрыта)
+  // Inner dot (initially hidden)
   &::after {
     content: "";
     position: relative;
@@ -86,16 +86,16 @@
 // CHECKED STATE
 // ============================================
 .filters__radio:checked + .filters__radio-mark {
-  // Рамка остается прежней (не меняется)
+  // Border remains unchanged
   &::before {
     border-color: $radio-border-checked;
   }
 
-  // Точка появляется (фиолетовая)
+  // Dot appears (purple)
   &::after {
     opacity: 1;
     transform: scale(1);
-    background-color: $radio-bg-checked; // Фиолетовая точка
+    background-color: $radio-bg-checked; // Purple dot
   }
 }
 
@@ -126,6 +126,6 @@
 }
 
 // ============================================
-// LABEL TEXT (уже определен в checkbox.scss)
+// LABEL TEXT (already defined in checkbox.scss)
 // ============================================
-// .filters__label-text - используется общий стиль
+// .filters__label-text - uses shared style

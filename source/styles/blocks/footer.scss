@@ -26,7 +26,7 @@
   position: relative;
   min-width: 0;
 
-  // Линия на всю ширину экрана
+  // Full-width line
   &::after {
     content: "";
     position: absolute;
@@ -34,7 +34,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    height: 1px; // Тонкая линия-разделитель
+    height: 1px; // Thin separator line
     background-color: $color-border-secondary;
   }
 }
@@ -47,24 +47,24 @@
   gap: $spacing-lg;
   min-width: 0;
 
-  // Переопределение отображения логотипов для footer
+  // Override logo display for footer
   .logo__image--mobile {
-    display: none; // Скрываем mobile версию в footer
+    display: none; // Hide mobile version in footer
   }
 
   .logo__image--tablet {
-    display: block; // На mobile показываем tablet версию (82x36)
+    display: block; // Show tablet version on mobile (82x36)
 
     @media (min-width: $breakpoint-tablet) {
-      display: none; // На tablet+ скрываем
+      display: none; // Hide on tablet+
     }
   }
 
   .logo__image--desktop {
-    display: none; // На mobile скрываем
+    display: none; // Hide on mobile
 
     @media (min-width: $breakpoint-tablet) {
-      display: block; // На tablet+ показываем desktop версию (170x36)
+      display: block; // Show desktop version on tablet+ (170x36)
       gap: $spacing-md;
     }
   }
@@ -83,7 +83,7 @@
 // ============================================
 
 .footer__social {
-  // margin-top убран, так как social теперь в одной линии с logo
+  // margin-top removed, as social is now in same line with logo
   min-width: 0;
 }
 
@@ -110,8 +110,8 @@
 .social__link {
   display: inline-flex;
   text-decoration: none;
-  color: $color-text-disabled; // Начальный цвет
-  transition: color $transition-base; // Изменено с opacity на color
+  color: $color-text-disabled; // Initial color
+  transition: color $transition-base; // Changed from opacity to color
 
   &:hover {
     color: $color-primary;
@@ -124,7 +124,7 @@
 
 .social__icon {
   display: block;
-  fill: currentColor; // Наследует цвет от родителя
+  fill: currentColor; // Inherits color from parent
   width: 100%;
   height: 100%;
 }
@@ -140,7 +140,7 @@
   position: relative;
   min-width: 0;
 
-  // Линия на всю ширину экрана
+  // Full-width line
   &::after {
     content: "";
     position: absolute;
@@ -148,7 +148,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    height: 1px; // Тонкая линия-разделитель
+    height: 1px; // Thin separator line
     background-color: $color-border-secondary;
   }
 }
@@ -211,7 +211,7 @@
   position: relative;
   min-width: 0;
 
-  // Линия на всю ширину экрана
+  // Full-width line
   &::after {
     content: "";
     position: absolute;
@@ -219,7 +219,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    height: 1px; // Тонкая линия-разделитель
+    height: 1px; // Thin separator line
     background-color: $color-border-secondary;
   }
 }
@@ -275,9 +275,9 @@
 // COPYRIGHT
 // ============================================
 
-// Обертка для контента (на mobile просто блок)
+// Content wrapper (on mobile just a block)
 .footer__content {
-  display: contents; // Прозрачная обертка на mobile
+  display: contents; // Transparent wrapper on mobile
   min-width: 0;
 }
 
@@ -304,21 +304,21 @@
   align-items: center;
   gap: $spacing-md;
   text-decoration: none;
-  color: $color-text-disabled; // Начальный цвет для всей ссылки
-  transition: color $transition-base; // Изменено с opacity на color
+  color: $color-text-disabled; // Initial color for entire link
+  transition: color $transition-base; // Changed from opacity to color
   min-width: 0;
 
-  // Текст внутри ссылки наследует цвет от родителя
+  // Text inside link inherits color from parent
   .footer__academy-text {
     color: inherit;
   }
 
   &:hover {
-    color: $color-primary; // Меняет цвет всей ссылки (текст + логотип)
+    color: $color-primary; // Changes color of entire link (text + logo)
   }
 
   &:active {
-    color: $color-primary-active; // Меняет цвет всей ссылки (текст + логотип)
+    color: $color-primary-active; // Changes color of entire link (text + logo)
   }
 }
 
@@ -345,7 +345,7 @@
     padding: 0 $container-padding-tablet;
   }
 
-  // Обертка для верхнего контента
+  // Top content wrapper
   .footer__content {
     grid-area: content;
     display: grid;
@@ -364,7 +364,7 @@
     padding: 0;
     min-width: 0;
 
-    // Убираем линию на tablet+
+    // Remove line on tablet+
     &::after {
       display: none;
     }
@@ -388,7 +388,7 @@
   .footer__nav {
     padding: 0;
     min-width: 0;
-    // Убираем линии на tablet+
+    // Remove lines on tablet+
     &::after {
       display: none;
     }
@@ -407,7 +407,7 @@
     padding: 0;
     min-width: 0;
 
-    // Убираем линию на tablet+
+    // Remove line on tablet+
     &::after {
       display: none;
     }
@@ -453,7 +453,7 @@
     gap: 0;
   }
 
-  // Обертка для верхнего контента
+  // Top content wrapper
   .footer__content {
     grid-area: content;
     display: grid;

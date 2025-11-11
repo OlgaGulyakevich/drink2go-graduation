@@ -1,7 +1,7 @@
 // ============================================================
-// CHECKBOX → TOGGLE SWITCH (переключатель-капля)
+// CHECKBOX → TOGGLE SWITCH (toggle-drop)
 // ============================================================
-// Кастомные toggle switches для фильтров (default, hover, focus, checked, disabled)
+// Custom toggle switches for filters (default, hover, focus, checked, disabled)
 // ============================================================
 
 .filters__checkbox {
@@ -20,25 +20,25 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: 44px; // Ширина переключателя
-  height: 24px; // Высота переключателя
+  width: 44px; // Toggle width
+  height: 24px; // Toggle height
   flex-shrink: 0;
-  border-radius: 12px; // Полностью скругленный
-  background-color: #bdbdbd; // Серый фон для выключенного состояния
+  border-radius: 12px; // Fully rounded
+  background-color: #bdbdbd; // Gray background for unchecked state
   border: none;
   transition:
     background-color $transition-base,
     box-shadow $transition-base;
 
-  // Кружок-переключатель (капля)
+  // Toggle circle (drop)
   &::after {
     content: "";
     position: absolute;
-    left: 2px; // Отступ от края
+    left: 2px; // Offset from edge
     top: 2px;
     width: 20px;
     height: 20px;
-    border-radius: 50%; // Круглый
+    border-radius: 50%; // Round
     background-color: #ffffff;
     transition:
       transform $transition-base,
@@ -46,9 +46,9 @@
   }
 }
 
-// HOVER STATE (не checked)
+// HOVER STATE (not checked)
 .filters__checkbox:not(:disabled):not(:checked):hover + .filters__checkbox-mark {
-  background-color: #a89bce; // Чуть светлее серого
+  background-color: #a89bce; // Slightly lighter gray
   box-shadow: 0 0 0 2px rgba(120, 89, 207, 0.12);
 }
 
@@ -58,23 +58,23 @@
   outline-offset: 2px;
 }
 
-// CHECKED STATE (включен)
+// CHECKED STATE (enabled)
 .filters__checkbox:checked + .filters__checkbox-mark {
-  background-color: #7859cf; // Фиолетовый фон
+  background-color: #7859cf; // Purple background
 
-  // Сдвигаем кружок вправо
+  // Move circle to right
   &::after {
-    transform: translateX(20px); // Сдвиг на 20px (44 - 20 - 4)
+    transform: translateX(20px); // Shift by 20px (44 - 20 - 4)
   }
 }
 
 // CHECKED + HOVER
 .filters__checkbox:checked:not(:disabled):hover + .filters__checkbox-mark {
-  background-color: #9070ec; // Светлее фиолетовый при hover
+  background-color: #9070ec; // Lighter purple on hover
   box-shadow: 0 0 0 2px rgba(120, 89, 207, 0.12);
 }
 
-// DISABLED STATE (выключен)
+// DISABLED STATE (unchecked)
 .filters__checkbox:disabled + .filters__checkbox-mark {
   background-color: #e0e0e0;
   cursor: not-allowed;
@@ -85,7 +85,7 @@
   }
 }
 
-// DISABLED STATE (включен)
+// DISABLED STATE (checked)
 .filters__checkbox:checked:disabled + .filters__checkbox-mark {
   background-color: #bdbdbd;
 

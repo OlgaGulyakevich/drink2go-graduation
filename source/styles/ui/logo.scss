@@ -9,7 +9,7 @@
   text-decoration: none;
   color: #333333;
   transition: opacity 0.3s ease;
-  min-width: 0; // Для корректной работы в flex-контейнере
+  min-width: 0; // For correct work in flex container
 
   &:hover {
     opacity: 0.8;
@@ -30,7 +30,7 @@
   flex-shrink: 0;
 }
 
-/* Mobile logo (32x36) - показывается только на mobile */
+/* Mobile logo (32x36) - shown only on mobile */
 .logo__image--mobile {
   display: block;
 
@@ -39,7 +39,7 @@
   }
 }
 
-/* Tablet logo (82x36) - показывается на tablet */
+/* Tablet logo (82x36) - shown on tablet */
 .logo__image--tablet {
   display: none;
 
@@ -53,7 +53,7 @@
   }
 }
 
-/* Desktop logo (170x36) - показывается на desktop */
+/* Desktop logo (170x36) - shown on desktop */
 .logo__image--desktop {
   display: none;
 
@@ -62,7 +62,7 @@
   }
 }
 
-/* Слоган "Интернет-магазин кофейных напитков" */
+/* Tagline "Internet coffee shop" */
 .logo__tagline {
   display: none;
 

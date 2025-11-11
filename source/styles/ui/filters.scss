@@ -153,12 +153,12 @@
     width: auto;
     min-width: 120px;
 
-    // Первая кнопка (Применить)
+    // First button (Apply)
     &.button--primary {
       min-width: 137px;
     }
 
-    // Вторая кнопка (Сбросить)
+    // Second button (Reset)
     &.button--secondary {
       min-width: 120px;
     }

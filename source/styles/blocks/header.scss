@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: $header-height-mobile;
-  overflow: hidden visible; // Предотвращаем горизонтальный скролл // Позволяем мобильному меню выходить вниз
+  overflow: hidden visible; // Prevent horizontal scroll // Allow mobile menu to extend downward
 
   @media (min-width: $breakpoint-tablet) {
     min-height: $header-height-tablet;
@@ -54,7 +54,7 @@
   width: $header-button-size-mobile;
   height: $header-button-size-mobile;
   padding: 0;
-  margin-right: -$container-padding-mobile; // Компенсируем padding контейнера для прижатия к краю
+  margin-right: -$container-padding-mobile; // Compensate container padding to align to edge
   background: none;
   border: none;
   cursor: pointer;
@@ -63,11 +63,11 @@
 
   @media (min-width: $breakpoint-tablet) {
     display: none;
-    margin-right: 0; // Сбрасываем на tablet/desktop
+    margin-right: 0; // Reset on tablet/desktop
   }
 
   // ============================================
-  // MOBILE: только фон при active, иконка черная
+  // MOBILE: background only on active, icon is black
   // ============================================
   &:active {
     background-color: $color-primary-light;
@@ -118,7 +118,7 @@
   transition: color $transition-ui, background-color $transition-ui;
 
   // ============================================
-  // MOBILE: только фон при active, иконки черные
+  // MOBILE: background only on active, icons are black
   // ============================================
   &:active {
     background-color: $color-primary-light;
@@ -130,7 +130,7 @@
   }
 
   // ============================================
-  // DESKTOP: иконки меняют цвет и размеры
+  // DESKTOP: icons change color and sizes
   // ============================================
   @media (min-width: $breakpoint-desktop) {
     &:hover {
@@ -150,7 +150,7 @@
   }
 
   // ============================================
-  // DESKTOP: Размеры для иконки пользователя
+  // DESKTOP: Sizes for user icon
   // ============================================
   &--user {
     @media (min-width: $breakpoint-desktop) {
@@ -160,7 +160,7 @@
   }
 
   // ============================================
-  // DESKTOP: Размеры для иконки корзины
+  // DESKTOP: Sizes for cart icon
   // ============================================
   &--cart {
     @media (min-width: $breakpoint-desktop) {
@@ -189,7 +189,7 @@
    MOBILE MENU STATES
    ============================================ */
 
-/* Когда меню открыто */
+/* When menu is open */
 .header--menu-open {
   .header__nav {
     display: block;

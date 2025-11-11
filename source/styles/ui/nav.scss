@@ -15,7 +15,7 @@
   list-style: none;
 
   @media (min-width: 768px) {
-    flex-flow: row wrap; // Разрешаем перенос пунктов меню на новую строку
+      flex-flow: row wrap; // Allow menu items to wrap to new line
     // gap: 32px;
     justify-content: center;
   }
@@ -30,9 +30,9 @@
   text-align: center;
   position: relative;
   max-height: 57px;
-  min-width: 0; // Для корректной работы в flex-контейнере
+  min-width: 0; // For correct work in flex container
 
-  // Линия сверху для первого пункта меню (mobile)
+  // Top line for first menu item (mobile)
   &:first-child::before {
     content: "";
     position: absolute;
@@ -48,7 +48,7 @@
     }
   }
 
-  // Линия на всю ширину экрана для mobile
+  // Full-width line for mobile
   &::after {
     content: "";
     position: absolute;
@@ -66,7 +66,7 @@
 
   @media (min-width: 768px) {
     text-align: left;
-    white-space: nowrap; // Чтобы текст в пункте не переносился
+    white-space: nowrap; // Prevent text wrapping in item
   }
 }
 
@@ -82,11 +82,11 @@
   letter-spacing: 0.02em;
   position: relative;
   transition: color 0.3s ease;
-  overflow-wrap: anywhere; // Для длинных слов
-  min-width: 0; // Для корректной работы в flex-контейнере
+  overflow-wrap: anywhere; // For long words
+  min-width: 0; // For correct work in flex container
 
   // ============================================
-  // Фон на всю ширину экрана для mobile (при active)
+  // Full-width background for mobile (on active)
   // ============================================
   &::before {
     content: "";
@@ -110,10 +110,10 @@
     align-items: center;
     font-size: 12px;
     padding-bottom: 32px;
-    white-space: nowrap; // Пункты меню в одну строку
+    white-space: nowrap; // Menu items in one line
   }
 
-  /* Подчеркивание (анимация из центра) для tablet/desktop */
+  /* Underline (animation from center) for tablet/desktop */
   @media (min-width: 768px) {
     &::after {
       content: "";
@@ -127,12 +127,12 @@
     }
   }
 
-  /* Hover state - только для tablet/desktop */
+  /* Hover state - only for tablet/desktop */
   @media (min-width: 768px) {
     &:hover {
       color: #7859cf;
 
-      /* Убираем подчеркивание при hover */
+      /* Remove underline on hover */
       &::after {
         left: 50%;
         right: 50%;
@@ -140,14 +140,14 @@
     }
   }
 
-  /* Focus state - только для tablet/desktop */
+  /* Focus state - only for tablet/desktop */
   @media (min-width: 768px) {
     &:focus {
       outline: 2px solid #7859cf;
       outline-offset: 4px;
       color: #7859cf;
 
-      /* Убираем подчеркивание при focus */
+      /* Remove underline on focus */
       &::after {
         left: 50%;
         right: 50%;
@@ -157,29 +157,29 @@
 
   /* Active state */
   &:active {
-    // Фон на всю ширину через ::before (mobile)
+    // Full-width background via ::before (mobile)
     &::before {
       background-color: #f0ebff;
     }
 
-    // Tablet/Desktop: фон + цвет текста
+    // Tablet/Desktop: background + text color
     @media (min-width: 768px) {
       color: #6849b8;
       background-color: #f0ebff;
     }
   }
 
-  /* Current page (активная ссылка) */
+  /* Current page (active link) */
   &--current {
     color: #7859cf;
 
-    /* Подчеркивание снизу (полное) */
+    /* Bottom underline (full) */
     &::after {
       left: 0;
       right: 0;
     }
 
-    /* На mobile убираем подчеркивание */
+    /* Remove underline on mobile */
     @media (max-width: 767px) {
       &::after {
         display: none;
