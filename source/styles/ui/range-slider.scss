@@ -210,10 +210,11 @@
   width: 118px;
   text-align: center;
   font-weight: $font-weight-medium;
+  color: #bdbdbd; // Default inactive color (for 0 or empty)
 
-  // Style for field with zero value
-  &[value="0"] {
-    color: #bdbdbd;
+  // Active state - when value is not 0
+  &.range-slider__input--active {
+    color: #333333; // Active color
   }
 
   // Tablet

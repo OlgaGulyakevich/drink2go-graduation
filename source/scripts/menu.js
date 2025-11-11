@@ -1,8 +1,11 @@
-/**
- * Mobile menu (Mobile/Tablet)
- * Toggle navigation visibility
- */
+// ============================================
+// MENU - Mobile Menu (Mobile/Tablet)
+// ============================================
 
+/**
+ * Toggle navigation visibility
+ * Mobile menu (Mobile/Tablet)
+ */
 const initMenu = () => {
   const toggleButton = document.querySelector('.js-toggle-button');
   const header = document.querySelector('.header');

@@ -1,7 +1,6 @@
-/**
- * Slider Component
- * #?@02;5=85 A;0945@>< A =02830F859 8 ?038=0F859
- */
+// ============================================
+// SLIDER - Carousel Component
+// ============================================
 
 const initSlider = () => {
   const slider = document.querySelector('.slider');
@@ -18,18 +17,18 @@ const initSlider = () => {
   const totalSlides = slides.length;
 
   /**
-   * >:070BL A;094 ?> 8=45:AC
+   * Show the slide at the given index
    */
   const showSlide = (index) => {
-    // #18@05< 0:B82=K9 :;0AA A> 2A5E A;094>2
+    // Remove the active class from all slides
     slides.forEach((slide) => {
       slide.classList.remove('slider__slide--active');
     });
 
-    // >102;O5< 0:B82=K9 :;0AA B5:CI5<C A;094C
+    // Add the active class to the slide at the given index
     slides[index].classList.add('slider__slide--active');
 
-    // 1=>2;O5< ?038=0F8N
+    // Add the active class to the pagination button at the given index
     paginationButtons.forEach((button, i) => {
       if (i === index) {
         button.classList.add('slider-pagination__button--active');
@@ -38,17 +37,17 @@ const initSlider = () => {
       }
     });
 
-    // 1=>2;O5< A>AB>O=85 :=>?>: =02830F88
+    // Update the current slide index
     currentSlide = index;
 
     updateNavigationButtons();
   };
 
   /**
-   * 1=>28BL A>AB>O=85 :=>?>: =02830F88 (disabled 4;O :@09=8E ?>78F89)
+   * Update the navigation buttons state
    */
   const updateNavigationButtons = () => {
-    // 5@2K9 A;094 - >B:;NG05< :=>?:C "=0704"
+    // Disable the previous button if the current slide is the first one
     if (currentSlide === 0) {
       prevButton.disabled = true;
       prevButton.setAttribute('aria-disabled', 'true');
@@ -57,7 +56,7 @@ const initSlider = () => {
       prevButton.setAttribute('aria-disabled', 'false');
     }
 
-    // >A;54=89 A;094 - >B:;NG05< :=>?:C "2?5@54"
+    // Disable the next button if the current slide is the last one
     if (currentSlide === totalSlides - 1) {
       nextButton.disabled = true;
       nextButton.setAttribute('aria-disabled', 'true');
@@ -68,7 +67,7 @@ const initSlider = () => {
   };
 
   /**
-   * 5@5:;NG8BL =0 A;54CNI89 A;094
+   * Show the next slide
    */
   const nextSlide = () => {
     if (currentSlide < totalSlides - 1) {
@@ -77,7 +76,7 @@ const initSlider = () => {
   };
 
   /**
-   * 5@5:;NG8BL =0 ?@54K4CI89 A;094
+   * Show the previous slide
    */
   const prevSlide = () => {
     if (currentSlide > 0) {
@@ -86,23 +85,23 @@ const initSlider = () => {
   };
 
   /**
-   * 1@01>BG8:8 A>1KB89
+   * Add event listeners to the navigation buttons and pagination buttons
    */
 
-  // =>?:0 "!;54CNI89"
+  // Add event listener to the next button
   nextButton.addEventListener('click', nextSlide);
 
-  // =>?:0 "@54K4CI89"
+  // Add event listener to the previous button
   prevButton.addEventListener('click', prevSlide);
 
-  // 038=0F8O
+  // Add event listeners to the pagination buttons
   paginationButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
       showSlide(index);
     });
   });
 
-  // ;0280BC@=0O =02830F8O (>?F8>=0;L=>)
+  // Add event listener to the document to handle keyboard navigation
   document.addEventListener('keydown', (evt) => {
     if (!slider.contains(document.activeElement)) {
       return;
@@ -115,7 +114,7 @@ const initSlider = () => {
     }
   });
 
-  // =8F80;870F8O: ?>:07K205< ?5@2K9 A;094 8 >1=>2;O5< :=>?:8
+  // Show the current slide
   showSlide(currentSlide);
 };
 

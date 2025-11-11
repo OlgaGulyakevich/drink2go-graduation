@@ -1,4 +1,6 @@
-/* Main entry point for all scripts */
+// ============================================
+// MAIN ENTRY POINT FOR ALL SCRIPTS
+// ============================================
 
 // Mobile menu
 import initMenu from './menu.js';
